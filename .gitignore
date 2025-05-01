@@ -1,0 +1,6 @@
+# Godot 4+ specific ignores
+.godot/
+addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf.import
+addons/dialogic/Example Assets/Fonts/Roboto-Italic.ttf.import
+addons/dialogic/Example Assets/Fonts/Roboto-Regular.ttf.import
+*.tmp

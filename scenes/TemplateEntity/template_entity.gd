@@ -58,17 +58,14 @@ func process_move_to_next_node(delta: float):
 func move_end_callback():
 	if next_nodes.size() == 0:
 		current_node = next_node
-		animation_player.play(animation_names[ANIMATION_STATE.IDLE])
 		start_idle_animation()
 		return
 	current_node = next_node
 	next_node = next_nodes.pop_front()
 	var next_node_vector = next_node.global_position - current_node.global_position
 	if next_node_vector.x > 0:
-		animation_player.play(animation_names[ANIMATION_STATE.WALK_RIGHT])
 		start_walk_animation_right()
 	else:
-		animation_player.play(animation_names[ANIMATION_STATE.WALK_LEFT])
 		start_walk_animation_left()
 		
 	var distance_to_next_node = next_node_vector.length() 
@@ -108,7 +105,7 @@ var animation_names = [
 	
 
 func update_animation():
-	#animation_player.play(animation_names[animation_state])
+	animation_player.play(animation_names[animation_state])
 	pass
 
 

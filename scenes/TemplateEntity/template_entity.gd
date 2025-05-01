@@ -3,12 +3,79 @@ class_name TemplateEntity
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var entity_path : String = "res://scenes/TemplateEntity/"
+
+@export var movement_nodes :  MovementNodes = null
+@export var starting_node : MovementNode = null
+@onready var current_node : MovementNode = null
+@onready var next_node : MovementNode = null
+@onready var next_nodes : Array[MovementNode] = []
+@export var movement_velocity = 1000.0
+@onready var movement_timer = $MovementTimer
+@onready var time_to_next_node = -1.0
+@onready var was_interrupted = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	init_audio_streams()
 	start_idle_animation()
 	audio_player.play()
+	global_position = starting_node.global_position
+	current_node = starting_node
+	next_node = starting_node
+	next_nodes = []
+	movement_timer.timeout.connect(move_end_callback)
+	start_idle_animation()
 	pass # Replace with function body.
+
+
+
+# при клике стартуем по набору точек
+# как таймер выходит переходим на другую
+# если в процессе еще раз нажали, то доходим
+# до текущей цели и стартуем заново, но второе что-то пока лень делать
+func _input(event):
+	if event is InputEventMouseButton:
+		if movement_timer.time_left > 0 or !next_nodes.is_empty():
+			return
+		var closest_node_to_click = movement_nodes.get_closest_node_to_position(get_global_mouse_position())
+		next_nodes = movement_nodes.get_list_of_nodes_to_get_from_a_to_b(current_node, closest_node_to_click).duplicate()
+		if !next_nodes.is_empty():
+			next_node = next_nodes.pop_front()
+			var next_node_vector = next_node.global_position - current_node.global_position
+			var distance_to_next_node = next_node_vector.length() 
+			var time = distance_to_next_node / movement_velocity
+			time_to_next_node = time
+			movement_timer.start(time)
+		
+		
+
+func process_move_to_next_node(delta: float):
+
+	if(next_node == current_node):
+		return
+	global_position = lerp(next_node.global_position, current_node.position, movement_timer.time_left / time_to_next_node)
+	return 
+
+func move_end_callback():
+	if next_nodes.size() == 0:
+		current_node = next_node
+		animation_player.play(animation_names[ANIMATION_STATE.IDLE])
+		start_idle_animation()
+		return
+	current_node = next_node
+	next_node = next_nodes.pop_front()
+	var next_node_vector = next_node.global_position - current_node.global_position
+	if next_node_vector.x > 0:
+		animation_player.play(animation_names[ANIMATION_STATE.WALK_RIGHT])
+		start_walk_animation_right()
+	else:
+		animation_player.play(animation_names[ANIMATION_STATE.WALK_LEFT])
+		start_walk_animation_left()
+		
+	var distance_to_next_node = next_node_vector.length() 
+	var time = distance_to_next_node / movement_velocity
+	time_to_next_node = time
+	movement_timer.start(time)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,11 +84,7 @@ func _process(delta: float) -> void:
 		animation_player.stop(true)
 		audio_player.stream_paused = true
 		return
-	var random_value : float = randf()
-	if(random_value > 0.1):
-		start_idle_animation()
-	else:
-		start_walk_animation()
+	process_move_to_next_node(delta)
 	update_audio_stream_player()
 	update_animation()
 
@@ -45,17 +108,20 @@ var animation_names = [
 	
 
 func update_animation():
-	var current_animation = animation_player.get_current_animation()
-	if(current_animation != animation_names[animation_state]):
-		animation_player.play(animation_names[animation_state])
+	#animation_player.play(animation_names[animation_state])
+	pass
+
 
 func start_idle_animation():
 	animation_state = ANIMATION_STATE.IDLE
 
-func start_walk_animation():
+func start_walk_animation_right():
 	#feel free to add direction logic
 	animation_state = ANIMATION_STATE.WALK_RIGHT
 
+func start_walk_animation_left():
+	animation_state = ANIMATION_STATE.WALK_LEFT
+	
 #endregion
 
 #region Sound

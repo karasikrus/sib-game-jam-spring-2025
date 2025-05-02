@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhraaqfxt8rpw"]
+
+[ext_resource type="Script" path="res://scenes/interactableCharacter/interaction_window.gd" id="1_t7ovg"]
+
+[node name="InteractionWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t7ovg")
+
+[node name="Hack" type="Button" parent="."]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 247.0
+offset_right = 486.0
+offset_bottom = 343.0
+text = "Взлом"
+
+[node name="Talk" type="Button" parent="."]
+layout_mode = 0
+offset_left = 532.0
+offset_top = 247.0
+offset_right = 700.0
+offset_bottom = 342.0
+text = "Поговорить"
+
+[node name="HackWindow" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = -1.0
+offset_top = 2.0
+offset_right = 1150.0
+offset_bottom = 649.0
+
+[node name="Sprite2D" type="Sprite2D" parent="HackWindow"]
+
+[node name="TalkWindow" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = -1.0
+offset_right = 1145.0
+offset_bottom = 647.0
+
+[connection signal="button_down" from="Hack" to="." method="pressed_hacked"]
+[connection signal="mouse_entered" from="Hack" to="." method="mouse_on_button"]
+[connection signal="mouse_exited" from="Hack" to="." method="mouse_off_button"]
+[connection signal="button_down" from="Talk" to="." method="pressed_talk"]
+[connection signal="mouse_entered" from="Talk" to="." method="mouse_on_button"]
+[connection signal="mouse_exited" from="Talk" to="." method="mouse_off_button"]

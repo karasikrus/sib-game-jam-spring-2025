@@ -1,13 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://bl7kmv1cyrida"]
+[gd_scene load_steps=7 format=3 uid="uid://bl7kmv1cyrida"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_kdb3r"]
 [ext_resource type="Texture2D" uid="uid://bgu4lnsafosmc" path="res://icon.svg" id="1_pe6fa"]
+[ext_resource type="PackedScene" uid="uid://cwd8t1bdevga8" path="res://scenes/interactableCharacter/interactable_character.tscn" id="2_8a0nw"]
 [ext_resource type="PackedScene" uid="uid://gujhtqt7mob6" path="res://scenes/TemplateEntity/TemplateEntity.tscn" id="3_lhg0g"]
 [ext_resource type="PackedScene" uid="uid://802678fmiy16" path="res://scenes/ui/ui_main.tscn" id="4_biw3x"]
 [ext_resource type="PackedScene" uid="uid://da7kgewmb2aww" path="res://scenes/movementNode/movement_nodes.tscn" id="5_ljfgf"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_kdb3r")
+
+[node name="InteractableCharacter" parent="." instance=ExtResource("2_8a0nw")]
+position = Vector2(68, 55)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 1, 1)

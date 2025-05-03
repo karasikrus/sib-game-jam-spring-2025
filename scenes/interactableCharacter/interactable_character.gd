@@ -33,6 +33,8 @@ enum INTERACTION_STATE{
 # Called when the node enters the scene tree for the first time.
 @onready var sprite = $Sprite2D
 
+@onready var need_to_start_idle = 0.0
+
 func set_mouse_on_object():
 	if interaction_state == INTERACTION_STATE.IDLE:
 		interaction_state = INTERACTION_STATE.HIGHLIGHTED
@@ -77,15 +79,22 @@ func _process(delta: float) -> void:
 		animation_player.stop(true)
 		audio_player.stream_paused = true
 		return
-	
+	if(randf() > 0.2):
+		need_to_start_idle += delta
+	if(need_to_start_idle > 0.5):
+		animation_state = ANIMATION_STATE.IDLE
+		update_animation()
+	#else:
+		#animation_state = ANIMATION_STATE.RESET
 	sprite.material.set_shader_parameter("is_highlited", interaction_state == INTERACTION_STATE.HIGHLIGHTED)
 	#sprite.material.set_shader_parameter("is_highlited", interaction_state == INTERACTION_STATE.HIGHLIGHTED)
 	update_audio_stream_player()
-	update_animation()
+	
 
 #region Animations
 
 enum ANIMATION_STATE{
+	RESET,
 	IDLE,
 	WALK_RIGHT,
 	WALK_LEFT,
@@ -93,6 +102,7 @@ enum ANIMATION_STATE{
 }
 
 var animation_names = [
+	"RESET",
 	"idle",
 	"walk_right",
 	"walk_left"

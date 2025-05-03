@@ -1,12 +1,138 @@
-[gd_scene load_steps=8 format=3 uid="uid://clb2cdbhem0da"]
+[gd_scene load_steps=15 format=3 uid="uid://clb2cdbhem0da"]
 
 [ext_resource type="PackedScene" uid="uid://gujhtqt7mob6" path="res://scenes/TemplateEntity/TemplateEntity.tscn" id="1_khm5p"]
 [ext_resource type="PackedScene" uid="uid://cwd8t1bdevga8" path="res://scenes/interactableCharacter/interactable_character.tscn" id="2_qc3u2"]
 [ext_resource type="PackedScene" uid="uid://802678fmiy16" path="res://scenes/ui/ui_main.tscn" id="3_5jnvt"]
-[ext_resource type="Texture2D" uid="uid://bvhd04aau7irw" path="res://scenes/zone1/IdleGoblin.png" id="3_ikcd4"]
+[ext_resource type="Texture2D" uid="uid://bvhd04aau7irw" path="res://scenes/goblin/IdleGoblin.png" id="3_ikcd4"]
 [ext_resource type="Script" path="res://scenes/movementNode/movement_nodes.gd" id="4_fpsod"]
 [ext_resource type="PackedScene" uid="uid://c2pwalittkt00" path="res://scenes/movementNode/movement_node.tscn" id="5_00614"]
 [ext_resource type="PackedScene" uid="uid://31awqwru7b70" path="res://scenes/movementNode/next_scene_node.tscn" id="5_v10l6"]
+
+[sub_resource type="Animation" id="Animation_k8fyg"]
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_8ay3b"]
+resource_name = "idle"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.766667, 1.1, 1.53333, 1.86667, 2.26667, 2.63333, 3.06667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 0, 0, 0, 0, 0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_ua1vt"]
+resource_name = "walk_left"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+
+[sub_resource type="Animation" id="Animation_airge"]
+resource_name = "walk_right"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e544i"]
+_data = {
+"RESET": SubResource("Animation_k8fyg"),
+"idle": SubResource("Animation_8ay3b"),
+"walk_left": SubResource("Animation_ua1vt"),
+"walk_right": SubResource("Animation_airge")
+}
+
+[sub_resource type="Animation" id="Animation_dcrll"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ywauo"]
+_data = {
+"idle": SubResource("Animation_dcrll")
+}
 
 [node name="Zone1" type="Node2D"]
 
@@ -18,6 +144,8 @@ starting_node = NodePath("../MovementNodes/Node2")
 [node name="InteractableCharacter" parent="." node_paths=PackedStringArray("nodes_to_unlock") instance=ExtResource("2_qc3u2")]
 position = Vector2(823, 505)
 nodes_to_unlock = [NodePath("../MovementNodes/Node4"), NodePath("../MovementNodes/NextSceneNode")]
+hints_path = "res://scenes/goblin/goblin_hints.txt"
+animation_start_name = "goblin"
 riddle_text = "Sosal?"
 riddle_answer = "Da"
 
@@ -26,6 +154,12 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_ikcd4")
 hframes = 9
 vframes = 1
+
+[node name="AnimationPlayer" parent="InteractableCharacter" index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_e544i"),
+"goblin": SubResource("AnimationLibrary_ywauo")
+}
 
 [node name="UiMain" parent="." instance=ExtResource("3_5jnvt")]
 

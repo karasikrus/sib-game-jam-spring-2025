@@ -19,6 +19,7 @@ class_name InteractableCharacter
 @onready var current_click_count = 0
 @export var hints_number_clicks : Array[int] = [1, 5, 10, 10, 10, 25, 25, 50] #still changable from editor
 
+@export var animation_start_name = "InteractableCharacter"
 enum INTERACTION_STATE{
 	IDLE,
 	HIGHLIGHTED,
@@ -78,7 +79,6 @@ func parse_hints():
 
 func _ready() -> void:
 	init_audio_streams()
-	start_idle_animation()
 	#audio_player.play()
 	start_idle_animation()
 	parse_hints()
@@ -92,13 +92,13 @@ func _process(delta: float) -> void:
 		animation_player.stop(true)
 		audio_player.stream_paused = true
 		return
-	if(randf() > 0.2):
+	
+	if(randf() > 0.5):
 		need_to_start_idle += delta
-	if(need_to_start_idle > 0.5):
+	if(need_to_start_idle > 1.0):
+		need_to_start_idle = 0.0
 		animation_state = ANIMATION_STATE.IDLE
 		update_animation()
-	#else:
-		#animation_state = ANIMATION_STATE.RESET
 	sprite.material.set_shader_parameter("is_highlited", interaction_state == INTERACTION_STATE.HIGHLIGHTED)
 	#sprite.material.set_shader_parameter("is_highlited", interaction_state == INTERACTION_STATE.HIGHLIGHTED)
 	update_audio_stream_player()
@@ -107,7 +107,6 @@ func _process(delta: float) -> void:
 #region Animations
 
 enum ANIMATION_STATE{
-	RESET,
 	IDLE,
 	WALK_RIGHT,
 	WALK_LEFT,
@@ -115,7 +114,6 @@ enum ANIMATION_STATE{
 }
 
 var animation_names = [
-	"RESET",
 	"idle",
 	"walk_right",
 	"walk_left"
@@ -125,7 +123,8 @@ var animation_names = [
 	
 
 func update_animation():
-	animation_player.play(animation_names[animation_state])
+	
+	animation_player.play(animation_start_name + "/" + animation_names[animation_state])
 	pass
 
 

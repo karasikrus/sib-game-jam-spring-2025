@@ -22,7 +22,6 @@ LevelManager="*res://scenes/autoload/level_manager.gd"
 StateManager="*res://scenes/autoload/state_manager.gd"
 UiManager="*res://scenes/autoload/ui_manager.gd"
 GameDataManager="*res://scenes/autoload/game_data_manager.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 DialogueSignalBus="*res://scenes/autoload/dialogue_signal_bus.gd"
 
 [dialogic]

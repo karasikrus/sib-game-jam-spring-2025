@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://da7kgewmb2aww"]
+
+[ext_resource type="Script" path="res://scenes/movementNode/movement_nodes.gd" id="1_8epn7"]
+[ext_resource type="PackedScene" uid="uid://c2pwalittkt00" path="res://scenes/movementNode/movement_node.tscn" id="2_6u6yb"]
+
+[node name="MovementNodes" type="Node2D"]
+script = ExtResource("1_8epn7")
+
+[node name="Node0" parent="." node_paths=PackedStringArray("connected_nodes") instance=ExtResource("2_6u6yb")]
+position = Vector2(577, 104)
+connected_nodes = []
+
+[node name="Node1" parent="." node_paths=PackedStringArray("connected_nodes") instance=ExtResource("2_6u6yb")]
+position = Vector2(929, 138)
+connected_nodes = []
+
+[node name="Node2" parent="." node_paths=PackedStringArray("connected_nodes") instance=ExtResource("2_6u6yb")]
+position = Vector2(162, 410)
+connected_nodes = []
+
+[node name="Node3" parent="." node_paths=PackedStringArray("connected_nodes") instance=ExtResource("2_6u6yb")]
+position = Vector2(211, 185)
+connected_nodes = [NodePath("../Node4"), NodePath("../Node2")]
+
+[node name="Node4" parent="." node_paths=PackedStringArray("connected_nodes") instance=ExtResource("2_6u6yb")]
+position = Vector2(284, 46)
+connected_nodes = [NodePath("../Node3")]
+
+[node name="Node5" parent="." node_paths=PackedStringArray("connected_nodes") instance=ExtResource("2_6u6yb")]
+position = Vector2(559, 402)
+connected_nodes = [NodePath("../Node2"), NodePath("../Node0"), NodePath("../Node1")]

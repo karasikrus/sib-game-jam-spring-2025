@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2pwalittkt00"]
+
+[ext_resource type="Script" path="res://scenes/movementNode/movement_node.gd" id="1_adl4k"]
+
+[node name="MovementNode" type="Node2D" node_paths=PackedStringArray("connected_nodes")]
+script = ExtResource("1_adl4k")
+connected_nodes = [null]
+
+[node name="DebugName" type="RichTextLabel" parent="."]
+offset_right = 79.0
+offset_bottom = 45.0
+scroll_active = false
+tab_size = 2

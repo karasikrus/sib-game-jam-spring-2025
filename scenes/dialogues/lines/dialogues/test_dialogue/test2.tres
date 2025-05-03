@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=4 format=3 uid="uid://ycqumb4a1rvy"]
+
+[ext_resource type="Resource" uid="uid://bn6b042fasvms" path="res://scenes/dialogues/characters/player.tres" id="1_0lsvi"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_ub472"]
+[ext_resource type="AudioStream" uid="uid://vqr6ssy3a3fb" path="res://scenes/dialogues/lines/dialogues/test_dialogue/test_dialogue_out 2.mp3" id="3_skuo7"]
+
+[resource]
+script = ExtResource("2_ub472")
+character = ExtResource("1_0lsvi")
+text = "Здесь я проверяю сами диалоги и их озвучку."
+voiceOver = ExtResource("3_skuo7")

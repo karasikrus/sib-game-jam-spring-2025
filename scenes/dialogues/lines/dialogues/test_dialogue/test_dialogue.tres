@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=7 format=3 uid="uid://bbm0ctri4dtlf"]
+
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="1_ukl8w"]
+[ext_resource type="Resource" uid="uid://cr1hiyicnnba7" path="res://scenes/dialogues/lines/dialogues/test_dialogue/test1.tres" id="2_xmrs1"]
+[ext_resource type="Resource" uid="uid://ycqumb4a1rvy" path="res://scenes/dialogues/lines/dialogues/test_dialogue/test2.tres" id="3_l4adf"]
+[ext_resource type="Resource" uid="uid://bq8ovfo4e4lks" path="res://scenes/dialogues/lines/dialogues/test_dialogue/test3.tres" id="4_p13n8"]
+[ext_resource type="Resource" uid="uid://jycno0uoarxf" path="res://scenes/dialogues/lines/dialogues/test_dialogue/test4.tres" id="5_od1bw"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue.gd" id="6_mscsp"]
+
+[resource]
+script = ExtResource("6_mscsp")
+lines = Array[ExtResource("1_ukl8w")]([ExtResource("2_xmrs1"), ExtResource("3_l4adf"), ExtResource("4_p13n8"), ExtResource("5_od1bw")])

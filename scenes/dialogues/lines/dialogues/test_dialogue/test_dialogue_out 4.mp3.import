@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://qpyh3w22574c"
+path="res://.godot/imported/test_dialogue_out 4.mp3-5f205ea0a24078d04071489970ef3d9d.mp3str"
+
+[deps]
+
+source_file="res://scenes/dialogues/lines/dialogues/test_dialogue/test_dialogue_out 4.mp3"
+dest_files=["res://.godot/imported/test_dialogue_out 4.mp3-5f205ea0a24078d04071489970ef3d9d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

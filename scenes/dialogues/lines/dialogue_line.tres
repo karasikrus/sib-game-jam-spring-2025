@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=2 format=3 uid="uid://bfkr2pfst0cpy"]
+
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="1_5bu20"]
+
+[resource]
+script = ExtResource("1_5bu20")
+text = ""

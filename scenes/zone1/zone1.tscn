@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://clb2cdbhem0da"]
+[gd_scene load_steps=17 format=3 uid="uid://clb2cdbhem0da"]
 
+[ext_resource type="Shader" path="res://scenes/postEffects/crtShader.gdshader" id="1_1tu0n"]
 [ext_resource type="PackedScene" uid="uid://gujhtqt7mob6" path="res://scenes/TemplateEntity/TemplateEntity.tscn" id="1_khm5p"]
 [ext_resource type="PackedScene" uid="uid://cwd8t1bdevga8" path="res://scenes/interactableCharacter/interactable_character.tscn" id="2_qc3u2"]
 [ext_resource type="PackedScene" uid="uid://802678fmiy16" path="res://scenes/ui/ui_main.tscn" id="3_5jnvt"]
@@ -134,6 +135,20 @@ _data = {
 "idle": SubResource("Animation_dcrll")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7g8ub"]
+shader = ExtResource("1_1tu0n")
+shader_parameter/res = Vector2(1440, 720)
+shader_parameter/mask_type = 0
+shader_parameter/bloom_type = 0
+shader_parameter/hardScan = -1.57
+shader_parameter/hardPix = -1.682
+shader_parameter/hardBloomScan = -0.965
+shader_parameter/hardBloomPix = -1.5
+shader_parameter/bloomAmount = 16.0
+shader_parameter/warp = Vector2(64, 24)
+shader_parameter/maskDark = 0.5
+shader_parameter/maskLight = 1.5
+
 [node name="Zone1" type="Node2D"]
 
 [node name="TemplateEntity" parent="." node_paths=PackedStringArray("movement_nodes", "starting_node") instance=ExtResource("1_khm5p")]
@@ -190,5 +205,15 @@ connected_nodes = [NodePath("../Node2"), NodePath("../Node0"), NodePath("../Node
 [node name="NextSceneNode" parent="MovementNodes" instance=ExtResource("5_v10l6")]
 position = Vector2(1044, 104)
 is_available = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+top_level = true
+z_index = 1
+z_as_relative = false
+material = SubResource("ShaderMaterial_7g8ub")
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
 
 [editable path="InteractableCharacter"]

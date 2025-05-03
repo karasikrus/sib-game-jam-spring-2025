@@ -13,6 +13,7 @@ class_name InteractableCharacter
 
 @onready var main_character : TemplateEntity = get_tree().get_first_node_in_group("MainCharacter") as TemplateEntity
 
+
 enum INTERACTION_STATE{
 	IDLE,
 	HIGHLIGHTED,
@@ -26,6 +27,8 @@ enum INTERACTION_STATE{
 
 @onready var interaction_state : INTERACTION_STATE = INTERACTION_STATE.IDLE
 @onready var interaction_window = $InteractionWindow
+@export var riddle_text : String = ""
+@export var riddle_answer : String = ""
 # Called when the node enters the scene tree for the first time.
 @onready var sprite = $Sprite2D
 
@@ -64,6 +67,7 @@ func _ready() -> void:
 	#audio_player.play()
 	start_idle_animation()
 	sprite.material = sprite.material.duplicate() #cringe, godot can not set variable per instance, so we duplicating material
+	
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

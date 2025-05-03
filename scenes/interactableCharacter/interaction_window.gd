@@ -6,8 +6,13 @@ extends Control
 @onready var is_on_button = false
 @onready var hack_button = $Hack
 @onready var hack_window = $HackWindow
+@onready var riddle_text_label = $HackWindow/RiddleText
+@onready var riddle_answer_input : TextEdit = $HackWindow/RiddleAnswer
 @onready var talk_button = $Talk
 @onready var talk_window = null
+
+@onready var riddle_text : String = ""
+@onready var riddle_answer : String = ""
 
 func hide_talk_hack_buttons():
 	hack_button.visible = false
@@ -17,14 +22,27 @@ func show_talk_hack_buttons():
 	hack_button.visible = true
 	talk_button.visible = true
 
+func on_hack_attempt():
+	if(riddle_answer_input.text.to_lower() == riddle_answer.to_lower()):
+		on_hack_succesful()
+
 func on_hack_succesful():
 	interactable_character.unlock_nodes()
 	interactable_character.interaction_state = InteractableCharacter.INTERACTION_STATE.IDLE
+	#could be replace with default state if there no more logic
 	show_talk_hack_buttons()
 	hack_window.visible = false
 	self.visible = false
+	StateManager.currentState = StateManager.GlobalStates.RUNNING
 
-	
+
+func reset_to_defult_state():
+	self.visible = false
+	hack_window.visible = false
+	#talk_window.visible = false
+	hack_button.visible = true
+	talk_button.visible = true
+	StateManager.currentState = StateManager.GlobalStates.RUNNING
 
 func main_character_arrived():
 	if interactable_character.interaction_state == InteractableCharacter.INTERACTION_STATE.PRESSED_HACK:
@@ -32,11 +50,14 @@ func main_character_arrived():
 		hide_talk_hack_buttons()
 		hack_window.visible = true
 		is_on_button = false
+		StateManager.currentState = StateManager.GlobalStates.FREEZED
 	elif interactable_character.interaction_state == InteractableCharacter.INTERACTION_STATE.PRESSED_TALK:
 		interactable_character.interaction_state = InteractableCharacter.INTERACTION_STATE.IDLE
 		self.visible = false
 		is_on_button = false
+		#StateManager.currentState = StateManager.GlobalStates.FREEZED
 	interactable_character.waiting_for_character = false
+	
 
 func mouse_on_button():
 	is_on_button = true
@@ -57,16 +78,18 @@ func _input(event):
 	if not self.visible:
 		return
 	if event is InputEventMouseButton and not is_on_button:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed() and interactable_character.interaction_state < InteractableCharacter.INTERACTION_STATE.PRESSED_TALK:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 			interactable_character.interaction_state = InteractableCharacter.INTERACTION_STATE.IDLE
 			is_on_button = false
-			self.visible = false
+			reset_to_defult_state()
 		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var main_character : TemplateEntity = get_tree().get_first_node_in_group("MainCharacter") as TemplateEntity
 	main_character.arrival_signal.connect(self.main_character_arrived)
-	
+	riddle_text = interactable_character.riddle_text
+	riddle_answer = interactable_character.riddle_answer
+	riddle_text_label.text = riddle_text
 	pass # Replace with function body.
 
 

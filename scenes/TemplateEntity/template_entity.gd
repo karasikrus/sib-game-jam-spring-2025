@@ -34,6 +34,8 @@ func _ready() -> void:
 # если в процессе еще раз нажали, то доходим
 # до текущей цели и стартуем заново, но второе что-то пока лень делать
 func _input(event):
+	if StateManager.currentState == StateManager.GlobalStates.FREEZED:
+		return
 	if event is InputEventMouseButton and !StateManager.isMouseHighlightingObject:
 		if movement_timer.time_left > 0 or !next_nodes.is_empty():
 			return

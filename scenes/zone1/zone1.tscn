@@ -17,6 +17,8 @@ starting_node = NodePath("../MovementNodes/Node2")
 [node name="InteractableCharacter" parent="." node_paths=PackedStringArray("nodes_to_unlock") instance=ExtResource("2_qc3u2")]
 position = Vector2(823, 505)
 nodes_to_unlock = [NodePath("../MovementNodes/Node4"), NodePath("../MovementNodes/NextSceneNode")]
+riddle_text = "Sosal?"
+riddle_answer = "Da"
 
 [node name="UiMain" parent="." instance=ExtResource("3_5jnvt")]
 

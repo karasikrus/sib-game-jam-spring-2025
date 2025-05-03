@@ -132,6 +132,7 @@ size = Vector2(130, 103)
 [node name="InteractableCharacter" type="CharacterBody2D"]
 position = Vector2(494, 376)
 script = ExtResource("1_hargx")
+hints_path = "res://scenes/interactableCharacter/test_hints.txt"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_k0vd5")

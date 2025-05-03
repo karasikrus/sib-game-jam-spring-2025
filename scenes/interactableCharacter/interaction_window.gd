@@ -15,6 +15,8 @@ extends Control
 @onready var riddle_text : String = ""
 @onready var riddle_answer : String = ""
 
+@onready var hints_label = $HackWindow/Node2D/HintsText
+
 func hide_talk_hack_buttons():
 	hack_button.visible = false
 	talk_button.visible = false
@@ -93,8 +95,19 @@ func _ready() -> void:
 	riddle_text = interactable_character.riddle_text
 	riddle_answer = interactable_character.riddle_answer
 	riddle_text_label.text = riddle_text
+	reset_to_defult_state()
 	pass # Replace with function body.
 
+func request_more_hints() -> void:
+	if interactable_character.current_hint ==interactable_character.hints.size():
+		return
+	interactable_character.current_hint = interactable_character.current_hint + 1
+	var result_text = ""
+	for i in range(0, interactable_character.current_hint):
+		result_text += interactable_character.hints[i]
+		result_text += "\n"
+	hints_label.text = result_text
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

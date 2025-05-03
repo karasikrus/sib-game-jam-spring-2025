@@ -12,7 +12,10 @@ class_name InteractableCharacter
 @export var nodes_to_unlock : Array[MovementNode] = []
 
 @onready var main_character : TemplateEntity = get_tree().get_first_node_in_group("MainCharacter") as TemplateEntity
-
+@export var hints_path : String
+@onready var hints : Array[String] = []
+@onready var hints_state : Array[bool] = []
+@onready var current_hint = 0
 
 enum INTERACTION_STATE{
 	IDLE,
@@ -64,11 +67,19 @@ func _input(event):
 			interaction_window.visible = true
 
 
+func parse_hints():
+	var hints_txt = FileAccess.open(hints_path, FileAccess.READ)
+	while not hints_txt.eof_reached(): # iterate through all lines until the end of file is reached
+		var line = hints_txt.get_line()
+		hints.append(line)
+	hints_txt.close()
+
 func _ready() -> void:
 	init_audio_streams()
 	start_idle_animation()
 	#audio_player.play()
 	start_idle_animation()
+	parse_hints()
 	sprite.material = sprite.material.duplicate() #cringe, godot can not set variable per instance, so we duplicating material
 	
 	pass # Replace with function body.

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dssgeqemdl21p"
-path="res://.godot/imported/TemplateEntitySheet.png-90acb8124792441ae49431599ff65aae.ctex"
+uid="uid://vwtosdp7ifdf"
+path="res://.godot/imported/IdleDetectiveSpreadshit.png-9092647b394d5f03f333247017fec102.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/TemplateEntity/TemplateEntitySheet.png"
-dest_files=["res://.godot/imported/TemplateEntitySheet.png-90acb8124792441ae49431599ff65aae.ctex"]
+source_file="res://scenes/TemplateEntity/IdleDetectiveSpreadshit.png"
+dest_files=["res://.godot/imported/IdleDetectiveSpreadshit.png-9092647b394d5f03f333247017fec102.ctex"]
 
 [params]
 

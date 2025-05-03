@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dystef15qb8eb"
-path="res://.godot/imported/cursor_next_zone.png-5653121c6206967af8a27d85addc0d98.ctex"
+uid="uid://ci3f6f4uoa0dh"
+path="res://.godot/imported/IdleDetectiveSpreadsheet.png-9fc25e6f05f9dd4fae9fe916910a502f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/cursors/cursor_next_zone.png"
-dest_files=["res://.godot/imported/cursor_next_zone.png-5653121c6206967af8a27d85addc0d98.ctex"]
+source_file="res://scenes/TemplateEntity/IdleDetectiveSpreadsheet.png"
+dest_files=["res://.godot/imported/IdleDetectiveSpreadsheet.png-9fc25e6f05f9dd4fae9fe916910a502f.ctex"]
 
 [params]
 

@@ -29,6 +29,7 @@ enum INTERACTION_STATE{
 @onready var interaction_window = $InteractionWindow
 @export var riddle_text : String = ""
 @export var riddle_answer : String = ""
+@onready var is_hacked = false
 # Called when the node enters the scene tree for the first time.
 @onready var sprite = $Sprite2D
 

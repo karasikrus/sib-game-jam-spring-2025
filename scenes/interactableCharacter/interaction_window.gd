@@ -8,6 +8,7 @@ extends Control
 @onready var hack_window = $HackWindow
 @onready var riddle_text_label = $HackWindow/RiddleText
 @onready var riddle_answer_input : TextEdit = $HackWindow/RiddleAnswer
+@onready var submit_answer = $HackWindow/SuccesfulHackButton
 @onready var talk_button = $Talk
 @onready var talk_window = null
 
@@ -23,15 +24,17 @@ func show_talk_hack_buttons():
 	talk_button.visible = true
 
 func on_hack_attempt():
-	if(riddle_answer_input.text.to_lower() == riddle_answer.to_lower()):
+	if(riddle_answer_input.text.to_lower() == riddle_answer.to_lower()):\
 		on_hack_succesful()
 
 func on_hack_succesful():
 	interactable_character.unlock_nodes()
 	interactable_character.interaction_state = InteractableCharacter.INTERACTION_STATE.IDLE
+	interactable_character.is_hacked = true
 	#could be replace with default state if there no more logic
 	show_talk_hack_buttons()
 	hack_window.visible = false
+	submit_answer.visible = false
 	self.visible = false
 	StateManager.currentState = StateManager.GlobalStates.RUNNING
 

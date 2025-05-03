@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dystef15qb8eb"
-path="res://.godot/imported/cursor_next_zone.png-5653121c6206967af8a27d85addc0d98.ctex"
+uid="uid://yt8klxljy2sv"
+path="res://.godot/imported/TalkButton.png-88ac9d4659a253b1f01d31c0dde0735d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/cursors/cursor_next_zone.png"
-dest_files=["res://.godot/imported/cursor_next_zone.png-5653121c6206967af8a27d85addc0d98.ctex"]
+source_file="res://scenes/interactableCharacter/TalkButton.png"
+dest_files=["res://.godot/imported/TalkButton.png-88ac9d4659a253b1f01d31c0dde0735d.ctex"]
 
 [params]
 

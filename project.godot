@@ -39,6 +39,10 @@ layout/default_style="Default"
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
+[global_group]
+
+MainCharacter="Main Character Group"
+
 [input]
 
 dialogic_default_action={

@@ -112,7 +112,7 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mq23p"]
 
-[node name="TemplateEntity" type="CharacterBody2D"]
+[node name="TemplateEntity" type="CharacterBody2D" groups=["MainCharacter"]]
 script = ExtResource("1_pgnyf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

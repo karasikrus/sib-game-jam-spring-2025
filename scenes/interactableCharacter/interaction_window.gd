@@ -5,6 +5,18 @@ extends Control
 
 @onready var is_on_button = false
 
+
+func main_character_arrived():
+	if interactable_character.interaction_state == InteractableCharacter.INTERACTION_STATE.PRESSED_HACK:
+		interactable_character.interaction_state = InteractableCharacter.INTERACTION_STATE.IDLE
+		self.visible = false
+		is_on_button = false
+	elif interactable_character.interaction_state == InteractableCharacter.INTERACTION_STATE.PRESSED_TALK:
+		interactable_character.interaction_state = InteractableCharacter.INTERACTION_STATE.IDLE
+		self.visible = false
+		is_on_button = false
+	interactable_character.waiting_for_character = false
+
 func mouse_on_button():
 	is_on_button = true
 	
@@ -14,10 +26,11 @@ func mouse_off_button():
 
 func pressed_hacked():
 	interactable_character.interaction_state = InteractableCharacter.INTERACTION_STATE.PRESSED_HACK
+	interactable_character.waiting_for_character = true
 	
 func pressed_talk():
 	interactable_character.interaction_state = InteractableCharacter.INTERACTION_STATE.PRESSED_TALK
-	
+	interactable_character.waiting_for_character = true
 	
 func _input(event):
 	if not self.visible:
@@ -30,6 +43,9 @@ func _input(event):
 		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var main_character : TemplateEntity = get_tree().get_first_node_in_group("MainCharacter") as TemplateEntity
+	main_character.arrival_signal.connect(self.main_character_arrived)
+	
 	pass # Replace with function body.
 
 

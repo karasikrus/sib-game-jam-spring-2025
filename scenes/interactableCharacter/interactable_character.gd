@@ -7,13 +7,16 @@ class_name InteractableCharacter
 @onready var interaction_area = $InteractionArea
 @onready var is_highlited = false
 
+@onready var waiting_for_character = false
+
+@onready var main_character : TemplateEntity = get_tree().get_first_node_in_group("MainCharacter") as TemplateEntity
+
 enum INTERACTION_STATE{
 	IDLE,
 	HIGHLIGHTED,
 	PRESSED_INTERCATION,
 	PRESSED_TALK,
 	PRESSED_HACK,
-	WAITING_FOR_MC,
 	TALKING,
 	HACKING,
 	INTERACTION_STATE_COUNT,
@@ -54,6 +57,7 @@ func _ready() -> void:
 	start_idle_animation()
 	#audio_player.play()
 	start_idle_animation()
+	sprite.material = sprite.material.duplicate() #cringe, godot can not set variable per instance, so we duplicating material
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -62,10 +66,11 @@ func _process(delta: float) -> void:
 		animation_player.stop(true)
 		audio_player.stream_paused = true
 		return
+	
 	sprite.material.set_shader_parameter("is_highlited", interaction_state == INTERACTION_STATE.HIGHLIGHTED)
+	#sprite.material.set_shader_parameter("is_highlited", interaction_state == INTERACTION_STATE.HIGHLIGHTED)
 	update_audio_stream_player()
 	update_animation()
-
 
 #region Animations
 

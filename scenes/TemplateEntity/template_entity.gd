@@ -12,7 +12,8 @@ class_name TemplateEntity
 @export var movement_velocity = 1000.0
 @onready var movement_timer = $MovementTimer
 @onready var time_to_next_node = -1.0
-@onready var was_interrupted = false
+
+signal arrival_signal
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	init_audio_streams()
@@ -45,6 +46,8 @@ func _input(event):
 			var time = distance_to_next_node / movement_velocity
 			time_to_next_node = time
 			movement_timer.start(time)
+		else:
+			arrival_signal.emit()
 		
 		
 
@@ -58,6 +61,7 @@ func process_move_to_next_node(delta: float):
 func move_end_callback():
 	if next_nodes.size() == 0:
 		current_node = next_node
+		arrival_signal.emit()
 		start_idle_animation()
 		return
 	current_node = next_node

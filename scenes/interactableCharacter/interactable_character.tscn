@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://scenes/interactableCharacter/interactable_character.gd" id="1_hargx"]
 [ext_resource type="Shader" path="res://scenes/interactableCharacter/interactable_character.gdshader" id="2_1cv0v"]
-[ext_resource type="Texture2D" uid="uid://dssgeqemdl21p" path="res://scenes/TemplateEntity/TemplateEntitySheet.png" id="2_6lxjp"]
 [ext_resource type="AudioStream" uid="uid://r6oou2c8mf3j" path="res://scenes/TemplateEntity/idle.mp3" id="3_7o5le"]
 [ext_resource type="PackedScene" uid="uid://dhraaqfxt8rpw" path="res://scenes/interactableCharacter/InteractionWindow.tscn" id="5_ipwex"]
 
@@ -14,6 +13,10 @@ shader_parameter/highlight_strength = 0.5
 shader_parameter/color_mode_toggle = false
 shader_parameter/is_horizontal = false
 shader_parameter/is_highlited = false
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vypt4"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/TemplateEntitySheet.png-60bdf7a52acdc5738b9673bf3cab0de5.ctex"
 
 [sub_resource type="Animation" id="Animation_k8fyg"]
 tracks/0/type = "value"
@@ -132,7 +135,7 @@ script = ExtResource("1_hargx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_k0vd5")
-texture = ExtResource("2_6lxjp")
+texture = SubResource("CompressedTexture2D_vypt4")
 hframes = 2
 vframes = 2
 

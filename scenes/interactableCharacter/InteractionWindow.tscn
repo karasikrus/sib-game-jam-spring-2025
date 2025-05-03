@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhraaqfxt8rpw"]
+[gd_scene load_steps=11 format=3 uid="uid://dhraaqfxt8rpw"]
 
 [ext_resource type="Script" path="res://scenes/interactableCharacter/interaction_window.gd" id="1_t7ovg"]
 [ext_resource type="Texture2D" uid="uid://bd8w2ny4qenjh" path="res://scenes/interactableCharacter/HackButton.png" id="2_36p0u"]
 [ext_resource type="AudioStream" uid="uid://cm5hptfp0p4pb" path="res://scenes/interactableCharacter/sounds/HackClose.wav" id="2_c54t2"]
 [ext_resource type="Texture2D" uid="uid://yt8klxljy2sv" path="res://scenes/interactableCharacter/TalkButton.png" id="3_ka2m2"]
+[ext_resource type="AudioStream" uid="uid://dqqcn8kcmhkkk" path="res://scenes/interactableCharacter/sounds/HelperClick.wav" id="4_1p75k"]
 [ext_resource type="AudioStream" uid="uid://55p5dlwh6c4y" path="res://scenes/interactableCharacter/sounds/HackOpen.wav" id="4_77a11"]
+[ext_resource type="AudioStream" uid="uid://djaggv8ido73y" path="res://scenes/interactableCharacter/sounds/RightAnswer.wav" id="5_chdo5"]
+[ext_resource type="AudioStream" uid="uid://mks5uuuog5nl" path="res://scenes/interactableCharacter/sounds/TipRecieved.wav" id="6_urkgr"]
+[ext_resource type="AudioStream" uid="uid://dcp7msmubwpic" path="res://scenes/interactableCharacter/sounds/TipsAreOver.wav" id="7_hlhrw"]
+[ext_resource type="AudioStream" uid="uid://dmnbnun5ir5qp" path="res://scenes/interactableCharacter/sounds/WrongAnswer.wav" id="8_n3iny"]
 
 [node name="InteractionWindow" type="Control"]
 layout_mode = 3
@@ -18,7 +23,7 @@ offset_bottom = -523.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t7ovg")
-audio_streams = Array[AudioStream]([ExtResource("2_c54t2"), ExtResource("4_77a11")])
+audio_streams = Array[AudioStream]([ExtResource("2_c54t2"), ExtResource("4_77a11"), ExtResource("4_1p75k"), ExtResource("5_chdo5"), ExtResource("6_urkgr"), ExtResource("7_hlhrw"), ExtResource("8_n3iny")])
 
 [node name="Hack" type="Button" parent="."]
 layout_mode = 0
@@ -93,6 +98,8 @@ offset_bottom = 62.0
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="HackWindow"]
 stream = ExtResource("4_77a11")
+
+[node name="AudioPlayerForTips" type="AudioStreamPlayer" parent="HackWindow"]
 
 [node name="TalkWindow" type="Control" parent="."]
 visible = false

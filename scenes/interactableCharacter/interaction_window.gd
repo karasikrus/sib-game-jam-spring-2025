@@ -24,15 +24,25 @@ extends Control
 enum AUDIO_STATE{
 	HACK_WINDOW_CLOSE,
 	HACK_WINDOW_OPEN,
-	
+	HACK_WINDOW_HELPER_CLICK,
+	HACK_RIGHT_ANSWER,
+	HACK_TIP_RECIEVED,
+	HACK_TIPS_ARE_OVER,
+	HACK_WRONG_ANSWER,
 }
+
 var audio_names = [
 	"HackClose",
 	"HackOpen",
+	"HelperClick",
+	"RightAnswer",
+	"TipRecieved",
+	"TipsAreOver",
+	"WrongAnswer",
 ]
 
 @onready var audio_player : AudioStreamPlayer =$HackWindow/AudioPlayer 
-
+@onready var audio_player_for_tip : AudioStreamPlayer = $HackWindow/AudioPlayerForTips #second one as we can recieve tip and get sound of counter increment at the same time
 
 func hide_talk_hack_buttons():
 	hack_button.visible = false
@@ -43,8 +53,13 @@ func show_talk_hack_buttons():
 	talk_button.visible = true
 
 func on_hack_attempt():
-	if(riddle_answer_input.text.to_lower() == riddle_answer.to_lower()):\
+	if(riddle_answer_input.text.to_lower() == riddle_answer.to_lower()):
 		on_hack_succesful()
+	else:
+		on_hack_unsuccesful()
+
+func on_hack_unsuccesful():
+	play_sound(AUDIO_STATE.HACK_WRONG_ANSWER)
 
 func on_hack_succesful():
 	interactable_character.unlock_nodes()
@@ -56,6 +71,7 @@ func on_hack_succesful():
 	submit_answer.visible = false
 	self.visible = false
 	StateManager.currentState = StateManager.GlobalStates.RUNNING
+	play_sound(AUDIO_STATE.HACK_RIGHT_ANSWER)
 
 
 func reset_to_defult_state():
@@ -93,6 +109,10 @@ func play_sound(state : AUDIO_STATE):
 	audio_player.stream = audio_streams[state]
 	audio_player.play()
 
+func play_sound_for_tip(state : AUDIO_STATE):
+	audio_player_for_tip.stream = audio_streams[state]
+	audio_player_for_tip.play()
+
 func pressed_hacked():
 	interactable_character.interaction_state = InteractableCharacter.INTERACTION_STATE.PRESSED_HACK
 	interactable_character.waiting_for_character = true
@@ -127,12 +147,15 @@ func _ready() -> void:
 func request_more_hints() -> void:
 	var current_hint_index = interactable_character.current_hint
 	if current_hint_index ==interactable_character.hints.size():
+		play_sound_for_tip(AUDIO_STATE.HACK_TIPS_ARE_OVER)
 		return
 	interactable_character.current_click_count += 1
+	play_sound(AUDIO_STATE.HACK_WINDOW_HELPER_CLICK)
 	if interactable_character.hints_number_clicks[current_hint_index] == interactable_character.current_click_count:
 		current_hint_index += 1
 		interactable_character.current_hint = current_hint_index
 		interactable_character.current_click_count = 0
+		play_sound_for_tip(AUDIO_STATE.HACK_TIP_RECIEVED)
 	var result_text = ""
 	for i in range(0, interactable_character.current_hint):
 		result_text += interactable_character.hints[i]

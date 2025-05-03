@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://ynr8nxak6w8b"]
+
+[ext_resource type="Script" path="res://scenes/test/test_dialogue.gd" id="1_mtarl"]
+[ext_resource type="Texture2D" uid="uid://bgu4lnsafosmc" path="res://icon.svg" id="1_ttxs8"]
+[ext_resource type="PackedScene" uid="uid://dr5jvrtte8k8t" path="res://scenes/dialogues/dialogue_box/text_bubble.tscn" id="2_6dygy"]
+[ext_resource type="Resource" uid="uid://bbm0ctri4dtlf" path="res://scenes/dialogues/lines/dialogues/test_dialogue/test_dialogue.tres" id="2_nthme"]
+[ext_resource type="Resource" uid="uid://bn6b042fasvms" path="res://scenes/dialogues/characters/player.tres" id="3_20xa0"]
+[ext_resource type="PackedScene" uid="uid://djvm4x8kkeqre" path="res://scenes/dialogues/dialogue_manager/dialogue_manager.tscn" id="5_quv8i"]
+
+[node name="TestDialogue" type="Node2D"]
+script = ExtResource("1_mtarl")
+dialogue = ExtResource("2_nthme")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(890, 492)
+texture = ExtResource("1_ttxs8")
+
+[node name="TextBubble" parent="Icon" instance=ExtResource("2_6dygy")]
+offset_left = -563.0
+offset_top = -236.0
+offset_right = 477.0
+offset_bottom = -136.0
+dialogueCharacter = ExtResource("3_20xa0")
+
+[node name="DialogueManager" parent="." instance=ExtResource("5_quv8i")]

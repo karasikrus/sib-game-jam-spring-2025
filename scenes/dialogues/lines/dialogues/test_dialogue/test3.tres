@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://bq8ovfo4e4lks"]
+
+[ext_resource type="Resource" uid="uid://bn6b042fasvms" path="res://scenes/dialogues/characters/player.tres" id="1_hor3a"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_h7jaj"]
+
+[resource]
+script = ExtResource("2_h7jaj")
+character = ExtResource("1_hor3a")
+text = "Это часть текста не должна озвучиваться."

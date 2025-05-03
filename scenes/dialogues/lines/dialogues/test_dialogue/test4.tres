@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=4 format=3 uid="uid://jycno0uoarxf"]
+
+[ext_resource type="Resource" uid="uid://bn6b042fasvms" path="res://scenes/dialogues/characters/player.tres" id="1_n3g7d"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_a2lkc"]
+[ext_resource type="AudioStream" uid="uid://qpyh3w22574c" path="res://scenes/dialogues/lines/dialogues/test_dialogue/test_dialogue_out 4.mp3" id="3_u8dq4"]
+
+[resource]
+script = ExtResource("2_a2lkc")
+character = ExtResource("1_n3g7d")
+text = "А эта - должна."
+voiceOver = ExtResource("3_u8dq4")

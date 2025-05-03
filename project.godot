@@ -20,9 +20,10 @@ config/icon="res://icon.svg"
 SceneTransition="*res://scenes/autoload/scene_transition.tscn"
 LevelManager="*res://scenes/autoload/level_manager.gd"
 StateManager="*res://scenes/autoload/state_manager.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 UiManager="*res://scenes/autoload/ui_manager.gd"
 GameDataManager="*res://scenes/autoload/game_data_manager.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+DialogueSignalBus="*res://scenes/autoload/dialogue_signal_bus.gd"
 
 [dialogic]
 
@@ -34,6 +35,14 @@ directories/dtl_directory={
 }
 layout/style_list=[]
 layout/default_style="Default"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=720
+window/size/window_height_override=480
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 

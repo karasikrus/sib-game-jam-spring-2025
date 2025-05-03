@@ -4,6 +4,8 @@ class_name MovementNode
 var connected_nodes_distances
 @onready var debug_name = $DebugName
 @onready var parent_node = $".."
+
+@export var is_available = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	

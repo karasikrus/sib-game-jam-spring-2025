@@ -37,7 +37,11 @@ func _input(event):
 	if event is InputEventMouseButton and !StateManager.isMouseHighlightingObject:
 		if movement_timer.time_left > 0 or !next_nodes.is_empty():
 			return
-		var closest_node_to_click = movement_nodes.get_closest_node_to_position(get_global_mouse_position())
+		var closest_node_to_click = movement_nodes.get_closest_available_node_to_position(get_global_mouse_position())
+		
+		if not closest_node_to_click.is_available:
+			#node is blocked
+			return
 		next_nodes = movement_nodes.get_list_of_nodes_to_get_from_a_to_b(current_node, closest_node_to_click).duplicate()
 		if !next_nodes.is_empty():
 			next_node = next_nodes.pop_front()

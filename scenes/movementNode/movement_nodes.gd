@@ -8,6 +8,20 @@ class_name MovementNodes
 @onready var paths = null
 # Called when the node enters the scene tree for the first time.
 
+func get_closest_available_node_to_position(click_global_position: Vector2):
+	var nodes_count : int = get_child_count()
+	var children = get_children()
+	var result = null
+	var min_distance = 100000000000.0
+	for node in children:
+		if not node.is_available:
+			continue
+		var distance = (click_global_position - node.global_position).length_squared()
+		if distance < min_distance:
+			result = node
+			min_distance = distance
+	return result
+
 func get_closest_node_to_position(click_global_position: Vector2):
 	var nodes_count : int = get_child_count()
 	var children = get_children()

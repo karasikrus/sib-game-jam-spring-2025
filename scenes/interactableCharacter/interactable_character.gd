@@ -9,6 +9,8 @@ class_name InteractableCharacter
 
 @onready var waiting_for_character = false
 
+@export var nodes_to_unlock : Array[MovementNode] = []
+
 @onready var main_character : TemplateEntity = get_tree().get_first_node_in_group("MainCharacter") as TemplateEntity
 
 enum INTERACTION_STATE{
@@ -38,6 +40,10 @@ func set_mouse_off_object():
 		interaction_state = INTERACTION_STATE.IDLE
 	StateManager.isMouseHighlightingObject = false
 	pass
+
+func unlock_nodes():
+	for node in nodes_to_unlock:
+		node.is_available = true
 
 func _input(event):
 	

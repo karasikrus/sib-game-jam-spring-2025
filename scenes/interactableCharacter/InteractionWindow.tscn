@@ -37,6 +37,14 @@ offset_bottom = 649.0
 
 [node name="Sprite2D" type="Sprite2D" parent="HackWindow"]
 
+[node name="SuccesfulHackButton" type="Button" parent="HackWindow"]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 182.0
+offset_right = 626.0
+offset_bottom = 216.0
+text = "Взломать"
+
 [node name="TalkWindow" type="Control" parent="."]
 visible = false
 anchors_preset = 0
@@ -50,3 +58,5 @@ offset_bottom = 647.0
 [connection signal="button_down" from="Talk" to="." method="pressed_talk"]
 [connection signal="mouse_entered" from="Talk" to="." method="mouse_on_button"]
 [connection signal="mouse_exited" from="Talk" to="." method="mouse_off_button"]
+[connection signal="button_down" from="HackWindow/SuccesfulHackButton" to="." method="on_hack_succesful"]
+[connection signal="pressed" from="HackWindow/SuccesfulHackButton" to="." method="on_hack_succesful"]

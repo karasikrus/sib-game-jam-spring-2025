@@ -99,9 +99,14 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func request_more_hints() -> void:
-	if interactable_character.current_hint ==interactable_character.hints.size():
+	var current_hint_index = interactable_character.current_hint
+	if current_hint_index ==interactable_character.hints.size():
 		return
-	interactable_character.current_hint = interactable_character.current_hint + 1
+	interactable_character.current_click_count += 1
+	if interactable_character.hints_number_clicks[current_hint_index] == interactable_character.current_click_count:
+		current_hint_index += 1
+		interactable_character.current_hint = current_hint_index
+		interactable_character.current_click_count = 0
 	var result_text = ""
 	for i in range(0, interactable_character.current_hint):
 		result_text += interactable_character.hints[i]

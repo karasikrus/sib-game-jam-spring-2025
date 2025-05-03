@@ -16,6 +16,8 @@ class_name InteractableCharacter
 @onready var hints : Array[String] = []
 @onready var hints_state : Array[bool] = []
 @onready var current_hint = 0
+@onready var current_click_count = 0
+@export var hints_number_clicks : Array[int] = [1, 5, 10, 10, 10, 25, 25, 50] #still changable from editor
 
 enum INTERACTION_STATE{
 	IDLE,

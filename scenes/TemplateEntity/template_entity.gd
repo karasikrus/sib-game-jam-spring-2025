@@ -18,7 +18,7 @@ signal arrival_signal
 func _ready() -> void:
 	init_audio_streams()
 	start_idle_animation()
-	audio_player.play()
+	#audio_player.play()
 	global_position = starting_node.global_position
 	current_node = starting_node
 	next_node = starting_node
@@ -92,7 +92,7 @@ func _process(delta: float) -> void:
 		audio_player.stream_paused = true
 		return
 	process_move_to_next_node(delta)
-	update_audio_stream_player()
+	#update_audio_stream_player()
 	update_animation()
 
 

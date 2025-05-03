@@ -17,6 +17,23 @@ extends Control
 
 @onready var hints_label = $HackWindow/Node2D/HintsText
 
+#audio
+#Don't have time to properly load them and store, so hacky-wacky for now
+@export var audio_streams : Array[AudioStream] = []
+
+enum AUDIO_STATE{
+	HACK_WINDOW_CLOSE,
+	HACK_WINDOW_OPEN,
+	
+}
+var audio_names = [
+	"HackClose",
+	"HackOpen",
+]
+
+@onready var audio_player : AudioStreamPlayer =$HackWindow/AudioPlayer 
+
+
 func hide_talk_hack_buttons():
 	hack_button.visible = false
 	talk_button.visible = false
@@ -56,6 +73,7 @@ func main_character_arrived():
 		hack_window.visible = true
 		is_on_button = false
 		StateManager.currentState = StateManager.GlobalStates.FREEZED
+		play_sound(AUDIO_STATE.HACK_WINDOW_OPEN)
 	elif interactable_character.interaction_state == InteractableCharacter.INTERACTION_STATE.PRESSED_TALK:
 		interactable_character.interaction_state = InteractableCharacter.INTERACTION_STATE.IDLE
 		self.visible = false
@@ -71,9 +89,14 @@ func mouse_off_button():
 	is_on_button = false
 
 
+func play_sound(state : AUDIO_STATE):
+	audio_player.stream = audio_streams[state]
+	audio_player.play()
+
 func pressed_hacked():
 	interactable_character.interaction_state = InteractableCharacter.INTERACTION_STATE.PRESSED_HACK
 	interactable_character.waiting_for_character = true
+	
 	
 func pressed_talk():
 	interactable_character.interaction_state = InteractableCharacter.INTERACTION_STATE.PRESSED_TALK
@@ -84,9 +107,12 @@ func _input(event):
 		return
 	if event is InputEventMouseButton and not is_on_button:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+			if (interactable_character.interaction_state == InteractableCharacter.INTERACTION_STATE.HACKING):
+				play_sound(AUDIO_STATE.HACK_WINDOW_CLOSE)
 			interactable_character.interaction_state = InteractableCharacter.INTERACTION_STATE.IDLE
 			is_on_button = false
 			reset_to_defult_state()
+
 		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

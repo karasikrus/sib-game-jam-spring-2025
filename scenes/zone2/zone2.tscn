@@ -532,7 +532,10 @@ connected_nodes = [NodePath("../Node2"), NodePath("../Node0"), NodePath("../Node
 [node name="NextSceneNode" parent="MovementNodes" instance=ExtResource("8_yhxay")]
 position = Vector2(1125, 261)
 next_scene_name = "res://scenes/zone3/zone3.tscn"
-is_available = false
+
+[node name="Node6" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("7_iyfop")]
+position = Vector2(1284, 507)
+connected_nodes = [NodePath("../Node4"), NodePath("../NextSceneNode"), NodePath("../Node1")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 top_level = true

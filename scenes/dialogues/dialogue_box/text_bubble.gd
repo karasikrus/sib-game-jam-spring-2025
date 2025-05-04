@@ -14,6 +14,7 @@ func _ready():
 	audio_stream_player.finished.connect(on_finished)
 	timer.timeout.connect(on_finished)
 	visible = false
+	rich_text_label.set("theme_override_colors/default_color", dialogueCharacter.textColor)
 
 func try_playing_line(line : DialogueLine):
 	if line.character.id == dialogueCharacter.id:

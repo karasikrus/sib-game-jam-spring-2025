@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/dialogues/dialogue_manager/dialogue_manager.gd" id="1_61swm"]
 [ext_resource type="PackedScene" uid="uid://dx7ic1h7uf2p7" path="res://scenes/dialogues/dialogue_options/dialog_options_box.tscn" id="2_6ji07"]
 
-[node name="DialogueManager" type="Node"]
+[node name="DialogueManager" type="Node" groups=["dialogue_manager"]]
 script = ExtResource("1_61swm")
 
 [node name="DialogOptionsBox" parent="." instance=ExtResource("2_6ji07")]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://gujhtqt7mob6"]
+[gd_scene load_steps=12 format=3 uid="uid://gujhtqt7mob6"]
 
 [ext_resource type="Script" path="res://scenes/TemplateEntity/template_entity.gd" id="1_pgnyf"]
 [ext_resource type="Texture2D" uid="uid://ci3f6f4uoa0dh" path="res://scenes/TemplateEntity/IdleDetectiveSpreadsheet.png" id="2_o0hje"]
 [ext_resource type="AudioStream" uid="uid://r6oou2c8mf3j" path="res://scenes/TemplateEntity/idle.mp3" id="3_oo736"]
 [ext_resource type="Texture2D" uid="uid://dhvujyplhvk7b" path="res://scenes/TemplateEntity/MovingDetectiveSpreadsheet.png" id="3_t1rkp"]
+[ext_resource type="PackedScene" uid="uid://djvm4x8kkeqre" path="res://scenes/dialogues/dialogue_manager/dialogue_manager.tscn" id="5_afxss"]
 
 [sub_resource type="Animation" id="Animation_k8fyg"]
 tracks/0/type = "value"
@@ -153,3 +154,5 @@ shape = SubResource("RectangleShape2D_mq23p")
 
 [node name="MovementTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="DialogueManager" parent="." instance=ExtResource("5_afxss")]

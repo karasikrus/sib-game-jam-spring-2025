@@ -92,6 +92,7 @@ func main_character_arrived():
 		play_sound(AUDIO_STATE.HACK_WINDOW_OPEN)
 	elif interactable_character.interaction_state == InteractableCharacter.INTERACTION_STATE.PRESSED_TALK:
 		interactable_character.interaction_state = InteractableCharacter.INTERACTION_STATE.IDLE
+		interactable_character.start_dialogue()
 		self.visible = false
 		is_on_button = false
 		#StateManager.currentState = StateManager.GlobalStates.FREEZED

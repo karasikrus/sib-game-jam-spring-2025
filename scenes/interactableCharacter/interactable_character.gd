@@ -41,6 +41,8 @@ enum INTERACTION_STATE{
 
 @onready var need_to_start_idle = 0.0
 
+@export var dialogue_options_block : DialogueOptionsBlock
+
 func set_mouse_on_object():
 	if interaction_state == INTERACTION_STATE.IDLE:
 		interaction_state = INTERACTION_STATE.HIGHLIGHTED
@@ -103,6 +105,14 @@ func _process(delta: float) -> void:
 	#sprite.material.set_shader_parameter("is_highlited", interaction_state == INTERACTION_STATE.HIGHLIGHTED)
 	update_audio_stream_player()
 	
+
+func start_dialogue():
+	var dialogue_manager = get_tree().get_first_node_in_group("dialogue_manager") as DialogueManager
+	dialogue_manager.play_options_block(dialogue_options_block)
+	dialogue_manager.dialogue_ended.connect(on_dialogue_end)
+
+func on_dialogue_end():
+	pass
 
 #region Animations
 

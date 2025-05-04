@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cwd8t1bdevga8"]
+[gd_scene load_steps=15 format=3 uid="uid://cwd8t1bdevga8"]
 
 [ext_resource type="Script" path="res://scenes/interactableCharacter/interactable_character.gd" id="1_hargx"]
 [ext_resource type="Shader" path="res://scenes/interactableCharacter/interactable_character.gdshader" id="2_1cv0v"]
+[ext_resource type="Resource" uid="uid://d2i6ttn8v5bgn" path="res://scenes/dialogues/lines/dialogues/test_dialogue/dialogue_options_block_test.tres" id="2_ki524"]
 [ext_resource type="AudioStream" uid="uid://r6oou2c8mf3j" path="res://scenes/TemplateEntity/idle.mp3" id="3_7o5le"]
 [ext_resource type="PackedScene" uid="uid://dhraaqfxt8rpw" path="res://scenes/interactableCharacter/InteractionWindow.tscn" id="5_ipwex"]
 
@@ -134,6 +135,7 @@ size = Vector2(130, 103)
 position = Vector2(494, 376)
 script = ExtResource("1_hargx")
 hints_path = "res://scenes/interactableCharacter/test_hints.txt"
+dialogue_options_block = ExtResource("2_ki524")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_k0vd5")

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueOption" load_steps=3 format=3 uid="uid://dqfhnjhl67n2x"]
+
+[ext_resource type="Resource" uid="uid://08p6wcwgpnck" path="res://scenes/dialogues/lines/dialogues/wolf/wolf_dialogue_a.tres" id="1_u0tmd"]
+[ext_resource type="Script" path="res://scenes/dialogues/dialogue_options/dialogue_option_resorce.gd" id="2_ecjw4"]
+
+[resource]
+script = ExtResource("2_ecjw4")
+optionText = "Узнать про него побольше"
+dialogue = ExtResource("1_u0tmd")

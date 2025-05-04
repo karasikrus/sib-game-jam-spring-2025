@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://c8kvopbdqowsr"]
+
+[ext_resource type="Resource" uid="uid://dkww6tofs546i" path="res://scenes/dialogues/characters/goblin/yaga.tres" id="1_muhu4"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_qfa06"]
+
+[resource]
+script = ExtResource("2_qfa06")
+character = ExtResource("1_muhu4")
+text = "Ливонских! Это был [i]Ливонский Орден![/i]"
+timerLengthSec = 3.0

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://dlnxipsm482f8"]
+
+[ext_resource type="Resource" uid="uid://dkww6tofs546i" path="res://scenes/dialogues/characters/goblin/yaga.tres" id="1_rtg3s"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_fhgl7"]
+
+[resource]
+script = ExtResource("2_fhgl7")
+character = ExtResource("1_rtg3s")
+text = "Злодействовала, внучок, злодействовала. Решила метлу заменить, винтовочку вот достала."
+timerLengthSec = 3.0

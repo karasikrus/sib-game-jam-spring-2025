@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DialogueOptionsBlock" load_steps=6 format=3 uid="uid://fssfronf772f"]
+
+[ext_resource type="Resource" uid="uid://bekb1oql4argu" path="res://scenes/dialogues/lines/dialogues/mermaid/mermaid_dialogue_intro.tres" id="1_ljqu4"]
+[ext_resource type="Resource" uid="uid://cudjjalkixh7l" path="res://scenes/dialogues/lines/dialogues/mermaid/dialogue_option_mermaid_a.tres" id="2_ml1qe"]
+[ext_resource type="Resource" uid="uid://bwhymje1ro01f" path="res://scenes/dialogues/lines/dialogues/mermaid/dialogue_option_mermaid_b.tres" id="3_pyi25"]
+[ext_resource type="Resource" uid="uid://cgxwb5wm073ks" path="res://scenes/dialogues/lines/dialogues/exit_dialogue/dialogue_option_exit.tres" id="4_rebjl"]
+[ext_resource type="Script" path="res://scenes/dialogues/dialogue_options/dialogue_options_block.gd" id="5_sgdam"]
+
+[resource]
+script = ExtResource("5_sgdam")
+optionExit = ExtResource("4_rebjl")
+optionA = ExtResource("2_ml1qe")
+optionB = ExtResource("3_pyi25")
+introDialogue = ExtResource("1_ljqu4")

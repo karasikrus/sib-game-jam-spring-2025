@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://dddhjao24qimt"]
+
+[ext_resource type="Resource" uid="uid://dha1cigd8phuv" path="res://scenes/dialogues/characters/goblin/merchant.tres" id="1_x26ad"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_xgnwu"]
+
+[resource]
+script = ExtResource("2_xgnwu")
+character = ExtResource("1_x26ad")
+text = "Вот так и сказал, представляете? По-моему, он просто завидует моему успеху!"
+timerLengthSec = 3.0

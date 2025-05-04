@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DialogueOptionsBlock" load_steps=6 format=3 uid="uid://b2xx3h7s4n7m7"]
+
+[ext_resource type="Resource" uid="uid://bj8a3hl73wmxo" path="res://scenes/dialogues/lines/dialogues/frog/frog_dialogue_intro.tres" id="1_lehqe"]
+[ext_resource type="Resource" uid="uid://biydm1csu15ty" path="res://scenes/dialogues/lines/dialogues/frog/dialogue_option_frog_a.tres" id="2_ht7vv"]
+[ext_resource type="Resource" uid="uid://jt6pjpuirdnq" path="res://scenes/dialogues/lines/dialogues/frog/dialogue_option_frog_b.tres" id="3_peppx"]
+[ext_resource type="Resource" uid="uid://cgxwb5wm073ks" path="res://scenes/dialogues/lines/dialogues/exit_dialogue/dialogue_option_exit.tres" id="4_2rbjy"]
+[ext_resource type="Script" path="res://scenes/dialogues/dialogue_options/dialogue_options_block.gd" id="5_0qdvh"]
+
+[resource]
+script = ExtResource("5_0qdvh")
+optionExit = ExtResource("4_2rbjy")
+optionA = ExtResource("2_ht7vv")
+optionB = ExtResource("3_peppx")
+introDialogue = ExtResource("1_lehqe")

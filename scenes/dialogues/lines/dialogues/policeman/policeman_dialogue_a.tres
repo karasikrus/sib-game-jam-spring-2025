@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=9 format=3 uid="uid://bemuficclpby2"]
+
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="1_m0s7j"]
+[ext_resource type="Resource" uid="uid://blgu4sbwii6ye" path="res://scenes/dialogues/lines/dialogues/policeman/policeman_a_1.tres" id="2_g0ep4"]
+[ext_resource type="Resource" uid="uid://csu4prfbsu3s" path="res://scenes/dialogues/lines/dialogues/policeman/policeman_a_2.tres" id="3_308hh"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue.gd" id="3_ytg51"]
+[ext_resource type="Resource" uid="uid://ci1yne4sqidlr" path="res://scenes/dialogues/lines/dialogues/policeman/policeman_a_3.tres" id="4_m7sd5"]
+[ext_resource type="Resource" uid="uid://rem5hkt441g4" path="res://scenes/dialogues/lines/dialogues/policeman/policeman_a_4.tres" id="5_l1uxi"]
+[ext_resource type="Resource" uid="uid://d35ukyayo0gbh" path="res://scenes/dialogues/lines/dialogues/policeman/policeman_a_5.tres" id="6_6afsg"]
+[ext_resource type="Resource" uid="uid://cljvebe0ql1y8" path="res://scenes/dialogues/lines/dialogues/policeman/policeman_a_6.tres" id="7_fbhcw"]
+
+[resource]
+script = ExtResource("3_ytg51")
+lines = Array[ExtResource("1_m0s7j")]([ExtResource("2_g0ep4"), ExtResource("3_308hh"), ExtResource("4_m7sd5"), ExtResource("5_l1uxi"), ExtResource("6_6afsg"), ExtResource("7_fbhcw")])

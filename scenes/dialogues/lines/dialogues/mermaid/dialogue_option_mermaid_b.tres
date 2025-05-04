@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueOption" load_steps=3 format=3 uid="uid://bwhymje1ro01f"]
+
+[ext_resource type="Resource" uid="uid://v4m3d1mfckl0" path="res://scenes/dialogues/lines/dialogues/mermaid/mermaid_dialogue_b.tres" id="1_rfsel"]
+[ext_resource type="Script" path="res://scenes/dialogues/dialogue_options/dialogue_option_resorce.gd" id="2_cnumw"]
+
+[resource]
+script = ExtResource("2_cnumw")
+optionText = "Узнать про кого-то еще"
+dialogue = ExtResource("1_rfsel")

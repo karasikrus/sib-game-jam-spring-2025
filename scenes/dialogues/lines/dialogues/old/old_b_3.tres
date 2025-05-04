@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://c7v04k5c0stae"]
+
+[ext_resource type="Resource" uid="uid://b7crui1rpispg" path="res://scenes/dialogues/characters/goblin/old.tres" id="1_87ps6"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_r6hch"]
+
+[resource]
+script = ExtResource("2_r6hch")
+character = ExtResource("1_87ps6")
+text = "Праздновали ее день рождения недавно. Весь вечер хвасталась, что [i]родилась через пару дней после разгрома каких-то рыцарей на озере[/i]."
+timerLengthSec = 3.0

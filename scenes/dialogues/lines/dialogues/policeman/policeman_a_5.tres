@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://d35ukyayo0gbh"]
+
+[ext_resource type="Resource" uid="uid://mp742ualwx1l" path="res://scenes/dialogues/characters/goblin/policeman.tres" id="1_c0aks"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_pyhv1"]
+
+[resource]
+script = ExtResource("2_pyhv1")
+character = ExtResource("1_c0aks")
+text = "Шеф любит повторять цитату одного французского посла в Риме: “Все вещи в мире представляют собой шифр. Вся природа является просто шифром и секретным письмом”."
+timerLengthSec = 3.0

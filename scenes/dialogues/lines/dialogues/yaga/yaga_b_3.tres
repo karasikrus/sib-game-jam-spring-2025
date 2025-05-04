@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://n04y1un6t4mt"]
+
+[ext_resource type="Resource" uid="uid://dkww6tofs546i" path="res://scenes/dialogues/characters/goblin/yaga.tres" id="1_4fkb4"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_csm3c"]
+
+[resource]
+script = ExtResource("2_csm3c")
+character = ExtResource("1_4fkb4")
+text = "Взять вон ту же русалку. Рассказывала она мне, значит. Нашла какую-то книжонку на побережье [i]одного южного моря[/i] и начала читать."
+timerLengthSec = 4.0

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://dj57ip1f8x22y"]
+
+[ext_resource type="Resource" uid="uid://dkww6tofs546i" path="res://scenes/dialogues/characters/goblin/yaga.tres" id="1_vft7l"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_wse2l"]
+
+[resource]
+script = ExtResource("2_wse2l")
+character = ExtResource("1_vft7l")
+text = "Бабушка ведь его на пять столетий старше. Давно родилась, ух как давно. Ничего уже не помню. Но знаю точно - день рождения мой был [i]в понедельник[/i]!"
+timerLengthSec = 5.0

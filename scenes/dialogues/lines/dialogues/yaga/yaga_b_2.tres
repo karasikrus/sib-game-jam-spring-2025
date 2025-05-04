@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://d14nqyxr2mcge"]
+
+[ext_resource type="Resource" uid="uid://dkww6tofs546i" path="res://scenes/dialogues/characters/goblin/yaga.tres" id="1_guerx"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_1ei01"]
+
+[resource]
+script = ExtResource("2_1ei01")
+character = ExtResource("1_guerx")
+text = "Бесстыдники! Ну и поколение пошло..."
+timerLengthSec = 3.0

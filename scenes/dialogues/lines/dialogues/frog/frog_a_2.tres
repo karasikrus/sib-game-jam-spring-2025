@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://biil7ykia1trh"]
+
+[ext_resource type="Resource" uid="uid://be6di515l6cqj" path="res://scenes/dialogues/characters/goblin/frog.tres" id="1_lhcyc"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_rscv5"]
+
+[resource]
+script = ExtResource("2_rscv5")
+character = ExtResource("1_lhcyc")
+text = "Тем же, чем и всегда, ква. Вам ведь интересно не это, а текст загадки?"
+timerLengthSec = 3.0

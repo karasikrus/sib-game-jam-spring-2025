@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueOption" load_steps=3 format=3 uid="uid://bk2lhbkk1qylk"]
+
+[ext_resource type="Resource" uid="uid://bemuficclpby2" path="res://scenes/dialogues/lines/dialogues/policeman/policeman_dialogue_a.tres" id="1_ijvb2"]
+[ext_resource type="Script" path="res://scenes/dialogues/dialogue_options/dialogue_option_resorce.gd" id="2_sdrv3"]
+
+[resource]
+script = ExtResource("2_sdrv3")
+optionText = "Узнать про него побольше"
+dialogue = ExtResource("1_ijvb2")

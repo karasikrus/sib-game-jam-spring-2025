@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://rem5hkt441g4"]
+
+[ext_resource type="Resource" uid="uid://mp742ualwx1l" path="res://scenes/dialogues/characters/goblin/policeman.tres" id="1_bii34"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_vucnb"]
+
+[resource]
+script = ExtResource("2_vucnb")
+character = ExtResource("1_bii34")
+text = "Иногда такие записки лежат в [i]очевидном[/i] месте. Для всяких дополнительных файлов."
+timerLengthSec = 3.0

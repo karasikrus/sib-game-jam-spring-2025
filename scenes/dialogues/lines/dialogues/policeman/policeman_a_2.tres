@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://csu4prfbsu3s"]
+
+[ext_resource type="Resource" uid="uid://mp742ualwx1l" path="res://scenes/dialogues/characters/goblin/policeman.tres" id="1_23kdk"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_bclcw"]
+
+[resource]
+script = ExtResource("2_bclcw")
+character = ExtResource("1_23kdk")
+text = "Без обид, парень. Сам понимаешь, у нас опасная работа. Прежде чем делиться сведениями, мне нужно тебя проверить."
+timerLengthSec = 3.0

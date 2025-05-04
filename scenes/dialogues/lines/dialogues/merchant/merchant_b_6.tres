@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://xj5qsuhmkiy"]
+
+[ext_resource type="Resource" uid="uid://dha1cigd8phuv" path="res://scenes/dialogues/characters/goblin/merchant.tres" id="1_kkm5j"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_egbx5"]
+
+[resource]
+script = ExtResource("2_egbx5")
+character = ExtResource("1_kkm5j")
+text = "У нас ведь даже нет такого понятия, как “регион”!"
+timerLengthSec = 3.0

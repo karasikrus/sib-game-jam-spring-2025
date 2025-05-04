@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://dfvmbrjl2jv8p"]
+
+[ext_resource type="Resource" uid="uid://be6di515l6cqj" path="res://scenes/dialogues/characters/goblin/frog.tres" id="1_cvkbj"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_y6660"]
+
+[resource]
+script = ExtResource("2_y6660")
+character = ExtResource("1_cvkbj")
+text = "Вот Волк любит [i]астрономию[/i]. Думаю, в будущем его ждет много возможностей. Уж больше, чем просто гонять овец, ква."
+timerLengthSec = 3.0

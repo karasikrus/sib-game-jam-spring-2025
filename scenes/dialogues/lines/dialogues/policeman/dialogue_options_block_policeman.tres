@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DialogueOptionsBlock" load_steps=6 format=3 uid="uid://dxtjk6c10xhca"]
+
+[ext_resource type="Resource" uid="uid://dl3p5fqiegaai" path="res://scenes/dialogues/lines/dialogues/policeman/policeman_dialogue_intro.tres" id="1_7vn42"]
+[ext_resource type="Resource" uid="uid://bk2lhbkk1qylk" path="res://scenes/dialogues/lines/dialogues/policeman/dialogue_option_policeman_a.tres" id="2_3cye2"]
+[ext_resource type="Resource" uid="uid://otdi3ttco0rh" path="res://scenes/dialogues/lines/dialogues/policeman/dialogue_option_policeman_b.tres" id="3_tt478"]
+[ext_resource type="Resource" uid="uid://cgxwb5wm073ks" path="res://scenes/dialogues/lines/dialogues/exit_dialogue/dialogue_option_exit.tres" id="4_nyddy"]
+[ext_resource type="Script" path="res://scenes/dialogues/dialogue_options/dialogue_options_block.gd" id="5_7ib8t"]
+
+[resource]
+script = ExtResource("5_7ib8t")
+optionExit = ExtResource("4_nyddy")
+optionA = ExtResource("2_3cye2")
+optionB = ExtResource("3_tt478")
+introDialogue = ExtResource("1_7vn42")

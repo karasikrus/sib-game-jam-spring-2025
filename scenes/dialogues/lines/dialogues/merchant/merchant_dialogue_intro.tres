@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=5 format=3 uid="uid://dbo6t8k5u83k3"]
+
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="1_xbdud"]
+[ext_resource type="Resource" uid="uid://ctvhxj01nekbn" path="res://scenes/dialogues/lines/dialogues/merchant/merchant_intro.tres" id="2_tqtgn"]
+[ext_resource type="Resource" uid="uid://deq58as0cjde5" path="res://scenes/dialogues/lines/dialogues/merchant/merchant_intro_2.tres" id="3_dfqtd"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue.gd" id="3_qycf5"]
+
+[resource]
+script = ExtResource("3_qycf5")
+lines = Array[ExtResource("1_xbdud")]([ExtResource("2_tqtgn"), ExtResource("3_dfqtd")])

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://dpu5l2br1pa55"]
+
+[ext_resource type="Resource" uid="uid://bn6b042fasvms" path="res://scenes/dialogues/characters/player.tres" id="1_veamy"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_55bbs"]
+
+[resource]
+script = ExtResource("2_55bbs")
+character = ExtResource("1_veamy")
+text = "Что вы можете сказать о других сказочных героях?"
+timerLengthSec = 3.0

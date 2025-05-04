@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://bvu7v7cb6ro3e"]
+
+[ext_resource type="Resource" uid="uid://bn6b042fasvms" path="res://scenes/dialogues/characters/player.tres" id="1_4gjbk"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_5lsgr"]
+
+[resource]
+script = ExtResource("2_5lsgr")
+character = ExtResource("1_4gjbk")
+text = "Чем вы занимались до приезда полиции?"
+timerLengthSec = 3.0

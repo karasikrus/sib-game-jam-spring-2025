@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueOption" load_steps=3 format=3 uid="uid://cgxwb5wm073ks"]
+
+[ext_resource type="Resource" uid="uid://bhcjkk6doh1e6" path="res://scenes/dialogues/lines/dialogues/exit_dialogue/exit_dialogue.tres" id="1_lxnb7"]
+[ext_resource type="Script" path="res://scenes/dialogues/dialogue_options/dialogue_option_resorce.gd" id="2_poxjf"]
+
+[resource]
+script = ExtResource("2_poxjf")
+optionText = "Это всё."
+dialogue = ExtResource("1_lxnb7")

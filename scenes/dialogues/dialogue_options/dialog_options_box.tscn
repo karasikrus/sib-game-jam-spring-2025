@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx7ic1h7uf2p7"]
+
+[ext_resource type="Script" path="res://scenes/dialogues/dialogue_options/dialog_options_box.gd" id="1_ji74r"]
+[ext_resource type="PackedScene" uid="uid://b1n403g7mt7v" path="res://scenes/dialogues/dialogue_options/dialogue_option_button.tscn" id="2_eckkl"]
+
+[node name="DialogOptionsBox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ji74r")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="DialogueOptionC" parent="VBoxContainer" instance=ExtResource("2_eckkl")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DialogueOptionB" parent="VBoxContainer" instance=ExtResource("2_eckkl")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DialogueOptionA" parent="VBoxContainer" instance=ExtResource("2_eckkl")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DialogueOptionExit" parent="VBoxContainer" instance=ExtResource("2_eckkl")]
+unique_name_in_owner = true
+layout_mode = 2

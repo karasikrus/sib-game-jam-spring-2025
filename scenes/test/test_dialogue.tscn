@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://scenes/test/test_dialogue.gd" id="1_mtarl"]
 [ext_resource type="Texture2D" uid="uid://bgu4lnsafosmc" path="res://icon.svg" id="1_ttxs8"]
 [ext_resource type="PackedScene" uid="uid://dr5jvrtte8k8t" path="res://scenes/dialogues/dialogue_box/text_bubble.tscn" id="2_6dygy"]
-[ext_resource type="Resource" uid="uid://bbm0ctri4dtlf" path="res://scenes/dialogues/lines/dialogues/test_dialogue/test_dialogue.tres" id="2_nthme"]
+[ext_resource type="Resource" uid="uid://d2i6ttn8v5bgn" path="res://scenes/dialogues/lines/dialogues/test_dialogue/dialogue_options_block_test.tres" id="2_q5ce0"]
 [ext_resource type="Resource" uid="uid://bn6b042fasvms" path="res://scenes/dialogues/characters/player.tres" id="3_20xa0"]
 [ext_resource type="PackedScene" uid="uid://djvm4x8kkeqre" path="res://scenes/dialogues/dialogue_manager/dialogue_manager.tscn" id="5_quv8i"]
 
 [node name="TestDialogue" type="Node2D"]
 script = ExtResource("1_mtarl")
-dialogue = ExtResource("2_nthme")
+optionsBlock = ExtResource("2_q5ce0")
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(890, 492)

@@ -109,6 +109,7 @@ func main_character_arrived():
 		self.visible = false
 		is_on_button = false
 		StateManager.currentState = StateManager.GlobalStates.FREEZED
+		(get_tree().get_first_node_in_group("MainCharacter") as TemplateEntity).animation_player.play("idle")
 	interactable_character.waiting_for_character = false
 	
 

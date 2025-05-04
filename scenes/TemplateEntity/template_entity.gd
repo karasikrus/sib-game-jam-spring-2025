@@ -23,7 +23,6 @@ func _ready() -> void:
 	next_node = starting_node
 	next_nodes = []
 	movement_timer.timeout.connect(move_end_callback)
-	start_idle_animation()
 	pass # Replace with function body.
 
 
@@ -87,7 +86,8 @@ func move_end_callback():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if(StateManager.currentState == StateManager.GlobalStates.FREEZED):
-		animation_player.stop(true)
+		#animation_player.stop(true)
+		animation_player.play("idle")
 		audio_player.stream_paused = true
 		return
 	process_move_to_next_node(delta)

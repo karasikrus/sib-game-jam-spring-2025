@@ -221,30 +221,36 @@ visible = false
 script = ExtResource("4_fpsod")
 
 [node name="Node0" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("5_00614")]
-position = Vector2(707, 576)
+position = Vector2(736, 627)
 connected_nodes = [NodePath("../Node4"), NodePath("../Node5"), NodePath("../Node1")]
 
 [node name="Node1" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("5_00614")]
-position = Vector2(1139, 698)
+position = Vector2(1102, 670)
 connected_nodes = []
 
 [node name="Node2" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("5_00614")]
-position = Vector2(364, 931)
+position = Vector2(576, 844)
 connected_nodes = [NodePath("../Node5")]
 
 [node name="Node4" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("5_00614")]
-position = Vector2(830, 311)
+position = Vector2(1185, 300)
 connected_nodes = [NodePath("../NextSceneNode")]
 is_available = false
 
 [node name="Node5" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("5_00614")]
-position = Vector2(768, 809)
+position = Vector2(868, 780)
 connected_nodes = [NodePath("../Node2"), NodePath("../Node0"), NodePath("../Node1")]
 
 [node name="NextSceneNode" parent="MovementNodes" instance=ExtResource("5_v10l6")]
-position = Vector2(1044, 104)
+position = Vector2(1411, 168)
 next_scene_name = "res://scenes/zone2/zone2.tscn"
 is_available = false
+
+[node name="Area2D" parent="MovementNodes/NextSceneNode" index="0"]
+position = Vector2(-25, 5)
+
+[node name="CollisionShape2D" parent="MovementNodes/NextSceneNode/Area2D" index="0"]
+position = Vector2(26, -21)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 top_level = true
@@ -261,8 +267,6 @@ z_index = -3
 position = Vector2(960, 540)
 texture = ExtResource("9_43j3j")
 
-[connection signal="mouse_entered" from="InteractableCharacter/InteractionWindow/Control/HackWindow" to="InteractableCharacter/InteractionWindow" method="mouse_on_button"]
-[connection signal="mouse_exited" from="InteractableCharacter/InteractionWindow/Control/HackWindow" to="InteractableCharacter/InteractionWindow" method="mouse_off_button"]
-
 [editable path="InteractableCharacter"]
 [editable path="InteractableCharacter/InteractionWindow"]
+[editable path="MovementNodes/NextSceneNode"]

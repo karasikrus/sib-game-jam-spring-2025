@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bd7u4pu58ku2g"]
+[gd_scene load_steps=24 format=3 uid="uid://bd7u4pu58ku2g"]
 
 [ext_resource type="PackedScene" uid="uid://gujhtqt7mob6" path="res://scenes/TemplateEntity/TemplateEntity.tscn" id="1_ppwhq"]
 [ext_resource type="PackedScene" uid="uid://cwd8t1bdevga8" path="res://scenes/interactableCharacter/interactable_character.tscn" id="2_1civm"]
@@ -6,8 +6,10 @@
 [ext_resource type="Resource" uid="uid://duml2n86rraw2" path="res://scenes/dialogues/lines/dialogues/wolf/dialogue_options_block_wolf.tres" id="3_w3uof"]
 [ext_resource type="Texture2D" uid="uid://dl14je0umglth" path="res://scenes/zone2/Zone2Background.PNG" id="4_h50ea"]
 [ext_resource type="PackedScene" uid="uid://802678fmiy16" path="res://scenes/ui/ui_main.tscn" id="5_svl0o"]
-[ext_resource type="Resource" path="res://scenes/dialogues/characters/goblin/wolf.tres" id="5_yl756"]
+[ext_resource type="Resource" uid="uid://uoyn0vuv0tjg" path="res://scenes/dialogues/characters/goblin/wolf.tres" id="5_yl756"]
+[ext_resource type="Resource" uid="uid://fssfronf772f" path="res://scenes/dialogues/lines/dialogues/mermaid/dialogue_options_block_mermaid.tres" id="6_oglhk"]
 [ext_resource type="Script" path="res://scenes/movementNode/movement_nodes.gd" id="6_r2jmf"]
+[ext_resource type="Resource" uid="uid://dfkne0vmbfblw" path="res://scenes/dialogues/characters/goblin/mermaid.tres" id="7_7b6g8"]
 [ext_resource type="PackedScene" uid="uid://c2pwalittkt00" path="res://scenes/movementNode/movement_node.tscn" id="7_iyfop"]
 [ext_resource type="PackedScene" uid="uid://31awqwru7b70" path="res://scenes/movementNode/next_scene_node.tscn" id="8_yhxay"]
 [ext_resource type="Shader" path="res://scenes/postEffects/crtShader.gdshader" id="9_tmxc1"]
@@ -217,6 +219,54 @@ offset_bottom = 269.0
 [node name="TextBubble" parent="Wolf" index="7"]
 dialogueCharacter = ExtResource("5_yl756")
 
+[node name="Mermaid" parent="." instance=ExtResource("2_1civm")]
+position = Vector2(1363, 927)
+hints_path = "res://scenes/wolf/wolf_hints.txt"
+animation_start_name = "mermaid"
+riddle_text = "Как зовут автора книги, которую читала русалка?"
+riddle_answer = "Гомер"
+dialogue_options_block = ExtResource("6_oglhk")
+
+[node name="Sprite2D" parent="Mermaid" index="0"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_v5j5x")
+hframes = 9
+vframes = 1
+
+[node name="AnimationPlayer" parent="Mermaid" index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_e544i"),
+"goblin": SubResource("AnimationLibrary_ywauo"),
+"wolf": SubResource("AnimationLibrary_8kajc")
+}
+
+[node name="InteractionWindow" parent="Mermaid" index="6"]
+visible = false
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1363.0
+offset_top = -927.0
+offset_right = -1363.0
+offset_bottom = -927.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" parent="Mermaid/InteractionWindow/Control" index="0"]
+offset_left = 1248.0
+offset_top = 802.0
+offset_right = 1503.0
+offset_bottom = 875.0
+
+[node name="HackWindow" parent="Mermaid/InteractionWindow/Control" index="1"]
+offset_left = -79.0
+offset_top = -3.0
+offset_right = 1841.0
+offset_bottom = 1077.0
+
+[node name="TextBubble" parent="Mermaid" index="7"]
+dialogueCharacter = ExtResource("7_7b6g8")
+
 [node name="UiMain" parent="." instance=ExtResource("5_svl0o")]
 visible = false
 
@@ -224,7 +274,7 @@ visible = false
 script = ExtResource("6_r2jmf")
 
 [node name="Node0" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("7_iyfop")]
-position = Vector2(707, 576)
+position = Vector2(494, 534)
 connected_nodes = [NodePath("../Node4"), NodePath("../Node5"), NodePath("../Node1")]
 
 [node name="Node1" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("7_iyfop")]
@@ -232,7 +282,7 @@ position = Vector2(1139, 698)
 connected_nodes = []
 
 [node name="Node2" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("7_iyfop")]
-position = Vector2(364, 931)
+position = Vector2(429, 814)
 connected_nodes = [NodePath("../Node5")]
 
 [node name="Node4" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("7_iyfop")]
@@ -241,15 +291,16 @@ connected_nodes = [NodePath("../NextSceneNode")]
 is_available = false
 
 [node name="Node5" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("7_iyfop")]
-position = Vector2(768, 809)
+position = Vector2(866, 833)
 connected_nodes = [NodePath("../Node2"), NodePath("../Node0"), NodePath("../Node1")]
 
 [node name="NextSceneNode" parent="MovementNodes" instance=ExtResource("8_yhxay")]
-position = Vector2(1044, 104)
+position = Vector2(1125, 261)
 next_scene_name = "res://scenes/zone3/zone3.tscn"
 is_available = false
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 top_level = true
 z_index = 1
 z_as_relative = false
@@ -264,5 +315,10 @@ z_index = -3
 position = Vector2(960, 540)
 texture = ExtResource("4_h50ea")
 
+[connection signal="mouse_entered" from="Mermaid/InteractionWindow/Control/HackWindow" to="Mermaid/InteractionWindow" method="mouse_on_button"]
+[connection signal="mouse_exited" from="Mermaid/InteractionWindow/Control/HackWindow" to="Mermaid/InteractionWindow" method="mouse_off_button"]
+
 [editable path="Wolf"]
 [editable path="Wolf/InteractionWindow"]
+[editable path="Mermaid"]
+[editable path="Mermaid/InteractionWindow"]

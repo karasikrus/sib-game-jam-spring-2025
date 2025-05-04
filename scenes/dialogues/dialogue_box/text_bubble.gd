@@ -13,6 +13,7 @@ func _ready():
 	DialogueSignalBus.play_dialog_line.connect(try_playing_line)
 	audio_stream_player.finished.connect(on_finished)
 	timer.timeout.connect(on_finished)
+	visible = false
 
 func try_playing_line(line : DialogueLine):
 	if line.character.id == dialogueCharacter.id:

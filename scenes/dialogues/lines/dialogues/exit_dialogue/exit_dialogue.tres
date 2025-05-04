@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=4 format=3 uid="uid://bhcjkk6doh1e6"]
+
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="1_toabl"]
+[ext_resource type="Resource" uid="uid://b5683qd03u1n0" path="res://scenes/dialogues/lines/dialogues/exit_dialogue/exit_line.tres" id="2_sj4a4"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue.gd" id="6_ibth5"]
+
+[resource]
+script = ExtResource("6_ibth5")
+lines = Array[ExtResource("1_toabl")]([ExtResource("2_sj4a4")])

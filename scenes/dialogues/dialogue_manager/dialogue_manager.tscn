@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://djvm4x8kkeqre"]
+[gd_scene load_steps=3 format=3 uid="uid://djvm4x8kkeqre"]
 
 [ext_resource type="Script" path="res://scenes/dialogues/dialogue_manager/dialogue_manager.gd" id="1_61swm"]
+[ext_resource type="PackedScene" uid="uid://dx7ic1h7uf2p7" path="res://scenes/dialogues/dialogue_options/dialog_options_box.tscn" id="2_6ji07"]
 
 [node name="DialogueManager" type="Node"]
 script = ExtResource("1_61swm")
+
+[node name="DialogOptionsBox" parent="." instance=ExtResource("2_6ji07")]
+unique_name_in_owner = true

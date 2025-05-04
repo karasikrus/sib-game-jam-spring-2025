@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueOption" load_steps=3 format=3 uid="uid://dtekrgvf7nxsq"]
+
+[ext_resource type="Resource" uid="uid://mgwgu8ue0hr2" path="res://scenes/dialogues/lines/dialogues/test_dialogue/test_dialogue2.tres" id="1_fmvtb"]
+[ext_resource type="Script" path="res://scenes/dialogues/dialogue_options/dialogue_option_resorce.gd" id="2_0d2bf"]
+
+[resource]
+script = ExtResource("2_0d2bf")
+optionText = "Тестовый вариант 2"
+dialogue = ExtResource("1_fmvtb")

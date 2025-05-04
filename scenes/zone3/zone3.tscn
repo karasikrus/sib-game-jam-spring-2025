@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://csnoy1ohmy0on"]
+[gd_scene load_steps=32 format=3 uid="uid://csnoy1ohmy0on"]
 
 [ext_resource type="PackedScene" uid="uid://gujhtqt7mob6" path="res://scenes/TemplateEntity/TemplateEntity.tscn" id="1_drnp0"]
 [ext_resource type="PackedScene" uid="uid://cwd8t1bdevga8" path="res://scenes/interactableCharacter/interactable_character.tscn" id="2_0hinv"]
@@ -6,15 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://31awqwru7b70" path="res://scenes/movementNode/next_scene_node.tscn" id="3_vmeko"]
 [ext_resource type="Texture2D" uid="uid://68r1elsp0f6p" path="res://scenes/old/old.png" id="4_cu5lb"]
 [ext_resource type="Shader" path="res://scenes/postEffects/crtShader.gdshader" id="5_2xfh0"]
-[ext_resource type="Resource" path="res://scenes/dialogues/characters/goblin/old.tres" id="5_45gkq"]
+[ext_resource type="Resource" uid="uid://b7crui1rpispg" path="res://scenes/dialogues/characters/goblin/old.tres" id="5_45gkq"]
 [ext_resource type="PackedScene" uid="uid://802678fmiy16" path="res://scenes/ui/ui_main.tscn" id="5_vv3x0"]
 [ext_resource type="Script" path="res://scenes/movementNode/movement_nodes.gd" id="6_5jw74"]
 [ext_resource type="Resource" uid="uid://dqpunyrygt06h" path="res://scenes/dialogues/lines/dialogues/yaga/dialogue_options_block_yaga.tres" id="6_it4tm"]
 [ext_resource type="Texture2D" uid="uid://8gb3ip5qb3ry" path="res://scenes/yaga/yaga.PNG" id="7_bxatq"]
 [ext_resource type="PackedScene" uid="uid://c2pwalittkt00" path="res://scenes/movementNode/movement_node.tscn" id="7_hwune"]
-[ext_resource type="Resource" path="res://scenes/dialogues/characters/goblin/yaga.tres" id="7_vsga5"]
+[ext_resource type="Resource" uid="uid://dkww6tofs546i" path="res://scenes/dialogues/characters/goblin/yaga.tres" id="7_vsga5"]
+[ext_resource type="Resource" uid="uid://4ien66q7csgb" path="res://scenes/dialogues/lines/dialogues/template/dialogue_options_block_template.tres" id="9_7g7cu"]
 [ext_resource type="Texture2D" uid="uid://dwr74htwh7wdq" path="res://scenes/chest/chest.png" id="9_xttj0"]
 [ext_resource type="Texture2D" uid="uid://bpb5ljdkwnwsw" path="res://scenes/zone3/Zone3Background.PNG" id="10_0fc5g"]
+[ext_resource type="Resource" uid="uid://d26875kixq440" path="res://scenes/dialogues/characters/goblin/goblin.tres" id="11_ux8m4"]
 
 [sub_resource type="Animation" id="Animation_k8fyg"]
 loop_mode = 2
@@ -341,11 +343,11 @@ dialogueCharacter = ExtResource("7_vsga5")
 [node name="Chest" parent="." node_paths=PackedStringArray("nodes_to_unlock") instance=ExtResource("2_0hinv")]
 position = Vector2(1000, 800)
 nodes_to_unlock = [NodePath("../MovementNodes/NextSceneNode")]
-hints_path = "res://scenes/yaga/yaga_hints.txt"
+hints_path = "res://scenes/traider/final_hints.txt"
 animation_start_name = "yaga"
-riddle_text = "Когда у Бабы Яги день рождения?"
-riddle_answer = "7 апреля"
-dialogue_options_block = ExtResource("6_it4tm")
+riddle_text = "Адрес - тот же и -corrupted Пароль: первые буквы Торговец, Волк, Русалка, Кощей, Яга, Полицейский, Лягушка "
+riddle_answer = "сказка123"
+dialogue_options_block = ExtResource("9_7g7cu")
 
 [node name="Sprite2D" parent="Chest" index="0"]
 scale = Vector2(0.2, 0.2)
@@ -379,7 +381,7 @@ offset_right = 1726.0
 offset_bottom = 724.0
 
 [node name="TextBubble" parent="Chest" index="7"]
-dialogueCharacter = ExtResource("7_vsga5")
+dialogueCharacter = ExtResource("11_ux8m4")
 
 [node name="UiMain" parent="." instance=ExtResource("5_vv3x0")]
 visible = false

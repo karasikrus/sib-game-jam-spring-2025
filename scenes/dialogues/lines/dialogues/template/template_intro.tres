@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("2_xxgh2")
 character = ExtResource("1_1flw1")
-text = "Чем вы занимались до приезда полиции?"
+text = "..."
 timerLengthSec = 3.0

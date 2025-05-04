@@ -81,7 +81,7 @@ func parse_hints():
 	hints_txt.close()
 
 func _ready() -> void:
-	init_audio_streams()
+	#init_audio_streams()
 	#audio_player.play()
 	start_idle_animation()
 	parse_hints()
@@ -192,13 +192,7 @@ func init_audio_streams():
 		
 		
 func update_audio_stream_player():
-	if(audio_player.stream_paused == true):
-		audio_player.stream_paused = false
-	#might be quite sharp change, but should work for now
-	var current_playing_stream = audio_player.stream.resource_path.get_file().get_basename()
-	if (current_playing_stream != audio_names[audio_state]):
-		audio_player.set_stream(audio_streams[audio_state])
-		audio_player.play()
+	pass
 		
 func play_idle():
 	audio_state = AUDIO_STATE.IDLE

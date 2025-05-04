@@ -176,7 +176,12 @@ func _input(event):
 			interactable_character.interaction_state = InteractableCharacter.INTERACTION_STATE.IDLE
 			is_on_button = false
 			reset_to_defult_state()
-
+	if Input.is_action_just_pressed("Escape"):
+		if (interactable_character.interaction_state == InteractableCharacter.INTERACTION_STATE.HACKING):
+			play_sound(AUDIO_STATE.HACK_WINDOW_CLOSE)
+		interactable_character.interaction_state = InteractableCharacter.INTERACTION_STATE.IDLE
+		is_on_button = false
+		reset_to_defult_state()
 		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

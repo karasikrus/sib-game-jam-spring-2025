@@ -151,7 +151,7 @@ shader_parameter/warp = Vector2(64, 24)
 shader_parameter/maskDark = 0.5
 shader_parameter/maskLight = 1.5
 
-[node name="Zone1" type="Node2D"]
+[node name="Zone2" type="Node2D"]
 
 [node name="TemplateEntity" parent="." node_paths=PackedStringArray("movement_nodes", "starting_node") instance=ExtResource("1_ppwhq")]
 position = Vector2(221, 950)

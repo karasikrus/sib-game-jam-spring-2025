@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cwd8t1bdevga8"]
+[gd_scene load_steps=18 format=3 uid="uid://cwd8t1bdevga8"]
 
 [ext_resource type="Script" path="res://scenes/interactableCharacter/interactable_character.gd" id="1_hargx"]
 [ext_resource type="Shader" path="res://scenes/interactableCharacter/interactable_character.gdshader" id="2_1cv0v"]
@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://r6oou2c8mf3j" path="res://scenes/TemplateEntity/idle.mp3" id="3_7o5le"]
 [ext_resource type="PackedScene" uid="uid://dhraaqfxt8rpw" path="res://scenes/interactableCharacter/InteractionWindow.tscn" id="5_ipwex"]
 [ext_resource type="PackedScene" uid="uid://dr5jvrtte8k8t" path="res://scenes/dialogues/dialogue_box/text_bubble.tscn" id="6_7y322"]
+[ext_resource type="Texture2D" uid="uid://dwbn0ycnab4nr" path="res://scenes/interactableCharacter/hackingWindow/InputButton.png" id="6_qb27q"]
+[ext_resource type="FontFile" uid="uid://7ymm17grohck" path="res://scenes/interactableCharacter/hackingWindow/monospace_fira_ttf/FiraCode-Regular.ttf" id="7_rcl7w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k0vd5"]
 shader = ExtResource("2_1cv0v")
@@ -168,7 +170,6 @@ one_shot = true
 shape = SubResource("RectangleShape2D_le0wj")
 
 [node name="InteractionWindow" parent="." node_paths=PackedStringArray("interactable_character") instance=ExtResource("5_ipwex")]
-visible = false
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -180,7 +181,27 @@ grow_horizontal = 1
 grow_vertical = 1
 interactable_character = NodePath("..")
 
+[node name="Control" parent="InteractionWindow/Control" index="0"]
+offset_left = 372.0
+offset_top = 244.0
+offset_right = 627.0
+offset_bottom = 317.0
+
+[node name="SuccesfulHackButton" parent="InteractionWindow/Control/HackWindow" index="1"]
+texture_pressed = ExtResource("6_qb27q")
+
+[node name="RichTextLabel" parent="InteractionWindow/Control/HackWindow/SuccesfulHackButton" index="0"]
+offset_left = 55.0
+offset_right = 191.0
+offset_bottom = 95.0
+theme_override_fonts/normal_font = ExtResource("7_rcl7w")
+
+[node name="RiddleText" parent="InteractionWindow/Control/HackWindow" index="3"]
+theme_override_fonts/normal_font = ExtResource("7_rcl7w")
+theme_override_font_sizes/normal_font_size = 25
+
 [node name="TextBubble" parent="." instance=ExtResource("6_7y322")]
+visible = false
 offset_left = -498.0
 offset_top = -156.0
 offset_right = 542.0
@@ -188,3 +209,7 @@ offset_bottom = -56.0
 
 [connection signal="mouse_entered" from="InteractionArea" to="." method="set_mouse_on_object"]
 [connection signal="mouse_exited" from="InteractionArea" to="." method="set_mouse_off_object"]
+[connection signal="mouse_entered" from="InteractionWindow/Control/HackWindow" to="InteractionWindow" method="mouse_on_button"]
+[connection signal="mouse_exited" from="InteractionWindow/Control/HackWindow" to="InteractionWindow" method="mouse_off_button"]
+
+[editable path="InteractionWindow"]

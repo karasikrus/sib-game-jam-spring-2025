@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dhraaqfxt8rpw"]
+[gd_scene load_steps=17 format=3 uid="uid://dhraaqfxt8rpw"]
 
 [ext_resource type="Script" path="res://scenes/interactableCharacter/interaction_window.gd" id="1_t7ovg"]
 [ext_resource type="Texture2D" uid="uid://bd8w2ny4qenjh" path="res://scenes/interactableCharacter/HackButton.png" id="2_36p0u"]
@@ -10,121 +10,170 @@
 [ext_resource type="AudioStream" uid="uid://mks5uuuog5nl" path="res://scenes/interactableCharacter/sounds/TipRecieved.wav" id="6_urkgr"]
 [ext_resource type="AudioStream" uid="uid://dcp7msmubwpic" path="res://scenes/interactableCharacter/sounds/TipsAreOver.wav" id="7_hlhrw"]
 [ext_resource type="AudioStream" uid="uid://dmnbnun5ir5qp" path="res://scenes/interactableCharacter/sounds/WrongAnswer.wav" id="8_n3iny"]
+[ext_resource type="Texture2D" uid="uid://bxrops23moy2m" path="res://scenes/interactableCharacter/hackingWindow/windowBackground.PNG" id="11_ikcsa"]
+[ext_resource type="Texture2D" uid="uid://dwbn0ycnab4nr" path="res://scenes/interactableCharacter/hackingWindow/InputButton.png" id="12_br0lq"]
+[ext_resource type="Texture2D" uid="uid://rlaikbd4ebsg" path="res://scenes/interactableCharacter/hackingWindow/FloppyDrive.png" id="13_2gh6i"]
+[ext_resource type="Texture2D" uid="uid://bf33kubb61qsa" path="res://scenes/interactableCharacter/hackingWindow/InputWindow.png" id="13_ubf81"]
+[ext_resource type="FontFile" uid="uid://7ymm17grohck" path="res://scenes/interactableCharacter/hackingWindow/monospace_fira_ttf/FiraCode-Regular.ttf" id="14_mjaa1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34s86"]
+bg_color = Color(0.333782, 0.361832, 0.466994, 1)
+border_color = Color(0.72549, 0.74902, 0.831373, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="InteractionWindow" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 422.0
-offset_top = 62.0
-offset_right = -598.0
-offset_bottom = -523.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t7ovg")
 audio_streams = Array[AudioStream]([ExtResource("2_c54t2"), ExtResource("4_77a11"), ExtResource("4_1p75k"), ExtResource("5_chdo5"), ExtResource("6_urkgr"), ExtResource("7_hlhrw"), ExtResource("8_n3iny")])
 
-[node name="Hack" type="TextureButton" parent="."]
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Control" type="Control" parent="Control"]
+anchors_preset = 0
+offset_left = 521.0
+offset_top = 234.0
+offset_right = 820.0
+offset_bottom = 308.0
+
+[node name="Hack" type="TextureButton" parent="Control/Control"]
 layout_mode = 0
-offset_left = 417.0
-offset_top = 264.0
-offset_right = 494.0
-offset_bottom = 327.0
+offset_right = 77.0
+offset_bottom = 63.0
 texture_normal = ExtResource("2_36p0u")
 texture_pressed = ExtResource("2_36p0u")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Talk" type="TextureButton" parent="."]
+[node name="Talk" type="TextureButton" parent="Control/Control"]
 layout_mode = 0
-offset_left = 528.0
-offset_top = 257.0
-offset_right = 618.0
-offset_bottom = 329.0
+offset_left = 150.0
+offset_top = -5.0
+offset_right = 240.0
+offset_bottom = 67.0
 texture_normal = ExtResource("3_ka2m2")
 texture_pressed = ExtResource("3_ka2m2")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="HackWindow" type="Control" parent="."]
-visible = false
+[node name="HackWindow" type="Control" parent="Control"]
 anchors_preset = 0
-offset_left = 133.0
-offset_top = 40.0
-offset_right = 646.0
-offset_bottom = 243.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 
-[node name="Sprite2D" type="Sprite2D" parent="HackWindow"]
+[node name="Sprite2D" type="Sprite2D" parent="Control/HackWindow"]
+position = Vector2(960, 533)
+scale = Vector2(1.06958, 1.11806)
+texture = ExtResource("11_ikcsa")
 
-[node name="SuccesfulHackButton" type="Button" parent="HackWindow"]
+[node name="SuccesfulHackButton" type="TextureButton" parent="Control/HackWindow"]
 layout_mode = 0
-offset_left = 26.0
-offset_top = 135.0
-offset_right = 274.0
-offset_bottom = 169.0
+offset_left = 405.0
+offset_top = 744.0
+offset_right = 634.0
+offset_bottom = 888.0
+texture_normal = ExtResource("12_br0lq")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/HackWindow/SuccesfulHackButton"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 52.0
+offset_right = 175.0
+offset_bottom = 88.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 25
 text = "Взломать"
 
-[node name="RiddleAnswer" type="TextEdit" parent="HackWindow"]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 99.0
-offset_right = 280.0
-offset_bottom = 124.0
+[node name="Sprite2D2" type="Sprite2D" parent="Control/HackWindow"]
+position = Vector2(523, 623)
+texture = ExtResource("13_ubf81")
 
-[node name="RiddleText" type="RichTextLabel" parent="HackWindow"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 18.0
-offset_right = 272.0
-offset_bottom = 75.0
+[node name="RiddleAnswer" type="TextEdit" parent="Control/HackWindow/Sprite2D2"]
+offset_left = -240.0
+offset_top = -53.0
+offset_right = 241.0
+offset_bottom = 54.0
+theme_override_fonts/font = ExtResource("14_mjaa1")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_34s86")
 
-[node name="Node2D" type="Node2D" parent="HackWindow"]
+[node name="RiddleText" type="RichTextLabel" parent="Control/HackWindow"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 211.0
+offset_right = 773.0
+offset_bottom = 443.0
+
+[node name="Node2D" type="Node2D" parent="Control/HackWindow"]
 position = Vector2(425, 51)
 
-[node name="FloppyDrive" type="Sprite2D" parent="HackWindow/Node2D"]
-position = Vector2(-165, -45)
+[node name="RequestHelp" type="TextureButton" parent="Control/HackWindow/Node2D"]
+offset_left = 699.0
+offset_top = 77.0
+offset_right = 1028.0
+offset_bottom = 228.0
+texture_normal = ExtResource("13_2gh6i")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="RequestHelp" type="Button" parent="HackWindow/Node2D"]
-offset_left = -62.0
-offset_top = 79.0
-offset_right = 60.0
-offset_bottom = 117.0
-text = "Подсказку"
+[node name="HintsText" type="RichTextLabel" parent="Control/HackWindow/Node2D"]
+offset_left = 484.0
+offset_top = 249.0
+offset_right = 1270.0
+offset_bottom = 791.0
+theme_override_fonts/normal_font = ExtResource("14_mjaa1")
+theme_override_fonts/mono_font = ExtResource("14_mjaa1")
+theme_override_font_sizes/normal_font_size = 30
+scroll_active = false
 
-[node name="HintsText" type="RichTextLabel" parent="HackWindow/Node2D"]
-offset_left = -93.0
-offset_top = -57.0
-offset_right = 106.0
-offset_bottom = 62.0
+[node name="HintAppearanceTimer" type="Timer" parent="Control/HackWindow/Node2D"]
 
-[node name="AudioPlayer" type="AudioStreamPlayer" parent="HackWindow"]
+[node name="IdleInputSymbolTimer" type="Timer" parent="Control/HackWindow/Node2D"]
+wait_time = 0.5
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="Control/HackWindow"]
 stream = ExtResource("4_77a11")
 
-[node name="AudioPlayerForTips" type="AudioStreamPlayer" parent="HackWindow"]
+[node name="AudioPlayerForTips" type="AudioStreamPlayer" parent="Control/HackWindow"]
 
-[node name="TalkWindow" type="Control" parent="."]
+[node name="TalkWindow" type="Control" parent="Control"]
 visible = false
 anchors_preset = 0
 offset_left = -1.0
 offset_right = 1145.0
 offset_bottom = 647.0
 
-[connection signal="button_down" from="Hack" to="." method="hack_button_pressed_scale"]
-[connection signal="button_up" from="Hack" to="." method="hack_button_unpressed_scale"]
-[connection signal="mouse_entered" from="Hack" to="." method="mouse_on_button"]
-[connection signal="mouse_exited" from="Hack" to="." method="mouse_off_button"]
-[connection signal="pressed" from="Hack" to="." method="pressed_hacked"]
-[connection signal="button_down" from="Talk" to="." method="talk_button_pressed_scale"]
-[connection signal="button_up" from="Talk" to="." method="talk_button_unpressed_scale"]
-[connection signal="mouse_entered" from="Talk" to="." method="mouse_on_button"]
-[connection signal="mouse_exited" from="Talk" to="." method="mouse_off_button"]
-[connection signal="pressed" from="Talk" to="." method="pressed_talk"]
-[connection signal="mouse_entered" from="HackWindow/SuccesfulHackButton" to="." method="mouse_on_button"]
-[connection signal="mouse_exited" from="HackWindow/SuccesfulHackButton" to="." method="mouse_off_button"]
-[connection signal="pressed" from="HackWindow/SuccesfulHackButton" to="." method="on_hack_attempt"]
-[connection signal="mouse_entered" from="HackWindow/RiddleAnswer" to="." method="mouse_on_button"]
-[connection signal="mouse_exited" from="HackWindow/RiddleAnswer" to="." method="mouse_off_button"]
-[connection signal="mouse_entered" from="HackWindow/Node2D/RequestHelp" to="." method="mouse_on_button"]
-[connection signal="mouse_exited" from="HackWindow/Node2D/RequestHelp" to="." method="mouse_off_button"]
-[connection signal="pressed" from="HackWindow/Node2D/RequestHelp" to="." method="request_more_hints"]
+[connection signal="button_down" from="Control/Control/Hack" to="." method="hack_button_pressed_scale"]
+[connection signal="button_up" from="Control/Control/Hack" to="." method="hack_button_unpressed_scale"]
+[connection signal="mouse_entered" from="Control/Control/Hack" to="." method="mouse_on_button"]
+[connection signal="mouse_exited" from="Control/Control/Hack" to="." method="mouse_off_button"]
+[connection signal="pressed" from="Control/Control/Hack" to="." method="pressed_hacked"]
+[connection signal="button_down" from="Control/Control/Talk" to="." method="talk_button_pressed_scale"]
+[connection signal="button_up" from="Control/Control/Talk" to="." method="talk_button_unpressed_scale"]
+[connection signal="mouse_entered" from="Control/Control/Talk" to="." method="mouse_on_button"]
+[connection signal="mouse_exited" from="Control/Control/Talk" to="." method="mouse_off_button"]
+[connection signal="pressed" from="Control/Control/Talk" to="." method="pressed_talk"]
+[connection signal="mouse_entered" from="Control/HackWindow/SuccesfulHackButton" to="." method="mouse_on_button"]
+[connection signal="mouse_exited" from="Control/HackWindow/SuccesfulHackButton" to="." method="mouse_off_button"]
+[connection signal="pressed" from="Control/HackWindow/SuccesfulHackButton" to="." method="on_hack_attempt"]
+[connection signal="mouse_entered" from="Control/HackWindow/Sprite2D2/RiddleAnswer" to="." method="mouse_on_button"]
+[connection signal="mouse_exited" from="Control/HackWindow/Sprite2D2/RiddleAnswer" to="." method="mouse_off_button"]
+[connection signal="button_down" from="Control/HackWindow/Node2D/RequestHelp" to="." method="request_hint_button_pressed_scale"]
+[connection signal="button_up" from="Control/HackWindow/Node2D/RequestHelp" to="." method="request_hint_button_unpressed_scale"]
+[connection signal="mouse_entered" from="Control/HackWindow/Node2D/RequestHelp" to="." method="mouse_on_button"]
+[connection signal="mouse_exited" from="Control/HackWindow/Node2D/RequestHelp" to="." method="mouse_off_button"]
+[connection signal="pressed" from="Control/HackWindow/Node2D/RequestHelp" to="." method="request_more_hints"]
+[connection signal="timeout" from="Control/HackWindow/Node2D/IdleInputSymbolTimer" to="." method="end_hint_input_idle_timer"]

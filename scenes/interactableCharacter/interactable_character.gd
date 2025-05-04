@@ -76,7 +76,8 @@ func parse_hints():
 	var hints_txt = FileAccess.open(hints_path, FileAccess.READ)
 	while not hints_txt.eof_reached(): # iterate through all lines until the end of file is reached
 		var line = hints_txt.get_line()
-		hints.append(line)
+		if not line.is_empty():
+			hints.append(line)
 	hints_txt.close()
 
 func _ready() -> void:

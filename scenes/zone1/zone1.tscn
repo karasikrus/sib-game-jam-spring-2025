@@ -180,6 +180,32 @@ libraries = {
 "goblin": SubResource("AnimationLibrary_ywauo")
 }
 
+[node name="InteractionWindow" parent="InteractableCharacter" index="6"]
+visible = false
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -823.0
+offset_top = -505.0
+offset_right = -823.0
+offset_bottom = -505.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" parent="InteractableCharacter/InteractionWindow/Control" index="0"]
+offset_left = 702.0
+offset_top = 348.0
+offset_right = 957.0
+offset_bottom = 421.0
+
+[node name="HackWindow" parent="InteractableCharacter/InteractionWindow/Control" index="1"]
+visible = false
+
+[node name="RichTextLabel" parent="InteractableCharacter/InteractionWindow/Control/HackWindow/SuccesfulHackButton" index="0"]
+z_index = 1
+z_as_relative = false
+scroll_active = false
+
 [node name="TextBubble" parent="InteractableCharacter" index="7"]
 dialogueCharacter = ExtResource("4_rdmax")
 
@@ -230,4 +256,8 @@ z_index = -3
 position = Vector2(960, 540)
 texture = ExtResource("9_43j3j")
 
+[connection signal="mouse_entered" from="InteractableCharacter/InteractionWindow/Control/HackWindow" to="InteractableCharacter/InteractionWindow" method="mouse_on_button"]
+[connection signal="mouse_exited" from="InteractableCharacter/InteractionWindow/Control/HackWindow" to="InteractableCharacter/InteractionWindow" method="mouse_off_button"]
+
 [editable path="InteractableCharacter"]
+[editable path="InteractableCharacter/InteractionWindow"]

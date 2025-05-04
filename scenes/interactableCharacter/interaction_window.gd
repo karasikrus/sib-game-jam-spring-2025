@@ -4,20 +4,21 @@ extends Control
 @export var interactable_character :InteractableCharacter = null
 
 @onready var is_on_button = false
-@onready var hack_button = $Hack
-@onready var hack_window = $HackWindow
-@onready var riddle_text_label = $HackWindow/RiddleText
-@onready var riddle_answer_input : TextEdit = $HackWindow/RiddleAnswer
-@onready var submit_answer = $HackWindow/SuccesfulHackButton
-@onready var talk_button = $Talk
+@onready var hack_button = $Control/Control/Hack
+@onready var hack_window = $Control/HackWindow
+@onready var riddle_text_label = $Control/HackWindow/RiddleText
+@onready var riddle_answer_input : TextEdit = $Control/HackWindow/Sprite2D2/RiddleAnswer
+@onready var submit_answer = $Control/HackWindow/SuccesfulHackButton
+@onready var talk_button = $Control/Control/Talk
 @onready var talk_window = null
 
 @onready var riddle_text : String = ""
 @onready var riddle_answer : String = ""
 
-@onready var hints_label = $HackWindow/Node2D/HintsText
+@onready var hints_label = $Control/HackWindow/Node2D/HintsText
 
-#audio
+@onready var request_hint_button = $Control/HackWindow/Node2D/RequestHelp
+
 #Don't have time to properly load them and store, so hacky-wacky for now
 @export var audio_streams : Array[AudioStream] = []
 
@@ -41,9 +42,12 @@ var audio_names = [
 	"WrongAnswer",
 ]
 
-@onready var audio_player : AudioStreamPlayer =$HackWindow/AudioPlayer 
-@onready var audio_player_for_tip : AudioStreamPlayer = $HackWindow/AudioPlayerForTips #second one as we can recieve tip and get sound of counter increment at the same time
+@onready var audio_player : AudioStreamPlayer =$Control/HackWindow/AudioPlayer 
+@onready var audio_player_for_tip : AudioStreamPlayer = $Control/HackWindow/AudioPlayerForTips #second one as we can recieve tip and get sound of counter increment at the same time
 
+@onready var hint_appearance_timer = $Control/HackWindow/Node2D/HintAppearanceTimer
+@onready var idle_input_timer = $Control/HackWindow/Node2D/IdleInputSymbolTimer
+@onready var is_input_symbol_rendered = false
 func hide_talk_hack_buttons():
 	hack_button.visible = false
 	talk_button.visible = false
@@ -86,6 +90,7 @@ func main_character_arrived():
 	if interactable_character.interaction_state == InteractableCharacter.INTERACTION_STATE.PRESSED_HACK:
 		interactable_character.interaction_state = InteractableCharacter.INTERACTION_STATE.HACKING
 		hide_talk_hack_buttons()
+		start_hint_input_idle_timer()
 		hack_window.visible = true
 		is_on_button = false
 		StateManager.currentState = StateManager.GlobalStates.FREEZED
@@ -121,17 +126,29 @@ func pressed_hacked():
 	interactable_character.waiting_for_character = true
 	
 	
+func button_pressed_scale(button : TextureButton):
+	button.scale = Vector2(0.95, 0.95)
+	
+func button_unpressed_scale(button : TextureButton):
+	button.scale = Vector2(1.0, 1.0)
+	
 func hack_button_pressed_scale():
-	(hack_button as TextureButton).scale = Vector2(0.95, 0.95)
+	button_pressed_scale(hack_button)
 	
 func hack_button_unpressed_scale():
-	(hack_button as TextureButton).scale = Vector2(1.0, 1.0)
+	button_unpressed_scale(hack_button)
 	
 func talk_button_pressed_scale():
-	(talk_button as TextureButton).scale = Vector2(0.95, 0.95)
+	button_pressed_scale(talk_button)
 	
 func talk_button_unpressed_scale():
-	(talk_button as TextureButton).scale = Vector2(1.0, 1.0)
+	button_unpressed_scale(talk_button)
+	
+func request_hint_button_pressed_scale():
+	button_pressed_scale(request_hint_button)
+	
+func request_hint_button_unpressed_scale():
+	button_unpressed_scale(request_hint_button)
 	
 func pressed_talk():
 	interactable_character.interaction_state = InteractableCharacter.INTERACTION_STATE.PRESSED_TALK
@@ -159,24 +176,76 @@ func _ready() -> void:
 	reset_to_defult_state()
 	pass # Replace with function body.
 
+
+#potentially worth adding per symbol adding to hints 
 func request_more_hints() -> void:
 	var current_hint_index = interactable_character.current_hint
-	if current_hint_index ==interactable_character.hints.size():
+	if current_hint_index == interactable_character.hints.size():
 		play_sound_for_tip(AUDIO_STATE.HACK_TIPS_ARE_OVER)
 		return
 	interactable_character.current_click_count += 1
 	play_sound(AUDIO_STATE.HACK_WINDOW_HELPER_CLICK)
 	if interactable_character.hints_number_clicks[current_hint_index] == interactable_character.current_click_count:
 		current_hint_index += 1
-		interactable_character.current_hint = current_hint_index
 		interactable_character.current_click_count = 0
+		var added_line = interactable_character.hints[interactable_character.current_hint]
+		add_hint_to_label(hints_label, added_line)	
 		play_sound_for_tip(AUDIO_STATE.HACK_TIP_RECIEVED)
-	var result_text = ""
-	for i in range(0, interactable_character.current_hint):
-		result_text += interactable_character.hints[i]
-		result_text += "\n"
-	hints_label.text = result_text
+		interactable_character.current_hint = current_hint_index
 	pass
+	
+func add_hint_to_label(label: RichTextLabel, text: String):
+	label.remove_paragraph(label.get_paragraph_count() - 1)
+	label.push_paragraph(HORIZONTAL_ALIGNMENT_LEFT)
+	
+	label.push_color(Color.WHITE)
+	label.add_text(">")
+	label.pop()
+	
+	label.push_color(Color.DARK_SEA_GREEN)
+	label.add_text(text)
+	label.add_text("\n")
+	label.pop()
+	
+	label.pop()
+	
+func add_input_symbol(label: RichTextLabel):
+	label.remove_paragraph(label.get_paragraph_count() - 1)
+	label.push_paragraph(HORIZONTAL_ALIGNMENT_LEFT)
+	label.push_color(Color.WHITE)
+	label.add_text(">")
+	label.pop()
+	
+	label.push_color(Color.DARK_SEA_GREEN)
+	label.add_text("_")
+	label.pop()
+	
+	label.pop()
+	
+func remove_input_symbol(label: RichTextLabel):
+	label.remove_paragraph(label.get_paragraph_count() - 1)
+	
+	label.push_paragraph(HORIZONTAL_ALIGNMENT_LEFT)
+	label.push_color(Color.WHITE)
+	label.add_text(">")
+	label.pop()
+	label.pop()
+	pass
+
+func start_hint_input_idle_timer():
+	if is_input_symbol_rendered:
+		remove_input_symbol(hints_label)
+		is_input_symbol_rendered = false
+	else:
+		is_input_symbol_rendered = true
+		add_input_symbol(hints_label)
+	idle_input_timer.start()
+
+func end_hint_input_idle_timer():
+	start_hint_input_idle_timer()
+
+
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

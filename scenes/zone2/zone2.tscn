@@ -1,8 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://bd7u4pu58ku2g"]
+[gd_scene load_steps=21 format=3 uid="uid://bd7u4pu58ku2g"]
 
 [ext_resource type="PackedScene" uid="uid://gujhtqt7mob6" path="res://scenes/TemplateEntity/TemplateEntity.tscn" id="1_ppwhq"]
 [ext_resource type="PackedScene" uid="uid://cwd8t1bdevga8" path="res://scenes/interactableCharacter/interactable_character.tscn" id="2_1civm"]
-[ext_resource type="Texture2D" uid="uid://bvhd04aau7irw" path="res://scenes/goblin/IdleGoblin.png" id="3_cj0vl"]
+[ext_resource type="Texture2D" uid="uid://tw67ttg27cl" path="res://scenes/wolf/Wolf.png" id="3_v5j5x"]
 [ext_resource type="Resource" uid="uid://d26875kixq440" path="res://scenes/dialogues/characters/goblin/goblin.tres" id="4_db5aa"]
 [ext_resource type="Texture2D" uid="uid://dl14je0umglth" path="res://scenes/zone2/Zone2Background.PNG" id="4_h50ea"]
 [ext_resource type="PackedScene" uid="uid://802678fmiy16" path="res://scenes/ui/ui_main.tscn" id="5_svl0o"]
@@ -137,6 +137,25 @@ _data = {
 "idle": SubResource("Animation_dcrll")
 }
 
+[sub_resource type="Animation" id="Animation_h86gu"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8kajc"]
+_data = {
+"idle": SubResource("Animation_h86gu")
+}
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7g8ub"]
 shader = ExtResource("9_tmxc1")
 shader_parameter/res = Vector2(1440, 720)
@@ -158,30 +177,42 @@ position = Vector2(221, 950)
 movement_nodes = NodePath("../MovementNodes")
 starting_node = NodePath("../MovementNodes/Node2")
 
-[node name="InteractableCharacter" parent="." node_paths=PackedStringArray("nodes_to_unlock") instance=ExtResource("2_1civm")]
-position = Vector2(823, 505)
+[node name="Wolf" parent="." node_paths=PackedStringArray("nodes_to_unlock") instance=ExtResource("2_1civm")]
+position = Vector2(682, 327)
 nodes_to_unlock = [NodePath("../MovementNodes/Node4"), NodePath("../MovementNodes/NextSceneNode")]
-hints_path = "res://scenes/goblin/goblin_hints.txt"
-animation_start_name = "goblin"
-riddle_text = "Sosal?"
-riddle_answer = "Da"
+hints_path = "res://scenes/wolf/wolf_hints.txt"
+animation_start_name = "wolf"
+riddle_text = "Как называется любимая звезда персонажа?"
+riddle_answer = "Денеб"
 
-[node name="Sprite2D" parent="InteractableCharacter" index="0"]
+[node name="Sprite2D" parent="Wolf" index="0"]
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_cj0vl")
+texture = ExtResource("3_v5j5x")
 hframes = 9
 vframes = 1
 
-[node name="AnimationPlayer" parent="InteractableCharacter" index="2"]
+[node name="AnimationPlayer" parent="Wolf" index="2"]
 libraries = {
 "": SubResource("AnimationLibrary_e544i"),
-"goblin": SubResource("AnimationLibrary_ywauo")
+"goblin": SubResource("AnimationLibrary_ywauo"),
+"wolf": SubResource("AnimationLibrary_8kajc")
 }
 
-[node name="InteractionWindow" parent="InteractableCharacter" index="6"]
+[node name="InteractionWindow" parent="Wolf" index="6"]
 visible = false
+anchors_preset = -1
+offset_left = -682.0
+offset_top = -327.0
+offset_right = -682.0
+offset_bottom = -327.0
 
-[node name="TextBubble" parent="InteractableCharacter" index="7"]
+[node name="Control" parent="Wolf/InteractionWindow/Control" index="0"]
+offset_left = 551.0
+offset_top = 196.0
+offset_right = 806.0
+offset_bottom = 269.0
+
+[node name="TextBubble" parent="Wolf" index="7"]
 dialogueCharacter = ExtResource("4_db5aa")
 
 [node name="UiMain" parent="." instance=ExtResource("5_svl0o")]
@@ -231,8 +262,8 @@ z_index = -3
 position = Vector2(960, 540)
 texture = ExtResource("4_h50ea")
 
-[connection signal="mouse_entered" from="InteractableCharacter/InteractionWindow/Control/HackWindow" to="InteractableCharacter/InteractionWindow" method="mouse_on_button"]
-[connection signal="mouse_exited" from="InteractableCharacter/InteractionWindow/Control/HackWindow" to="InteractableCharacter/InteractionWindow" method="mouse_off_button"]
+[connection signal="mouse_entered" from="Wolf/InteractionWindow/Control/HackWindow" to="Wolf/InteractionWindow" method="mouse_on_button"]
+[connection signal="mouse_exited" from="Wolf/InteractionWindow/Control/HackWindow" to="Wolf/InteractionWindow" method="mouse_off_button"]
 
-[editable path="InteractableCharacter"]
-[editable path="InteractableCharacter/InteractionWindow"]
+[editable path="Wolf"]
+[editable path="Wolf/InteractionWindow"]

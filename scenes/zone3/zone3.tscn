@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cwd8t1bdevga8" path="res://scenes/interactableCharacter/interactable_character.tscn" id="2_0hinv"]
 [ext_resource type="PackedScene" uid="uid://31awqwru7b70" path="res://scenes/movementNode/next_scene_node.tscn" id="3_vmeko"]
 [ext_resource type="Texture2D" uid="uid://bvhd04aau7irw" path="res://scenes/goblin/IdleGoblin.png" id="3_vq5jx"]
-[ext_resource type="Texture2D" uid="uid://dgyijha4xrn6f" path="res://scenes/zone2/Zone2Background.PNG" id="4_6217p"]
+[ext_resource type="Texture2D" uid="uid://dl14je0umglth" path="res://scenes/zone2/Zone2Background.PNG" id="4_6217p"]
 [ext_resource type="Resource" uid="uid://d26875kixq440" path="res://scenes/dialogues/characters/goblin/goblin.tres" id="4_veyla"]
 [ext_resource type="Shader" path="res://scenes/postEffects/crtShader.gdshader" id="5_2xfh0"]
 [ext_resource type="PackedScene" uid="uid://802678fmiy16" path="res://scenes/ui/ui_main.tscn" id="5_vv3x0"]

@@ -1,14 +1,17 @@
-[gd_scene load_steps=19 format=3 uid="uid://csnoy1ohmy0on"]
+[gd_scene load_steps=22 format=3 uid="uid://csnoy1ohmy0on"]
 
 [ext_resource type="PackedScene" uid="uid://gujhtqt7mob6" path="res://scenes/TemplateEntity/TemplateEntity.tscn" id="1_drnp0"]
 [ext_resource type="PackedScene" uid="uid://cwd8t1bdevga8" path="res://scenes/interactableCharacter/interactable_character.tscn" id="2_0hinv"]
+[ext_resource type="Resource" uid="uid://cudcwfhp8ki8e" path="res://scenes/dialogues/lines/dialogues/old/dialogue_options_block_old.tres" id="3_hmlt1"]
 [ext_resource type="PackedScene" uid="uid://31awqwru7b70" path="res://scenes/movementNode/next_scene_node.tscn" id="3_vmeko"]
 [ext_resource type="Texture2D" uid="uid://bvhd04aau7irw" path="res://scenes/goblin/IdleGoblin.png" id="3_vq5jx"]
-[ext_resource type="Resource" uid="uid://d26875kixq440" path="res://scenes/dialogues/characters/goblin/goblin.tres" id="4_veyla"]
 [ext_resource type="Shader" path="res://scenes/postEffects/crtShader.gdshader" id="5_2xfh0"]
+[ext_resource type="Resource" uid="uid://b7crui1rpispg" path="res://scenes/dialogues/characters/goblin/old.tres" id="5_45gkq"]
 [ext_resource type="PackedScene" uid="uid://802678fmiy16" path="res://scenes/ui/ui_main.tscn" id="5_vv3x0"]
 [ext_resource type="Script" path="res://scenes/movementNode/movement_nodes.gd" id="6_5jw74"]
+[ext_resource type="Resource" uid="uid://dqpunyrygt06h" path="res://scenes/dialogues/lines/dialogues/yaga/dialogue_options_block_yaga.tres" id="6_it4tm"]
 [ext_resource type="PackedScene" uid="uid://c2pwalittkt00" path="res://scenes/movementNode/movement_node.tscn" id="7_hwune"]
+[ext_resource type="Resource" uid="uid://dkww6tofs546i" path="res://scenes/dialogues/characters/goblin/yaga.tres" id="7_vsga5"]
 [ext_resource type="Texture2D" uid="uid://bpb5ljdkwnwsw" path="res://scenes/zone3/Zone3Background.PNG" id="10_0fc5g"]
 
 [sub_resource type="Animation" id="Animation_k8fyg"]
@@ -158,28 +161,71 @@ position = Vector2(221, 950)
 movement_nodes = NodePath("../MovementNodes")
 starting_node = NodePath("../MovementNodes/Node2")
 
-[node name="InteractableCharacter" parent="." node_paths=PackedStringArray("nodes_to_unlock") instance=ExtResource("2_0hinv")]
-position = Vector2(823, 505)
-nodes_to_unlock = [NodePath("../MovementNodes/Node4"), NodePath("../MovementNodes/NextSceneNode")]
-hints_path = "res://scenes/goblin/goblin_hints.txt"
-animation_start_name = "goblin"
-riddle_text = "Sosal?"
-riddle_answer = "Da"
+[node name="Old" parent="." instance=ExtResource("2_0hinv")]
+position = Vector2(1311, 813)
+hints_path = "res://scenes/old/old_hints.txt"
+animation_start_name = "old"
+riddle_text = "В честь какого региона назван шахматный дебют разыгранный в партии?"
+riddle_answer = "Сицилия"
+dialogue_options_block = ExtResource("3_hmlt1")
 
-[node name="Sprite2D" parent="InteractableCharacter" index="0"]
+[node name="Sprite2D" parent="Old" index="0"]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_vq5jx")
 hframes = 9
 vframes = 1
 
-[node name="AnimationPlayer" parent="InteractableCharacter" index="2"]
+[node name="AnimationPlayer" parent="Old" index="2"]
 libraries = {
 "": SubResource("AnimationLibrary_e544i"),
 "goblin": SubResource("AnimationLibrary_ywauo")
 }
 
-[node name="TextBubble" parent="InteractableCharacter" index="7"]
-dialogueCharacter = ExtResource("4_veyla")
+[node name="InteractionWindow" parent="Old" index="6"]
+visible = false
+
+[node name="HackWindow" parent="Old/InteractionWindow/Control" index="1"]
+offset_left = -819.0
+offset_top = -401.0
+offset_right = 1101.0
+offset_bottom = 679.0
+
+[node name="TextBubble" parent="Old" index="7"]
+dialogueCharacter = ExtResource("5_45gkq")
+
+[node name="Yaga" parent="." instance=ExtResource("2_0hinv")]
+position = Vector2(681, 779)
+hints_path = "res://scenes/yaga/yaga_hints.txt"
+animation_start_name = "yaga"
+riddle_text = "В какую дату (например, 1 апреля) родилась Баба Яга?"
+riddle_answer = "7 апреля"
+dialogue_options_block = ExtResource("6_it4tm")
+
+[node name="Sprite2D" parent="Yaga" index="0"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_vq5jx")
+hframes = 9
+vframes = 1
+
+[node name="AnimationPlayer" parent="Yaga" index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_e544i"),
+"goblin": SubResource("AnimationLibrary_ywauo")
+}
+
+[node name="Control" parent="Yaga/InteractionWindow/Control" index="0"]
+offset_top = 268.0
+offset_bottom = 341.0
+
+[node name="HackWindow" parent="Yaga/InteractionWindow/Control" index="1"]
+visible = false
+offset_left = -194.0
+offset_top = -356.0
+offset_right = 1726.0
+offset_bottom = 724.0
+
+[node name="TextBubble" parent="Yaga" index="7"]
+dialogueCharacter = ExtResource("7_vsga5")
 
 [node name="UiMain" parent="." instance=ExtResource("5_vv3x0")]
 visible = false
@@ -188,28 +234,28 @@ visible = false
 script = ExtResource("6_5jw74")
 
 [node name="Node0" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("7_hwune")]
-position = Vector2(707, 576)
+position = Vector2(425, 867)
 connected_nodes = [NodePath("../Node4"), NodePath("../Node5"), NodePath("../Node1")]
 
 [node name="Node1" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("7_hwune")]
-position = Vector2(1139, 698)
+position = Vector2(794, 843)
 connected_nodes = []
 
 [node name="Node2" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("7_hwune")]
-position = Vector2(364, 931)
+position = Vector2(692, 995)
 connected_nodes = [NodePath("../Node5")]
 
 [node name="Node4" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("7_hwune")]
-position = Vector2(830, 311)
+position = Vector2(1100, 789)
 connected_nodes = [NodePath("../NextSceneNode")]
 is_available = false
 
 [node name="Node5" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("7_hwune")]
-position = Vector2(768, 809)
+position = Vector2(1191, 924)
 connected_nodes = [NodePath("../Node2"), NodePath("../Node0"), NodePath("../Node1")]
 
 [node name="NextSceneNode" parent="MovementNodes" instance=ExtResource("3_vmeko")]
-position = Vector2(1044, 104)
+position = Vector2(234, 866)
 next_scene_name = "res://scenes/outro/outro.tscn"
 is_available = false
 
@@ -228,8 +274,12 @@ z_index = -3
 position = Vector2(960, 540)
 texture = ExtResource("10_0fc5g")
 
-[connection signal="mouse_entered" from="InteractableCharacter/InteractionWindow/Control/HackWindow" to="InteractableCharacter/InteractionWindow" method="mouse_on_button"]
-[connection signal="mouse_exited" from="InteractableCharacter/InteractionWindow/Control/HackWindow" to="InteractableCharacter/InteractionWindow" method="mouse_off_button"]
+[connection signal="mouse_entered" from="Old/InteractionWindow/Control/HackWindow" to="Old/InteractionWindow" method="mouse_on_button"]
+[connection signal="mouse_exited" from="Old/InteractionWindow/Control/HackWindow" to="Old/InteractionWindow" method="mouse_off_button"]
+[connection signal="mouse_entered" from="Yaga/InteractionWindow/Control/HackWindow" to="Yaga/InteractionWindow" method="mouse_on_button"]
+[connection signal="mouse_exited" from="Yaga/InteractionWindow/Control/HackWindow" to="Yaga/InteractionWindow" method="mouse_off_button"]
 
-[editable path="InteractableCharacter"]
-[editable path="InteractableCharacter/InteractionWindow"]
+[editable path="Old"]
+[editable path="Old/InteractionWindow"]
+[editable path="Yaga"]
+[editable path="Yaga/InteractionWindow"]

@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://br25d1sh2ckhx" path="res://scenes/TemplateEntity/Step_1.wav" id="4_agekm"]
 [ext_resource type="PackedScene" uid="uid://djvm4x8kkeqre" path="res://scenes/dialogues/dialogue_manager/dialogue_manager.tscn" id="5_afxss"]
 [ext_resource type="PackedScene" uid="uid://dr5jvrtte8k8t" path="res://scenes/dialogues/dialogue_box/text_bubble.tscn" id="6_jeuue"]
-[ext_resource type="Resource" uid="uid://bn6b042fasvms" path="res://scenes/dialogues/characters/player.tres" id="7_8lsqu"]
+[ext_resource type="Resource" path="res://scenes/dialogues/characters/player.tres" id="7_8lsqu"]
 
 [sub_resource type="Animation" id="Animation_k8fyg"]
 tracks/0/type = "value"
@@ -88,7 +88,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_ua1vt"]
 resource_name = "walk_left"
-length = 0.85
+length = 0.75
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -133,15 +133,15 @@ tracks/3/path = NodePath("AudioStreamPlayer2D:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.366667, 0.666667),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true, true, true]
+"values": [true, true]
 }
 
 [sub_resource type="Animation" id="Animation_airge"]
 resource_name = "walk_right"
-length = 0.85
+length = 0.75
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -186,10 +186,10 @@ tracks/3/path = NodePath("AudioStreamPlayer2D:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true, true, true]
+"values": [true, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e544i"]
@@ -210,7 +210,7 @@ audio_streams = Array[AudioStream]([ExtResource("4_agekm"), ExtResource("3_sl8sd
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_cjph3")
-hframes = 14
+hframes = 13
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_agekm")

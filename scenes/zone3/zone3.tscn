@@ -229,3 +229,4 @@ position = Vector2(960, 540)
 texture = ExtResource("4_6217p")
 
 [editable path="InteractableCharacter"]
+[editable path="InteractableCharacter/InteractionWindow"]

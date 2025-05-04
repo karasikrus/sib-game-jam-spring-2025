@@ -262,11 +262,10 @@ scale = Vector2(0.3, 0.3)
 
 [node name="Old" parent="." instance=ExtResource("2_0hinv")]
 position = Vector2(1311, 813)
-scale = Vector2(1.5, 1.5)
 hints_path = "res://scenes/old/old_hints.txt"
 animation_start_name = "old"
-riddle_text = "������� ������� ������������������?"
-riddle_answer = "����"
+riddle_text = "В честь какого региона назван шахматный дебют?"
+riddle_answer = "Сицилия"
 dialogue_options_block = ExtResource("3_hmlt1")
 
 [node name="Sprite2D" parent="Old" index="0"]
@@ -295,13 +294,13 @@ offset_bottom = 679.0
 z_index = 4
 dialogueCharacter = ExtResource("5_45gkq")
 
-[node name="Yaga" parent="." instance=ExtResource("2_0hinv")]
+[node name="Yaga" parent="." node_paths=PackedStringArray("nodes_to_unlock") instance=ExtResource("2_0hinv")]
 position = Vector2(681, 779)
-scale = Vector2(1.5, 1.5)
+nodes_to_unlock = [NodePath("../MovementNodes/NextSceneNode")]
 hints_path = "res://scenes/yaga/yaga_hints.txt"
 animation_start_name = "yaga"
-riddle_text = "���� �� (����, 1 ���) ���� �� ��"
-riddle_answer = "7 ���"
+riddle_text = "Когда у Бабы Яги день рождения?"
+riddle_answer = "7 апреля"
 dialogue_options_block = ExtResource("6_it4tm")
 
 [node name="Sprite2D" parent="Yaga" index="0"]
@@ -359,7 +358,6 @@ connected_nodes = [NodePath("../Node5")]
 [node name="Node4" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("7_hwune")]
 position = Vector2(1100, 789)
 connected_nodes = [NodePath("../NextSceneNode")]
-is_available = false
 
 [node name="Node5" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("7_hwune")]
 position = Vector2(1191, 924)
@@ -384,6 +382,11 @@ mouse_force_pass_scroll_events = false
 z_index = -3
 position = Vector2(960, 540)
 texture = ExtResource("10_0fc5g")
+
+[connection signal="mouse_entered" from="Old/InteractionWindow/Control/HackWindow" to="Old/InteractionWindow" method="mouse_on_button"]
+[connection signal="mouse_exited" from="Old/InteractionWindow/Control/HackWindow" to="Old/InteractionWindow" method="mouse_off_button"]
+[connection signal="mouse_entered" from="Yaga/InteractionWindow/Control/HackWindow" to="Yaga/InteractionWindow" method="mouse_on_button"]
+[connection signal="mouse_exited" from="Yaga/InteractionWindow/Control/HackWindow" to="Yaga/InteractionWindow" method="mouse_off_button"]
 
 [editable path="TemplateEntity"]
 [editable path="Old"]

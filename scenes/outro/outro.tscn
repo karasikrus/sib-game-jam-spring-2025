@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://bkqxpgwisxm0x"]
+[gd_scene load_steps=5 format=3 uid="uid://bkqxpgwisxm0x"]
+
+[ext_resource type="Script" path="res://scenes/outro/outro.gd" id="1_w4n57"]
+[ext_resource type="Texture2D" uid="uid://b56ib6need0ve" path="res://scenes/outro/outro1.PNG" id="2_wtu0y"]
+[ext_resource type="Texture2D" uid="uid://cb7ejpjoe63tv" path="res://scenes/outro/outro2.PNG" id="3_yl465"]
+[ext_resource type="Texture2D" uid="uid://crgd0kbv8mfoe" path="res://scenes/outro/outro3.PNG" id="4_pkrwc"]
 
 [node name="Outro" type="Node2D"]
+position = Vector2(960, 540)
+script = ExtResource("1_w4n57")
+intro_pictures = Array[Texture]([ExtResource("2_wtu0y"), ExtResource("3_yl465"), ExtResource("4_pkrwc")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

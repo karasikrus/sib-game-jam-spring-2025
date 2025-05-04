@@ -1,16 +1,16 @@
 [gd_scene load_steps=20 format=3 uid="uid://clb2cdbhem0da"]
 
-[ext_resource type="PackedScene" uid="uid://gujhtqt7mob6" path="res://scenes/TemplateEntity/TemplateEntity.tscn" id="1_opowa"]
-[ext_resource type="PackedScene" uid="uid://cwd8t1bdevga8" path="res://scenes/interactableCharacter/interactable_character.tscn" id="2_nhuae"]
-[ext_resource type="Resource" uid="uid://ssoi5seg8bmp" path="res://scenes/dialogues/lines/dialogues/goblin_dialogue/dialogue_options_block_goblin.tres" id="3_36xco"]
-[ext_resource type="Texture2D" uid="uid://bvhd04aau7irw" path="res://scenes/goblin/IdleGoblin.png" id="3_naa7t"]
-[ext_resource type="Resource" uid="uid://d26875kixq440" path="res://scenes/dialogues/characters/goblin/goblin.tres" id="4_gnlf7"]
-[ext_resource type="PackedScene" uid="uid://802678fmiy16" path="res://scenes/ui/ui_main.tscn" id="4_h8ar3"]
-[ext_resource type="Script" path="res://scenes/movementNode/movement_nodes.gd" id="5_6d6kl"]
-[ext_resource type="PackedScene" uid="uid://c2pwalittkt00" path="res://scenes/movementNode/movement_node.tscn" id="6_gysf3"]
-[ext_resource type="PackedScene" uid="uid://31awqwru7b70" path="res://scenes/movementNode/next_scene_node.tscn" id="7_hqwok"]
-[ext_resource type="Shader" path="res://scenes/postEffects/crtShader.gdshader" id="8_7upnx"]
-[ext_resource type="Texture2D" uid="uid://divp8assc4xcx" path="res://scenes/zone1/Zone1Background.PNG" id="9_4bwqq"]
+[ext_resource type="Shader" path="res://scenes/postEffects/crtShader.gdshader" id="1_1tu0n"]
+[ext_resource type="PackedScene" uid="uid://gujhtqt7mob6" path="res://scenes/TemplateEntity/TemplateEntity.tscn" id="1_khm5p"]
+[ext_resource type="PackedScene" uid="uid://cwd8t1bdevga8" path="res://scenes/interactableCharacter/interactable_character.tscn" id="2_qc3u2"]
+[ext_resource type="PackedScene" uid="uid://802678fmiy16" path="res://scenes/ui/ui_main.tscn" id="3_5jnvt"]
+[ext_resource type="Resource" uid="uid://ssoi5seg8bmp" path="res://scenes/dialogues/lines/dialogues/goblin_dialogue/dialogue_options_block_goblin.tres" id="3_bnpff"]
+[ext_resource type="Texture2D" uid="uid://bvhd04aau7irw" path="res://scenes/goblin/IdleGoblin.png" id="3_ikcd4"]
+[ext_resource type="Script" path="res://scenes/movementNode/movement_nodes.gd" id="4_fpsod"]
+[ext_resource type="Resource" uid="uid://d26875kixq440" path="res://scenes/dialogues/characters/goblin/goblin.tres" id="4_rdmax"]
+[ext_resource type="PackedScene" uid="uid://c2pwalittkt00" path="res://scenes/movementNode/movement_node.tscn" id="5_00614"]
+[ext_resource type="PackedScene" uid="uid://31awqwru7b70" path="res://scenes/movementNode/next_scene_node.tscn" id="5_v10l6"]
+[ext_resource type="Texture2D" uid="uid://divp8assc4xcx" path="res://scenes/zone1/Zone1Background.PNG" id="9_43j3j"]
 
 [sub_resource type="Animation" id="Animation_k8fyg"]
 loop_mode = 2
@@ -166,7 +166,7 @@ hints_path = "res://scenes/goblin/goblin_hints.txt"
 animation_start_name = "goblin"
 riddle_text = "Sosal?"
 riddle_answer = "Da"
-dialogue_options_block = ExtResource("3_36xco")
+dialogue_options_block = ExtResource("3_bnpff")
 
 [node name="Sprite2D" parent="InteractableCharacter" index="0"]
 scale = Vector2(0.2, 0.2)

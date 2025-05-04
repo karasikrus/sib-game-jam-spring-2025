@@ -5,3 +5,5 @@ class_name DialogueOptionsBlock
 @export var optionA : DialogueOption 
 @export var optionB : DialogueOption 
 @export var optionC : DialogueOption 
+
+@export var introDialogue : Dialogue

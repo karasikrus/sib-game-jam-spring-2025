@@ -19,8 +19,11 @@ func _ready() -> void:
 	dialog_options_box.option_exit.connect(play_option_exit)
 	
 
-func play_options_block(optionsBlock : DialogueOptionsBlock):
+func play_options_block(optionsBlock : DialogueOptionsBlock, playIntroLine : bool = false):
 	currentDialogueOptionsBlock = optionsBlock
+	if playIntroLine:
+		play_dialogue(optionsBlock.introDialogue)
+		return
 	dialog_options_box.setDialogueOptionsBlock(currentDialogueOptionsBlock)
 
 func play_option_a():

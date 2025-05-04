@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://clb2cdbhem0da"]
+[gd_scene load_steps=20 format=3 uid="uid://clb2cdbhem0da"]
 
 [ext_resource type="PackedScene" uid="uid://gujhtqt7mob6" path="res://scenes/TemplateEntity/TemplateEntity.tscn" id="1_opowa"]
 [ext_resource type="PackedScene" uid="uid://cwd8t1bdevga8" path="res://scenes/interactableCharacter/interactable_character.tscn" id="2_nhuae"]
+[ext_resource type="Resource" uid="uid://ssoi5seg8bmp" path="res://scenes/dialogues/lines/dialogues/goblin_dialogue/dialogue_options_block_goblin.tres" id="3_36xco"]
 [ext_resource type="Texture2D" uid="uid://bvhd04aau7irw" path="res://scenes/goblin/IdleGoblin.png" id="3_naa7t"]
 [ext_resource type="Resource" uid="uid://d26875kixq440" path="res://scenes/dialogues/characters/goblin/goblin.tres" id="4_gnlf7"]
 [ext_resource type="PackedScene" uid="uid://802678fmiy16" path="res://scenes/ui/ui_main.tscn" id="4_h8ar3"]
@@ -165,6 +166,7 @@ hints_path = "res://scenes/goblin/goblin_hints.txt"
 animation_start_name = "goblin"
 riddle_text = "Sosal?"
 riddle_answer = "Da"
+dialogue_options_block = ExtResource("3_36xco")
 
 [node name="Sprite2D" parent="InteractableCharacter" index="0"]
 scale = Vector2(0.2, 0.2)

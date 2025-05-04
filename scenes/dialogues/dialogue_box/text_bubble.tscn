@@ -4,6 +4,8 @@
 [ext_resource type="FontFile" uid="uid://4tm0c5wp0em8" path="res://scenes/dialogues/dialogue_box/PixelizerBold.ttf" id="1_ei55l"]
 
 [node name="TextBubble" type="MarginContainer"]
+z_index = 2
+z_as_relative = false
 custom_minimum_size = Vector2(400, 100)
 anchors_preset = 8
 anchor_left = 0.5

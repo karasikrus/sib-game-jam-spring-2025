@@ -549,15 +549,6 @@ z_index = -3
 position = Vector2(960, 540)
 texture = ExtResource("4_h50ea")
 
-[connection signal="mouse_entered" from="Wolf/InteractionWindow/Control/HackWindow" to="Wolf/InteractionWindow" method="mouse_on_button"]
-[connection signal="mouse_exited" from="Wolf/InteractionWindow/Control/HackWindow" to="Wolf/InteractionWindow" method="mouse_off_button"]
-[connection signal="mouse_entered" from="Mermaid/InteractionWindow/Control/HackWindow" to="Mermaid/InteractionWindow" method="mouse_on_button"]
-[connection signal="mouse_exited" from="Mermaid/InteractionWindow/Control/HackWindow" to="Mermaid/InteractionWindow" method="mouse_off_button"]
-[connection signal="mouse_entered" from="Trader/InteractionWindow/Control/HackWindow" to="Trader/InteractionWindow" method="mouse_on_button"]
-[connection signal="mouse_exited" from="Trader/InteractionWindow/Control/HackWindow" to="Trader/InteractionWindow" method="mouse_off_button"]
-[connection signal="mouse_entered" from="Policeman/InteractionWindow/Control/HackWindow" to="Policeman/InteractionWindow" method="mouse_on_button"]
-[connection signal="mouse_exited" from="Policeman/InteractionWindow/Control/HackWindow" to="Policeman/InteractionWindow" method="mouse_off_button"]
-
 [editable path="Wolf"]
 [editable path="Wolf/InteractionWindow"]
 [editable path="Mermaid"]

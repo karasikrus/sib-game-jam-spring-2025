@@ -254,7 +254,7 @@ position = Vector2(26, -21)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 top_level = true
-z_index = 1
+z_index = 10
 z_as_relative = false
 material = SubResource("ShaderMaterial_7g8ub")
 offset_right = 1920.0

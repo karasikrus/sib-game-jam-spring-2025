@@ -1,17 +1,18 @@
-[gd_scene load_steps=22 format=3 uid="uid://csnoy1ohmy0on"]
+[gd_scene load_steps=29 format=3 uid="uid://csnoy1ohmy0on"]
 
 [ext_resource type="PackedScene" uid="uid://gujhtqt7mob6" path="res://scenes/TemplateEntity/TemplateEntity.tscn" id="1_drnp0"]
 [ext_resource type="PackedScene" uid="uid://cwd8t1bdevga8" path="res://scenes/interactableCharacter/interactable_character.tscn" id="2_0hinv"]
 [ext_resource type="Resource" uid="uid://cudcwfhp8ki8e" path="res://scenes/dialogues/lines/dialogues/old/dialogue_options_block_old.tres" id="3_hmlt1"]
 [ext_resource type="PackedScene" uid="uid://31awqwru7b70" path="res://scenes/movementNode/next_scene_node.tscn" id="3_vmeko"]
-[ext_resource type="Texture2D" uid="uid://bvhd04aau7irw" path="res://scenes/goblin/IdleGoblin.png" id="3_vq5jx"]
+[ext_resource type="Texture2D" uid="uid://68r1elsp0f6p" path="res://scenes/old/old.png" id="4_cu5lb"]
 [ext_resource type="Shader" path="res://scenes/postEffects/crtShader.gdshader" id="5_2xfh0"]
-[ext_resource type="Resource" uid="uid://b7crui1rpispg" path="res://scenes/dialogues/characters/goblin/old.tres" id="5_45gkq"]
+[ext_resource type="Resource" path="res://scenes/dialogues/characters/goblin/old.tres" id="5_45gkq"]
 [ext_resource type="PackedScene" uid="uid://802678fmiy16" path="res://scenes/ui/ui_main.tscn" id="5_vv3x0"]
 [ext_resource type="Script" path="res://scenes/movementNode/movement_nodes.gd" id="6_5jw74"]
 [ext_resource type="Resource" uid="uid://dqpunyrygt06h" path="res://scenes/dialogues/lines/dialogues/yaga/dialogue_options_block_yaga.tres" id="6_it4tm"]
+[ext_resource type="Texture2D" uid="uid://8gb3ip5qb3ry" path="res://scenes/yaga/yaga.PNG" id="7_bxatq"]
 [ext_resource type="PackedScene" uid="uid://c2pwalittkt00" path="res://scenes/movementNode/movement_node.tscn" id="7_hwune"]
-[ext_resource type="Resource" uid="uid://dkww6tofs546i" path="res://scenes/dialogues/characters/goblin/yaga.tres" id="7_vsga5"]
+[ext_resource type="Resource" path="res://scenes/dialogues/characters/goblin/yaga.tres" id="7_vsga5"]
 [ext_resource type="Texture2D" uid="uid://bpb5ljdkwnwsw" path="res://scenes/zone3/Zone3Background.PNG" id="10_0fc5g"]
 
 [sub_resource type="Animation" id="Animation_k8fyg"]
@@ -39,6 +40,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Old/Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_cu5lb")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Old/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_8ay3b"]
@@ -140,6 +165,77 @@ _data = {
 "idle": SubResource("Animation_dcrll")
 }
 
+[sub_resource type="Animation" id="Animation_5vny1"]
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x7sox"]
+_data = {
+"idle": SubResource("Animation_5vny1")
+}
+
+[sub_resource type="Animation" id="Animation_31bi1"]
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Old/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_cu5lb")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Old/Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_npwm2"]
+_data = {
+"idle": SubResource("Animation_31bi1")
+}
+
+[sub_resource type="Animation" id="Animation_5ts3u"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n80m4"]
+_data = {
+"idle": SubResource("Animation_5ts3u")
+}
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7g8ub"]
 shader = ExtResource("5_2xfh0")
 shader_parameter/res = Vector2(1440, 720)
@@ -161,24 +257,29 @@ position = Vector2(221, 950)
 movement_nodes = NodePath("../MovementNodes")
 starting_node = NodePath("../MovementNodes/Node2")
 
+[node name="Sprite2D" parent="TemplateEntity" index="0"]
+scale = Vector2(0.3, 0.3)
+
 [node name="Old" parent="." instance=ExtResource("2_0hinv")]
 position = Vector2(1311, 813)
+scale = Vector2(1.5, 1.5)
 hints_path = "res://scenes/old/old_hints.txt"
 animation_start_name = "old"
-riddle_text = "В честь какого региона назван шахматный дебют разыгранный в партии?"
-riddle_answer = "Сицилия"
+riddle_text = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ?"
+riddle_answer = "пїЅпїЅпїЅпїЅ"
 dialogue_options_block = ExtResource("3_hmlt1")
 
 [node name="Sprite2D" parent="Old" index="0"]
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_vq5jx")
-hframes = 9
+texture = ExtResource("4_cu5lb")
+hframes = 22
 vframes = 1
 
 [node name="AnimationPlayer" parent="Old" index="2"]
 libraries = {
 "": SubResource("AnimationLibrary_e544i"),
-"goblin": SubResource("AnimationLibrary_ywauo")
+"goblin": SubResource("AnimationLibrary_ywauo"),
+"old": SubResource("AnimationLibrary_x7sox")
 }
 
 [node name="InteractionWindow" parent="Old" index="6"]
@@ -191,27 +292,38 @@ offset_right = 1101.0
 offset_bottom = 679.0
 
 [node name="TextBubble" parent="Old" index="7"]
+z_index = 4
+z_as_relative = false
 dialogueCharacter = ExtResource("5_45gkq")
 
 [node name="Yaga" parent="." instance=ExtResource("2_0hinv")]
 position = Vector2(681, 779)
+scale = Vector2(1.5, 1.5)
 hints_path = "res://scenes/yaga/yaga_hints.txt"
 animation_start_name = "yaga"
-riddle_text = "В какую дату (например, 1 апреля) родилась Баба Яга?"
-riddle_answer = "7 апреля"
+riddle_text = "пїЅпїЅпїЅпїЅ пїЅпїЅ (пїЅпїЅпїЅпїЅ, 1 пїЅпїЅпїЅ) пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅ"
+riddle_answer = "7 пїЅпїЅпїЅ"
 dialogue_options_block = ExtResource("6_it4tm")
 
 [node name="Sprite2D" parent="Yaga" index="0"]
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_vq5jx")
-hframes = 9
+texture = ExtResource("7_bxatq")
+hframes = 1
 vframes = 1
 
 [node name="AnimationPlayer" parent="Yaga" index="2"]
 libraries = {
 "": SubResource("AnimationLibrary_e544i"),
-"goblin": SubResource("AnimationLibrary_ywauo")
+"goblin": SubResource("AnimationLibrary_ywauo"),
+"old": SubResource("AnimationLibrary_npwm2"),
+"yaga": SubResource("AnimationLibrary_n80m4")
 }
+
+[node name="CollisionShape2D" parent="Yaga/InteractionArea" index="0"]
+position = Vector2(8, 0.5)
+
+[node name="InteractionWindow" parent="Yaga" index="6"]
+visible = false
 
 [node name="Control" parent="Yaga/InteractionWindow/Control" index="0"]
 offset_top = 268.0
@@ -274,11 +386,7 @@ z_index = -3
 position = Vector2(960, 540)
 texture = ExtResource("10_0fc5g")
 
-[connection signal="mouse_entered" from="Old/InteractionWindow/Control/HackWindow" to="Old/InteractionWindow" method="mouse_on_button"]
-[connection signal="mouse_exited" from="Old/InteractionWindow/Control/HackWindow" to="Old/InteractionWindow" method="mouse_off_button"]
-[connection signal="mouse_entered" from="Yaga/InteractionWindow/Control/HackWindow" to="Yaga/InteractionWindow" method="mouse_on_button"]
-[connection signal="mouse_exited" from="Yaga/InteractionWindow/Control/HackWindow" to="Yaga/InteractionWindow" method="mouse_off_button"]
-
+[editable path="TemplateEntity"]
 [editable path="Old"]
 [editable path="Old/InteractionWindow"]
 [editable path="Yaga"]

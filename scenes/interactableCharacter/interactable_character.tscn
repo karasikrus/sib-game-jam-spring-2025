@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://cwd8t1bdevga8"]
+[gd_scene load_steps=16 format=3 uid="uid://cwd8t1bdevga8"]
 
 [ext_resource type="Script" path="res://scenes/interactableCharacter/interactable_character.gd" id="1_hargx"]
 [ext_resource type="Shader" path="res://scenes/interactableCharacter/interactable_character.gdshader" id="2_1cv0v"]
 [ext_resource type="Resource" uid="uid://d2i6ttn8v5bgn" path="res://scenes/dialogues/lines/dialogues/test_dialogue/dialogue_options_block_test.tres" id="2_ki524"]
 [ext_resource type="AudioStream" uid="uid://r6oou2c8mf3j" path="res://scenes/TemplateEntity/idle.mp3" id="3_7o5le"]
 [ext_resource type="PackedScene" uid="uid://dhraaqfxt8rpw" path="res://scenes/interactableCharacter/InteractionWindow.tscn" id="5_ipwex"]
+[ext_resource type="PackedScene" uid="uid://dr5jvrtte8k8t" path="res://scenes/dialogues/dialogue_box/text_bubble.tscn" id="6_7y322"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k0vd5"]
 shader = ExtResource("2_1cv0v")
@@ -178,6 +179,12 @@ offset_bottom = -407.0
 grow_horizontal = 1
 grow_vertical = 1
 interactable_character = NodePath("..")
+
+[node name="TextBubble" parent="." instance=ExtResource("6_7y322")]
+offset_left = -498.0
+offset_top = -156.0
+offset_right = 542.0
+offset_bottom = -56.0
 
 [connection signal="mouse_entered" from="InteractionArea" to="." method="set_mouse_on_object"]
 [connection signal="mouse_exited" from="InteractionArea" to="." method="set_mouse_off_object"]

@@ -111,6 +111,8 @@ func start_dialogue():
 	dialogue_manager.dialogue_ended.connect(on_dialogue_end)
 
 func on_dialogue_end():
+	StateManager.currentState = StateManager.GlobalStates.RUNNING
+	interaction_state = INTERACTION_STATE.IDLE
 	pass
 
 #region Animations

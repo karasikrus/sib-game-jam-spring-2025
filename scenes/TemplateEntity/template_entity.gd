@@ -36,7 +36,7 @@ func _ready() -> void:
 func _input(event):
 	if StateManager.currentState == StateManager.GlobalStates.FREEZED:
 		return
-	if event is InputEventMouseButton and !StateManager.isMouseHighlightingObject:
+	if event is InputEventMouseButton and !StateManager.isMouseHighlightingObject and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 		if movement_timer.time_left > 0 or !next_nodes.is_empty():
 			return
 		var closest_node_to_click = movement_nodes.get_closest_available_node_to_position(get_global_mouse_position())

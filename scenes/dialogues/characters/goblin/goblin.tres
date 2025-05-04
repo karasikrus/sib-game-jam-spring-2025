@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueCharacter" load_steps=2 format=3 uid="uid://d26875kixq440"]
+
+[ext_resource type="Script" path="res://scenes/dialogues/characters/dialogue_character.gd" id="1_fecey"]
+
+[resource]
+script = ExtResource("1_fecey")
+id = "goblin"
+visibleName = ""
+textColor = Color(0.473766, 0.781778, 0.419041, 1)

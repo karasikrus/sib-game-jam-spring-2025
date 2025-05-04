@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://4bf730gsmxuy"]
+
+[ext_resource type="PackedScene" uid="uid://gujhtqt7mob6" path="res://scenes/TemplateEntity/TemplateEntity.tscn" id="1_6fnvg"]
+[ext_resource type="PackedScene" uid="uid://da7kgewmb2aww" path="res://scenes/movementNode/movement_nodes.tscn" id="2_i6dk1"]
+[ext_resource type="PackedScene" uid="uid://31awqwru7b70" path="res://scenes/movementNode/next_scene_node.tscn" id="3_52yfr"]
+[ext_resource type="Texture2D" uid="uid://dgyijha4xrn6f" path="res://scenes/zone2/Zone2Background.PNG" id="4_h50ea"]
+[ext_resource type="Shader" path="res://scenes/postEffects/crtShader.gdshader" id="5_y0qmb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_16tbg"]
+shader = ExtResource("5_y0qmb")
+shader_parameter/res = Vector2(1440, 720)
+shader_parameter/mask_type = 0
+shader_parameter/bloom_type = 0
+shader_parameter/hardScan = -1.57
+shader_parameter/hardPix = -1.682
+shader_parameter/hardBloomScan = -0.965
+shader_parameter/hardBloomPix = -1.5
+shader_parameter/bloomAmount = 16.0
+shader_parameter/warp = Vector2(64, 24)
+shader_parameter/maskDark = 0.5
+shader_parameter/maskLight = 1.5
+
+[node name="Zone2" type="Node2D"]
+
+[node name="TemplateEntity" parent="." node_paths=PackedStringArray("movement_nodes", "starting_node") instance=ExtResource("1_6fnvg")]
+position = Vector2(61, 76)
+movement_nodes = NodePath("../MovementNodes")
+starting_node = NodePath("../MovementNodes/Node5")
+
+[node name="MovementNodes" parent="." instance=ExtResource("2_i6dk1")]
+
+[node name="Node0" parent="MovementNodes" index="0" node_paths=PackedStringArray("connected_nodes")]
+position = Vector2(1242, 444)
+connected_nodes = [NodePath("../Node4"), NodePath("../Node1")]
+
+[node name="Node1" parent="MovementNodes" index="1" node_paths=PackedStringArray("connected_nodes")]
+position = Vector2(1125, 730)
+connected_nodes = [NodePath("../Node0"), NodePath("../Node2"), NodePath("../NextSceneNode")]
+
+[node name="Node2" parent="MovementNodes" index="2" node_paths=PackedStringArray("connected_nodes")]
+position = Vector2(683, 753)
+connected_nodes = [NodePath("../Node3"), NodePath("../Node5")]
+
+[node name="Node3" parent="MovementNodes" index="3"]
+position = Vector2(475, 556)
+
+[node name="Node4" parent="MovementNodes" index="4" node_paths=PackedStringArray("connected_nodes")]
+position = Vector2(846, 261)
+connected_nodes = [NodePath("../Node0"), NodePath("../Node3")]
+
+[node name="Node5" parent="MovementNodes" index="5" node_paths=PackedStringArray("connected_nodes")]
+position = Vector2(697, 895)
+connected_nodes = [NodePath("../Node2")]
+
+[node name="NextSceneNode" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("3_52yfr")]
+position = Vector2(1237, 867)
+connected_nodes = [NodePath("../Node1")]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(960, 540)
+texture = ExtResource("4_h50ea")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+top_level = true
+z_index = 1
+z_as_relative = false
+material = SubResource("ShaderMaterial_16tbg")
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+
+[editable path="MovementNodes"]

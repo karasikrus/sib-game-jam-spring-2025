@@ -427,13 +427,6 @@ z_index = -3
 position = Vector2(960, 540)
 texture = ExtResource("10_0fc5g")
 
-[connection signal="mouse_entered" from="Old/InteractionWindow/Control/HackWindow" to="Old/InteractionWindow" method="mouse_on_button"]
-[connection signal="mouse_exited" from="Old/InteractionWindow/Control/HackWindow" to="Old/InteractionWindow" method="mouse_off_button"]
-[connection signal="mouse_entered" from="Yaga/InteractionWindow/Control/HackWindow" to="Yaga/InteractionWindow" method="mouse_on_button"]
-[connection signal="mouse_exited" from="Yaga/InteractionWindow/Control/HackWindow" to="Yaga/InteractionWindow" method="mouse_off_button"]
-[connection signal="mouse_entered" from="Chest/InteractionWindow/Control/HackWindow" to="Chest/InteractionWindow" method="mouse_on_button"]
-[connection signal="mouse_exited" from="Chest/InteractionWindow/Control/HackWindow" to="Chest/InteractionWindow" method="mouse_off_button"]
-
 [editable path="TemplateEntity"]
 [editable path="Old"]
 [editable path="Old/InteractionWindow"]

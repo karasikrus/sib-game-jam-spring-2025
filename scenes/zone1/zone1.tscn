@@ -219,6 +219,7 @@ visible = false
 
 [node name="MovementNodes" type="Node2D" parent="."]
 script = ExtResource("4_fpsod")
+is_debug_draw = false
 
 [node name="Node0" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("5_00614")]
 position = Vector2(736, 627)

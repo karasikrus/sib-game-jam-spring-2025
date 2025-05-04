@@ -12,8 +12,8 @@ var scene_list = [
 	"res://scenes/zone1/zone1.tscn",
 	"res://scenes/zone2/zone2.tscn",
 	"res://scenes/zone3/zone3.tscn",
+	"res://scenes/outro/outro.tscn",
 	"res://scenes/main/main.tscn",
-	
 ]
 
 func reload_scene():

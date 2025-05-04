@@ -164,8 +164,8 @@ position = Vector2(823, 505)
 nodes_to_unlock = [NodePath("../MovementNodes/Node4"), NodePath("../MovementNodes/NextSceneNode")]
 hints_path = "res://scenes/goblin/goblin_hints.txt"
 animation_start_name = "goblin"
-riddle_text = "Sosal?"
-riddle_answer = "Da"
+riddle_text = "Как называется блюдо, которое хочет тролль?"
+riddle_answer = "Юлекаке"
 dialogue_options_block = ExtResource("3_bnpff")
 
 [node name="Sprite2D" parent="InteractableCharacter" index="0"]

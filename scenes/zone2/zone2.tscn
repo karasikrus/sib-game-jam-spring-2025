@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bd7u4pu58ku2g"]
+[gd_scene load_steps=36 format=3 uid="uid://bd7u4pu58ku2g"]
 
 [ext_resource type="PackedScene" uid="uid://gujhtqt7mob6" path="res://scenes/TemplateEntity/TemplateEntity.tscn" id="1_ppwhq"]
 [ext_resource type="PackedScene" uid="uid://cwd8t1bdevga8" path="res://scenes/interactableCharacter/interactable_character.tscn" id="2_1civm"]
@@ -6,16 +6,18 @@
 [ext_resource type="Resource" uid="uid://duml2n86rraw2" path="res://scenes/dialogues/lines/dialogues/wolf/dialogue_options_block_wolf.tres" id="3_w3uof"]
 [ext_resource type="Texture2D" uid="uid://dl14je0umglth" path="res://scenes/zone2/Zone2Background.PNG" id="4_h50ea"]
 [ext_resource type="PackedScene" uid="uid://802678fmiy16" path="res://scenes/ui/ui_main.tscn" id="5_svl0o"]
-[ext_resource type="Resource" path="res://scenes/dialogues/characters/goblin/wolf.tres" id="5_yl756"]
+[ext_resource type="Resource" uid="uid://uoyn0vuv0tjg" path="res://scenes/dialogues/characters/goblin/wolf.tres" id="5_yl756"]
 [ext_resource type="Resource" uid="uid://fssfronf772f" path="res://scenes/dialogues/lines/dialogues/mermaid/dialogue_options_block_mermaid.tres" id="6_oglhk"]
 [ext_resource type="Script" path="res://scenes/movementNode/movement_nodes.gd" id="6_r2jmf"]
-[ext_resource type="Resource" path="res://scenes/dialogues/characters/goblin/mermaid.tres" id="7_7b6g8"]
+[ext_resource type="Resource" uid="uid://dfkne0vmbfblw" path="res://scenes/dialogues/characters/goblin/mermaid.tres" id="7_7b6g8"]
 [ext_resource type="PackedScene" uid="uid://c2pwalittkt00" path="res://scenes/movementNode/movement_node.tscn" id="7_iyfop"]
 [ext_resource type="Texture2D" uid="uid://c8h1k40ybuc41" path="res://scenes/mermaid/mermaid.png" id="7_t3rwo"]
 [ext_resource type="PackedScene" uid="uid://31awqwru7b70" path="res://scenes/movementNode/next_scene_node.tscn" id="8_yhxay"]
+[ext_resource type="Resource" uid="uid://db6d05aufton1" path="res://scenes/dialogues/lines/dialogues/merchant/dialogue_options_block_merchant.tres" id="9_2f433"]
 [ext_resource type="Texture2D" uid="uid://c7ty07gr10w2d" path="res://scenes/traider/Trader.PNG" id="9_qf670"]
 [ext_resource type="Shader" path="res://scenes/postEffects/crtShader.gdshader" id="9_tmxc1"]
 [ext_resource type="Texture2D" uid="uid://cbw25i0tdnce4" path="res://scenes/policeman/policeman.PNG" id="10_gdnw4"]
+[ext_resource type="Resource" uid="uid://dha1cigd8phuv" path="res://scenes/dialogues/characters/goblin/merchant.tres" id="11_6g4oj"]
 
 [sub_resource type="Animation" id="Animation_k8fyg"]
 length = 0.6
@@ -340,8 +342,8 @@ dialogueCharacter = ExtResource("5_yl756")
 [node name="Mermaid" parent="." instance=ExtResource("2_1civm")]
 z_index = -1
 z_as_relative = false
-position = Vector2(1363, 927)
-hints_path = "res://scenes/wolf/wolf_hints.txt"
+position = Vector2(1383, 958)
+hints_path = "res://scenes/mermaid/mermaid_hints.txt"
 animation_start_name = "mermaid"
 riddle_text = "Как зовут автора книги, которую читала русалка?"
 riddle_answer = "Гомер"
@@ -383,10 +385,10 @@ offset_right = 1503.0
 offset_bottom = 875.0
 
 [node name="HackWindow" parent="Mermaid/InteractionWindow/Control" index="1"]
-offset_left = -79.0
-offset_top = -3.0
-offset_right = 1841.0
-offset_bottom = 1077.0
+offset_left = -24.0
+offset_top = -29.0
+offset_right = 1896.0
+offset_bottom = 1051.0
 
 [node name="TextBubble" parent="Mermaid" index="7"]
 dialogueCharacter = ExtResource("7_7b6g8")
@@ -395,11 +397,11 @@ dialogueCharacter = ExtResource("7_7b6g8")
 z_index = -1
 z_as_relative = false
 position = Vector2(400, 500)
-hints_path = "res://scenes/wolf/wolf_hints.txt"
+hints_path = "res://scenes/traider/trader_hints.txt"
 animation_start_name = "trader"
-riddle_text = "Как сейчас называется город персонажа?"
+riddle_text = "Как в современности называется город торговца?"
 riddle_answer = "Киото"
-dialogue_options_block = ExtResource("6_oglhk")
+dialogue_options_block = ExtResource("9_2f433")
 random_idle_value = 1.7
 
 [node name="Sprite2D" parent="Trader" index="0"]
@@ -438,14 +440,13 @@ offset_right = 548.0
 offset_bottom = 433.0
 
 [node name="HackWindow" parent="Trader/InteractionWindow/Control" index="1"]
-visible = false
 offset_left = -79.0
 offset_top = -3.0
 offset_right = 1841.0
 offset_bottom = 1077.0
 
 [node name="TextBubble" parent="Trader" index="7"]
-dialogueCharacter = ExtResource("7_7b6g8")
+dialogueCharacter = ExtResource("11_6g4oj")
 
 [node name="Policeman" parent="." instance=ExtResource("2_1civm")]
 z_index = -1
@@ -548,15 +549,6 @@ mouse_force_pass_scroll_events = false
 z_index = -3
 position = Vector2(960, 540)
 texture = ExtResource("4_h50ea")
-
-[connection signal="mouse_entered" from="Wolf/InteractionWindow/Control/HackWindow" to="Wolf/InteractionWindow" method="mouse_on_button"]
-[connection signal="mouse_exited" from="Wolf/InteractionWindow/Control/HackWindow" to="Wolf/InteractionWindow" method="mouse_off_button"]
-[connection signal="mouse_entered" from="Mermaid/InteractionWindow/Control/HackWindow" to="Mermaid/InteractionWindow" method="mouse_on_button"]
-[connection signal="mouse_exited" from="Mermaid/InteractionWindow/Control/HackWindow" to="Mermaid/InteractionWindow" method="mouse_off_button"]
-[connection signal="mouse_entered" from="Trader/InteractionWindow/Control/HackWindow" to="Trader/InteractionWindow" method="mouse_on_button"]
-[connection signal="mouse_exited" from="Trader/InteractionWindow/Control/HackWindow" to="Trader/InteractionWindow" method="mouse_off_button"]
-[connection signal="mouse_entered" from="Policeman/InteractionWindow/Control/HackWindow" to="Policeman/InteractionWindow" method="mouse_on_button"]
-[connection signal="mouse_exited" from="Policeman/InteractionWindow/Control/HackWindow" to="Policeman/InteractionWindow" method="mouse_off_button"]
 
 [editable path="Wolf"]
 [editable path="Wolf/InteractionWindow"]

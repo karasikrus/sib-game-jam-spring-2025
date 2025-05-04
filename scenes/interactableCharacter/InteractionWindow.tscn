@@ -149,6 +149,8 @@ stream = ExtResource("4_77a11")
 
 [node name="AudioPlayerForTips" type="AudioStreamPlayer" parent="Control/HackWindow"]
 
+[node name="AudioPlayerHintsRequest" type="AudioStreamPlayer" parent="Control/HackWindow"]
+
 [node name="TalkWindow" type="Control" parent="Control"]
 visible = false
 anchors_preset = 0

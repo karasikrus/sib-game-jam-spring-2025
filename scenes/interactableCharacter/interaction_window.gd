@@ -42,12 +42,17 @@ var audio_names = [
 	"WrongAnswer",
 ]
 
+
 @onready var audio_player : AudioStreamPlayer =$Control/HackWindow/AudioPlayer 
+@onready var audio_player_for_hint_request : AudioStreamPlayer = $Control/HackWindow/AudioPlayerHintsRequest
 @onready var audio_player_for_tip : AudioStreamPlayer = $Control/HackWindow/AudioPlayerForTips #second one as we can recieve tip and get sound of counter increment at the same time
 
 @onready var hint_appearance_timer = $Control/HackWindow/Node2D/HintAppearanceTimer
 @onready var idle_input_timer = $Control/HackWindow/Node2D/IdleInputSymbolTimer
 @onready var is_input_symbol_rendered = false
+
+
+
 func hide_talk_hack_buttons():
 	hack_button.visible = false
 	talk_button.visible = false
@@ -120,6 +125,13 @@ func play_sound_for_tip(state : AUDIO_STATE):
 	audio_player_for_tip.stream = audio_streams[state]
 	audio_player_for_tip.play()
 
+@export var pitchScaleMax = 2
+func play_sound_for_hint_request(state : AUDIO_STATE):
+	audio_player_for_hint_request.stream = audio_streams[state]
+	var progress = float(interactable_character.current_click_count) / interactable_character.hints_number_clicks[interactable_character.current_hint]
+	audio_player_for_hint_request.pitch_scale = lerp(1, pitchScaleMax, progress)
+	audio_player_for_hint_request.play()
+
 func pressed_hacked():
 	(hack_button as TextureButton).scale = Vector2(0.95, 0.95)
 	interactable_character.interaction_state = InteractableCharacter.INTERACTION_STATE.PRESSED_HACK
@@ -184,7 +196,7 @@ func request_more_hints() -> void:
 		play_sound_for_tip(AUDIO_STATE.HACK_TIPS_ARE_OVER)
 		return
 	interactable_character.current_click_count += 1
-	play_sound(AUDIO_STATE.HACK_WINDOW_HELPER_CLICK)
+	play_sound_for_hint_request(AUDIO_STATE.HACK_WINDOW_HELPER_CLICK)
 	if interactable_character.hints_number_clicks[current_hint_index] == interactable_character.current_click_count:
 		current_hint_index += 1
 		interactable_character.current_click_count = 0

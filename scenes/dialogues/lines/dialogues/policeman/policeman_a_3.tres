@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://ci1yne4sqidlr"]
+
+[ext_resource type="Resource" uid="uid://mp742ualwx1l" path="res://scenes/dialogues/characters/goblin/policeman.tres" id="1_s7fiy"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_tv8bb"]
+
+[resource]
+script = ExtResource("2_tv8bb")
+character = ExtResource("1_s7fiy")
+text = "Приходилось когда-нибудь писать секретные [i]записки[/i]? Мне - да. Удовольствие сомнительное. "
+timerLengthSec = 3.0

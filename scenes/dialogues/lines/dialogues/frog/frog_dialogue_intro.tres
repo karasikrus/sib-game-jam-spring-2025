@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=4 format=3 uid="uid://bj8a3hl73wmxo"]
+
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="1_qsqgj"]
+[ext_resource type="Resource" uid="uid://cim8s8rdo87hi" path="res://scenes/dialogues/lines/dialogues/frog/frog_intro.tres" id="2_82ppp"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue.gd" id="4_wclya"]
+
+[resource]
+script = ExtResource("4_wclya")
+lines = Array[ExtResource("1_qsqgj")]([ExtResource("2_82ppp")])

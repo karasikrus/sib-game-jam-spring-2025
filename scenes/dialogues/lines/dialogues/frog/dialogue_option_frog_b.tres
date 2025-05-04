@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueOption" load_steps=3 format=3 uid="uid://jt6pjpuirdnq"]
+
+[ext_resource type="Resource" uid="uid://cy4xykjj4ip61" path="res://scenes/dialogues/lines/dialogues/frog/frog_dialogue_b.tres" id="1_0v0us"]
+[ext_resource type="Script" path="res://scenes/dialogues/dialogue_options/dialogue_option_resorce.gd" id="2_5t4jk"]
+
+[resource]
+script = ExtResource("2_5t4jk")
+optionText = "Узнать про кого-то еще"
+dialogue = ExtResource("1_0v0us")

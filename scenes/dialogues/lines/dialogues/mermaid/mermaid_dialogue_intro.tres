@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=4 format=3 uid="uid://bekb1oql4argu"]
+
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="1_7iifv"]
+[ext_resource type="Resource" uid="uid://bpuboghs6s1qu" path="res://scenes/dialogues/lines/dialogues/mermaid/mermaid_intro.tres" id="2_6nks4"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue.gd" id="3_m1ywp"]
+
+[resource]
+script = ExtResource("3_m1ywp")
+lines = Array[ExtResource("1_7iifv")]([ExtResource("2_6nks4")])

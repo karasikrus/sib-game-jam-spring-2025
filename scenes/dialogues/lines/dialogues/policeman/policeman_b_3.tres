@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://7eev2l5a1r5g"]
+
+[ext_resource type="Resource" uid="uid://mp742ualwx1l" path="res://scenes/dialogues/characters/goblin/policeman.tres" id="1_4e7h6"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_o2s8n"]
+
+[resource]
+script = ExtResource("2_o2s8n")
+character = ExtResource("1_4e7h6")
+text = "Например, тот торговец всё время предлагает своё кимчи. Говорит, мол, не хуже любой еды из [i]страны восходящего солнца[/i]."
+timerLengthSec = 3.0

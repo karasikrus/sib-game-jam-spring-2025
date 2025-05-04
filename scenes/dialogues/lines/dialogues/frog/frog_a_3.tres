@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://mcshl3ogv5gg"]
+
+[ext_resource type="Resource" uid="uid://be6di515l6cqj" path="res://scenes/dialogues/characters/goblin/frog.tres" id="1_pm55p"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_y1835"]
+
+[resource]
+script = ExtResource("2_y1835")
+character = ExtResource("1_pm55p")
+text = "Иногда вещи прячут в самом [i]очевидном месте[/i]. Вспомните мой лучший рекламный слоган - “[i]Просто соедините всё по цветам радуги на вашем мониторе![/i]”. И тогда смысл появится."
+timerLengthSec = 7.0

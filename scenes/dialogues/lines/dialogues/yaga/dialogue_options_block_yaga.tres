@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DialogueOptionsBlock" load_steps=6 format=3 uid="uid://dqpunyrygt06h"]
+
+[ext_resource type="Resource" uid="uid://cv7dxwwq36oul" path="res://scenes/dialogues/lines/dialogues/yaga/yaga_dialogue_intro.tres" id="1_wavp1"]
+[ext_resource type="Resource" uid="uid://ddfrka8px8k70" path="res://scenes/dialogues/lines/dialogues/yaga/dialogue_option_yaga_a.tres" id="2_dfuip"]
+[ext_resource type="Resource" uid="uid://tddnq3r77k1l" path="res://scenes/dialogues/lines/dialogues/yaga/dialogue_option_yaga_b.tres" id="3_8k6ac"]
+[ext_resource type="Resource" uid="uid://cgxwb5wm073ks" path="res://scenes/dialogues/lines/dialogues/exit_dialogue/dialogue_option_exit.tres" id="4_tqvxo"]
+[ext_resource type="Script" path="res://scenes/dialogues/dialogue_options/dialogue_options_block.gd" id="5_8ngt0"]
+
+[resource]
+script = ExtResource("5_8ngt0")
+optionExit = ExtResource("4_tqvxo")
+optionA = ExtResource("2_dfuip")
+optionB = ExtResource("3_8k6ac")
+introDialogue = ExtResource("1_wavp1")

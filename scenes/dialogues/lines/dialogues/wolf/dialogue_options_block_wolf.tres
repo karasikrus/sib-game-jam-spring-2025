@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DialogueOptionsBlock" load_steps=6 format=3 uid="uid://duml2n86rraw2"]
+
+[ext_resource type="Resource" uid="uid://c3107hufhqxnu" path="res://scenes/dialogues/lines/dialogues/wolf/wolf_dialogue_intro.tres" id="1_go11e"]
+[ext_resource type="Resource" uid="uid://dqfhnjhl67n2x" path="res://scenes/dialogues/lines/dialogues/wolf/dialogue_option_wolf_a.tres" id="2_xxrtx"]
+[ext_resource type="Resource" uid="uid://cegkmbqt7rw3s" path="res://scenes/dialogues/lines/dialogues/wolf/dialogue_option_wolf_b.tres" id="3_a0ugh"]
+[ext_resource type="Resource" uid="uid://cgxwb5wm073ks" path="res://scenes/dialogues/lines/dialogues/exit_dialogue/dialogue_option_exit.tres" id="4_4qhix"]
+[ext_resource type="Script" path="res://scenes/dialogues/dialogue_options/dialogue_options_block.gd" id="5_v8b43"]
+
+[resource]
+script = ExtResource("5_v8b43")
+optionExit = ExtResource("4_4qhix")
+optionA = ExtResource("2_xxrtx")
+optionB = ExtResource("3_a0ugh")
+introDialogue = ExtResource("1_go11e")

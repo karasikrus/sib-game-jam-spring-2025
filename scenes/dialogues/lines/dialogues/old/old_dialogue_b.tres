@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=8 format=3 uid="uid://deatf1iuspkte"]
+
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="1_xjkmg"]
+[ext_resource type="Resource" uid="uid://b8pkvq0846486" path="res://scenes/dialogues/lines/dialogues/old/old_b_1.tres" id="2_m47sg"]
+[ext_resource type="Resource" uid="uid://4m0iw5y0k0ad" path="res://scenes/dialogues/lines/dialogues/old/old_b_2.tres" id="3_1khq1"]
+[ext_resource type="Resource" uid="uid://c7v04k5c0stae" path="res://scenes/dialogues/lines/dialogues/old/old_b_3.tres" id="4_ps25w"]
+[ext_resource type="Resource" uid="uid://c8kvopbdqowsr" path="res://scenes/dialogues/lines/dialogues/old/old_b_4.tres" id="5_r2jfy"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue.gd" id="6_5h4mu"]
+[ext_resource type="Resource" uid="uid://b0dcikobeexei" path="res://scenes/dialogues/lines/dialogues/old/old_b_5.tres" id="6_85qmf"]
+
+[resource]
+script = ExtResource("6_5h4mu")
+lines = Array[ExtResource("1_xjkmg")]([ExtResource("2_m47sg"), ExtResource("3_1khq1"), ExtResource("4_ps25w"), ExtResource("5_r2jfy"), ExtResource("6_85qmf")])

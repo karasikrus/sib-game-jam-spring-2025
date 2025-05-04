@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=6 format=3 uid="uid://cy4xykjj4ip61"]
+
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="1_k27vg"]
+[ext_resource type="Resource" uid="uid://cdikpq0bqmjhx" path="res://scenes/dialogues/lines/dialogues/frog/frog_b_1.tres" id="2_gotnq"]
+[ext_resource type="Resource" uid="uid://kifsksb17cox" path="res://scenes/dialogues/lines/dialogues/frog/frog_b_2.tres" id="3_m801n"]
+[ext_resource type="Resource" uid="uid://dfvmbrjl2jv8p" path="res://scenes/dialogues/lines/dialogues/frog/frog_b_3.tres" id="4_14m0q"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue.gd" id="8_sp84b"]
+
+[resource]
+script = ExtResource("8_sp84b")
+lines = Array[ExtResource("1_k27vg")]([ExtResource("2_gotnq"), ExtResource("3_m801n"), ExtResource("4_14m0q")])

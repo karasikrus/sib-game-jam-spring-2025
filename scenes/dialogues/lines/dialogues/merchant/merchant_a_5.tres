@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://c3c5wsf8nwg25"]
+
+[ext_resource type="Resource" uid="uid://dha1cigd8phuv" path="res://scenes/dialogues/characters/goblin/merchant.tres" id="1_4vnn0"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_tyhhq"]
+
+[resource]
+script = ExtResource("2_tyhhq")
+character = ExtResource("1_4vnn0")
+text = "Но пока живем так. Может, вам что-нибудь подсказать?"
+timerLengthSec = 3.0

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://t0pp85pft54x"]
+
+[ext_resource type="Resource" uid="uid://dfkne0vmbfblw" path="res://scenes/dialogues/characters/goblin/mermaid.tres" id="1_i0sn2"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_xk28f"]
+
+[resource]
+script = ExtResource("2_xk28f")
+character = ExtResource("1_i0sn2")
+text = "Вы бы видели его выражение лица!"
+timerLengthSec = 3.0

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://ce1rq2op4h4ux"]
+
+[ext_resource type="Resource" uid="uid://uoyn0vuv0tjg" path="res://scenes/dialogues/characters/goblin/wolf.tres" id="1_7r4re"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_vydqb"]
+
+[resource]
+script = ExtResource("2_vydqb")
+character = ExtResource("1_7r4re")
+text = "Русалка добрая. Торговец добрый. Лягушка добрый. Они меня покормили. Еще раз."
+timerLengthSec = 3.0

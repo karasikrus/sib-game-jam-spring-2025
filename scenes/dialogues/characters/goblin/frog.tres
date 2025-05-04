@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueCharacter" load_steps=2 format=3 uid="uid://be6di515l6cqj"]
+
+[ext_resource type="Script" path="res://scenes/dialogues/characters/dialogue_character.gd" id="1_g3bup"]
+
+[resource]
+script = ExtResource("1_g3bup")
+id = "frog"
+visibleName = ""
+textColor = Color(1, 0.744873, 0.140625, 1)

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueCharacter" load_steps=2 format=3 uid="uid://mp742ualwx1l"]
+
+[ext_resource type="Script" path="res://scenes/dialogues/characters/dialogue_character.gd" id="1_18h4h"]
+
+[resource]
+script = ExtResource("1_18h4h")
+id = "policeman"
+visibleName = ""
+textColor = Color(0.328125, 0.763794, 1, 1)

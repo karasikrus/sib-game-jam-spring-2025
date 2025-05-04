@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://b57qg8l6vjyde"]
+
+[ext_resource type="Resource" uid="uid://dha1cigd8phuv" path="res://scenes/dialogues/characters/goblin/merchant.tres" id="1_s48u1"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_ca7in"]
+
+[resource]
+script = ExtResource("2_ca7in")
+character = ExtResource("1_s48u1")
+text = "А как вы сами думаете? Торговал, конечно! Такова наша судьба - ни минуты покоя."
+timerLengthSec = 3.0

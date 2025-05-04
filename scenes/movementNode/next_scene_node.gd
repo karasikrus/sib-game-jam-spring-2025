@@ -10,7 +10,7 @@ var default_icon = load("res://scenes/cursors/default_cursor.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	debug_name.append_text(name)
+	#debug_name.append_text(name)
 	main_character.arrival_signal.connect(self.on_character_arrival)
 	pass # Replace with function body.
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://clb2cdbhem0da"]
+[gd_scene load_steps=22 format=3 uid="uid://clb2cdbhem0da"]
 
 [ext_resource type="Shader" path="res://scenes/postEffects/crtShader.gdshader" id="1_1tu0n"]
+[ext_resource type="Script" path="res://scenes/zone1/zone_1.gd" id="1_ayety"]
 [ext_resource type="PackedScene" uid="uid://gujhtqt7mob6" path="res://scenes/TemplateEntity/TemplateEntity.tscn" id="1_khm5p"]
 [ext_resource type="PackedScene" uid="uid://cwd8t1bdevga8" path="res://scenes/interactableCharacter/interactable_character.tscn" id="2_qc3u2"]
 [ext_resource type="PackedScene" uid="uid://802678fmiy16" path="res://scenes/ui/ui_main.tscn" id="3_5jnvt"]
@@ -11,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c2pwalittkt00" path="res://scenes/movementNode/movement_node.tscn" id="5_00614"]
 [ext_resource type="PackedScene" uid="uid://31awqwru7b70" path="res://scenes/movementNode/next_scene_node.tscn" id="5_v10l6"]
 [ext_resource type="Texture2D" uid="uid://divp8assc4xcx" path="res://scenes/zone1/Zone1Background.PNG" id="9_43j3j"]
+[ext_resource type="AudioStream" uid="uid://bbsq5xe1856qc" path="res://scenes/CyberTale_MainTheme.wav" id="12_qev1a"]
 
 [sub_resource type="Animation" id="Animation_k8fyg"]
 loop_mode = 2
@@ -153,6 +155,7 @@ shader_parameter/maskDark = 0.5
 shader_parameter/maskLight = 1.5
 
 [node name="Zone1" type="Node2D"]
+script = ExtResource("1_ayety")
 
 [node name="TemplateEntity" parent="." node_paths=PackedStringArray("movement_nodes", "starting_node") instance=ExtResource("1_khm5p")]
 position = Vector2(221, 950)
@@ -267,6 +270,13 @@ mouse_force_pass_scroll_events = false
 z_index = -3
 position = Vector2(960, 540)
 texture = ExtResource("9_43j3j")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_qev1a")
+autoplay = true
+
+[connection signal="mouse_entered" from="InteractableCharacter/InteractionWindow/Control/HackWindow" to="InteractableCharacter/InteractionWindow" method="mouse_on_button"]
+[connection signal="mouse_exited" from="InteractableCharacter/InteractionWindow/Control/HackWindow" to="InteractableCharacter/InteractionWindow" method="mouse_off_button"]
 
 [editable path="InteractableCharacter"]
 [editable path="InteractableCharacter/InteractionWindow"]

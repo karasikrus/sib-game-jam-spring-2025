@@ -28,6 +28,7 @@ func play_line(line : DialogueLine):
 		audio_stream_player.stream = line.voiceOver
 		audio_stream_player.play()
 	else:
+		timer.wait_time = line.timerLengthSec
 		timer.start()
 
 func on_finished():

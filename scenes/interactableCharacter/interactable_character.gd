@@ -107,7 +107,7 @@ func _process(delta: float) -> void:
 
 func start_dialogue():
 	var dialogue_manager = get_tree().get_first_node_in_group("dialogue_manager") as DialogueManager
-	dialogue_manager.play_options_block(dialogue_options_block)
+	dialogue_manager.play_options_block(dialogue_options_block, true)
 	dialogue_manager.dialogue_ended.connect(on_dialogue_end)
 
 func on_dialogue_end():

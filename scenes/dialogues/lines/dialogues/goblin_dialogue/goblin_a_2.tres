@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://dfqow6nal6xlp"]
+
+[ext_resource type="Resource" uid="uid://d26875kixq440" path="res://scenes/dialogues/characters/goblin/goblin.tres" id="1_a8nw8"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_jof0t"]
+
+[resource]
+script = ExtResource("2_jof0t")
+character = ExtResource("1_a8nw8")
+text = "Я простой [i]норвежский[/i] тролль. Живу под мостом. Полиция не разрешила мне есть тех, кто не козлик."

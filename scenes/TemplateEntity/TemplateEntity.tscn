@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dhvujyplhvk7b" path="res://scenes/TemplateEntity/MovingDetectiveSpreadsheet.png" id="3_t1rkp"]
 [ext_resource type="PackedScene" uid="uid://djvm4x8kkeqre" path="res://scenes/dialogues/dialogue_manager/dialogue_manager.tscn" id="5_afxss"]
 [ext_resource type="PackedScene" uid="uid://dr5jvrtte8k8t" path="res://scenes/dialogues/dialogue_box/text_bubble.tscn" id="6_jeuue"]
-[ext_resource type="Resource" path="res://scenes/dialogues/characters/player.tres" id="7_8lsqu"]
+[ext_resource type="Resource" uid="uid://bn6b042fasvms" path="res://scenes/dialogues/characters/player.tres" id="7_8lsqu"]
 
 [sub_resource type="Animation" id="Animation_k8fyg"]
 tracks/0/type = "value"

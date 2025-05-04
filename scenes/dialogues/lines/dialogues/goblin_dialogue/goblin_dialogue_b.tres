@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=6 format=3 uid="uid://ct0412hrrnmsr"]
+
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="1_ghkhh"]
+[ext_resource type="Resource" uid="uid://dx5ufosy7610u" path="res://scenes/dialogues/lines/dialogues/goblin_dialogue/goblin_b_1.tres" id="2_d8ws5"]
+[ext_resource type="Resource" uid="uid://qcbq2hcjxxvw" path="res://scenes/dialogues/lines/dialogues/goblin_dialogue/goblin_b_2.tres" id="3_c56xg"]
+[ext_resource type="Resource" uid="uid://dpos1l0obgtoq" path="res://scenes/dialogues/lines/dialogues/goblin_dialogue/goblin_b_3.tres" id="4_gmien"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue.gd" id="5_wmbuc"]
+
+[resource]
+script = ExtResource("5_wmbuc")
+lines = Array[ExtResource("1_ghkhh")]([ExtResource("2_d8ws5"), ExtResource("3_c56xg"), ExtResource("4_gmien")])

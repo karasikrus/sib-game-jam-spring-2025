@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://qcbq2hcjxxvw"]
+
+[ext_resource type="Resource" uid="uid://d26875kixq440" path="res://scenes/dialogues/characters/goblin/goblin.tres" id="1_5toyb"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_vvdw0"]
+
+[resource]
+script = ExtResource("2_vvdw0")
+character = ExtResource("1_5toyb")
+text = "Меня все боятся. Поэтому я ни с кем не общаюсь. Под мостом тихо, спокойно. Я люблю заниматься выпечкой. Один."

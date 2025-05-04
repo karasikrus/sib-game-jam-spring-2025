@@ -1,16 +1,15 @@
-[gd_scene load_steps=20 format=3 uid="uid://clb2cdbhem0da"]
+[gd_scene load_steps=19 format=3 uid="uid://csnoy1ohmy0on"]
 
-[ext_resource type="PackedScene" uid="uid://gujhtqt7mob6" path="res://scenes/TemplateEntity/TemplateEntity.tscn" id="1_opowa"]
-[ext_resource type="PackedScene" uid="uid://cwd8t1bdevga8" path="res://scenes/interactableCharacter/interactable_character.tscn" id="2_nhuae"]
-[ext_resource type="Resource" uid="uid://ssoi5seg8bmp" path="res://scenes/dialogues/lines/dialogues/goblin_dialogue/dialogue_options_block_goblin.tres" id="3_36xco"]
-[ext_resource type="Texture2D" uid="uid://bvhd04aau7irw" path="res://scenes/goblin/IdleGoblin.png" id="3_naa7t"]
-[ext_resource type="Resource" uid="uid://d26875kixq440" path="res://scenes/dialogues/characters/goblin/goblin.tres" id="4_gnlf7"]
-[ext_resource type="PackedScene" uid="uid://802678fmiy16" path="res://scenes/ui/ui_main.tscn" id="4_h8ar3"]
-[ext_resource type="Script" path="res://scenes/movementNode/movement_nodes.gd" id="5_6d6kl"]
-[ext_resource type="PackedScene" uid="uid://c2pwalittkt00" path="res://scenes/movementNode/movement_node.tscn" id="6_gysf3"]
-[ext_resource type="PackedScene" uid="uid://31awqwru7b70" path="res://scenes/movementNode/next_scene_node.tscn" id="7_hqwok"]
-[ext_resource type="Shader" path="res://scenes/postEffects/crtShader.gdshader" id="8_7upnx"]
-[ext_resource type="Texture2D" uid="uid://divp8assc4xcx" path="res://scenes/zone1/Zone1Background.PNG" id="9_4bwqq"]
+[ext_resource type="PackedScene" uid="uid://gujhtqt7mob6" path="res://scenes/TemplateEntity/TemplateEntity.tscn" id="1_drnp0"]
+[ext_resource type="PackedScene" uid="uid://cwd8t1bdevga8" path="res://scenes/interactableCharacter/interactable_character.tscn" id="2_0hinv"]
+[ext_resource type="PackedScene" uid="uid://31awqwru7b70" path="res://scenes/movementNode/next_scene_node.tscn" id="3_vmeko"]
+[ext_resource type="Texture2D" uid="uid://bvhd04aau7irw" path="res://scenes/goblin/IdleGoblin.png" id="3_vq5jx"]
+[ext_resource type="Texture2D" uid="uid://dgyijha4xrn6f" path="res://scenes/zone2/Zone2Background.PNG" id="4_6217p"]
+[ext_resource type="Resource" uid="uid://d26875kixq440" path="res://scenes/dialogues/characters/goblin/goblin.tres" id="4_veyla"]
+[ext_resource type="Shader" path="res://scenes/postEffects/crtShader.gdshader" id="5_2xfh0"]
+[ext_resource type="PackedScene" uid="uid://802678fmiy16" path="res://scenes/ui/ui_main.tscn" id="5_vv3x0"]
+[ext_resource type="Script" path="res://scenes/movementNode/movement_nodes.gd" id="6_5jw74"]
+[ext_resource type="PackedScene" uid="uid://c2pwalittkt00" path="res://scenes/movementNode/movement_node.tscn" id="7_hwune"]
 
 [sub_resource type="Animation" id="Animation_k8fyg"]
 loop_mode = 2
@@ -139,7 +138,7 @@ _data = {
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7g8ub"]
-shader = ExtResource("1_1tu0n")
+shader = ExtResource("5_2xfh0")
 shader_parameter/res = Vector2(1440, 720)
 shader_parameter/mask_type = 0
 shader_parameter/bloom_type = 0
@@ -152,25 +151,24 @@ shader_parameter/warp = Vector2(64, 24)
 shader_parameter/maskDark = 0.5
 shader_parameter/maskLight = 1.5
 
-[node name="Zone1" type="Node2D"]
+[node name="Zone3" type="Node2D"]
 
-[node name="TemplateEntity" parent="." node_paths=PackedStringArray("movement_nodes", "starting_node") instance=ExtResource("1_khm5p")]
+[node name="TemplateEntity" parent="." node_paths=PackedStringArray("movement_nodes", "starting_node") instance=ExtResource("1_drnp0")]
 position = Vector2(221, 950)
 movement_nodes = NodePath("../MovementNodes")
 starting_node = NodePath("../MovementNodes/Node2")
 
-[node name="InteractableCharacter" parent="." node_paths=PackedStringArray("nodes_to_unlock") instance=ExtResource("2_qc3u2")]
+[node name="InteractableCharacter" parent="." node_paths=PackedStringArray("nodes_to_unlock") instance=ExtResource("2_0hinv")]
 position = Vector2(823, 505)
 nodes_to_unlock = [NodePath("../MovementNodes/Node4"), NodePath("../MovementNodes/NextSceneNode")]
 hints_path = "res://scenes/goblin/goblin_hints.txt"
 animation_start_name = "goblin"
 riddle_text = "Sosal?"
 riddle_answer = "Da"
-dialogue_options_block = ExtResource("3_36xco")
 
 [node name="Sprite2D" parent="InteractableCharacter" index="0"]
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_ikcd4")
+texture = ExtResource("3_vq5jx")
 hframes = 9
 vframes = 1
 
@@ -181,38 +179,38 @@ libraries = {
 }
 
 [node name="TextBubble" parent="InteractableCharacter" index="7"]
-dialogueCharacter = ExtResource("4_rdmax")
+dialogueCharacter = ExtResource("4_veyla")
 
-[node name="UiMain" parent="." instance=ExtResource("3_5jnvt")]
+[node name="UiMain" parent="." instance=ExtResource("5_vv3x0")]
 visible = false
 
 [node name="MovementNodes" type="Node2D" parent="."]
-script = ExtResource("4_fpsod")
+script = ExtResource("6_5jw74")
 
-[node name="Node0" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("5_00614")]
+[node name="Node0" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("7_hwune")]
 position = Vector2(707, 576)
 connected_nodes = [NodePath("../Node4"), NodePath("../Node5"), NodePath("../Node1")]
 
-[node name="Node1" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("5_00614")]
+[node name="Node1" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("7_hwune")]
 position = Vector2(1139, 698)
 connected_nodes = []
 
-[node name="Node2" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("5_00614")]
+[node name="Node2" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("7_hwune")]
 position = Vector2(364, 931)
 connected_nodes = [NodePath("../Node5")]
 
-[node name="Node4" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("5_00614")]
+[node name="Node4" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("7_hwune")]
 position = Vector2(830, 311)
 connected_nodes = [NodePath("../NextSceneNode")]
 is_available = false
 
-[node name="Node5" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("5_00614")]
+[node name="Node5" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("7_hwune")]
 position = Vector2(768, 809)
 connected_nodes = [NodePath("../Node2"), NodePath("../Node0"), NodePath("../Node1")]
 
-[node name="NextSceneNode" parent="MovementNodes" instance=ExtResource("5_v10l6")]
+[node name="NextSceneNode" parent="MovementNodes" instance=ExtResource("3_vmeko")]
 position = Vector2(1044, 104)
-next_scene_name = "res://scenes/zone2/zone2.tscn"
+next_scene_name = "res://scenes/outro/outro.tscn"
 is_available = false
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -228,6 +226,6 @@ mouse_force_pass_scroll_events = false
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -3
 position = Vector2(960, 540)
-texture = ExtResource("9_43j3j")
+texture = ExtResource("4_6217p")
 
 [editable path="InteractableCharacter"]

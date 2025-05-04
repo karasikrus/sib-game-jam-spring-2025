@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqun6golfra0v"]
+[gd_scene load_steps=6 format=3 uid="uid://dqun6golfra0v"]
 
 [ext_resource type="Script" path="res://scenes/intro/intro.gd" id="1_litwt"]
+[ext_resource type="Texture2D" uid="uid://b1gdjieye4de3" path="res://scenes/intro/intro1.PNG" id="2_tiwgv"]
+[ext_resource type="Texture2D" uid="uid://bwnmskspfmwbj" path="res://scenes/intro/intro2.JPG" id="3_rkqhl"]
+[ext_resource type="Texture2D" uid="uid://sx3k1trw5iw1" path="res://scenes/intro/intro3.PNG" id="4_cehkq"]
+[ext_resource type="Texture2D" uid="uid://d4l403pwdus2u" path="res://scenes/intro/intro4.PNG" id="5_wpojs"]
 
 [node name="Intro" type="Node2D"]
+position = Vector2(920, 540)
 script = ExtResource("1_litwt")
+intro_pictures = [ExtResource("2_tiwgv"), ExtResource("3_rkqhl"), ExtResource("4_cehkq"), ExtResource("5_wpojs")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

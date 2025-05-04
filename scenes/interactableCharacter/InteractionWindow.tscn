@@ -133,10 +133,10 @@ stretch_mode = 5
 offset_left = 484.0
 offset_top = 249.0
 offset_right = 1270.0
-offset_bottom = 791.0
+offset_bottom = 883.0
 theme_override_fonts/normal_font = ExtResource("14_mjaa1")
 theme_override_fonts/mono_font = ExtResource("14_mjaa1")
-theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/normal_font_size = 28
 scroll_active = false
 
 [node name="HintAppearanceTimer" type="Timer" parent="Control/HackWindow/Node2D"]

@@ -2,7 +2,7 @@ extends "res://scenes/movementNode/movement_node.gd"
 class_name NextSceneNode
 # Load the custom images for the mouse cursor.
 var next_scene_move_icon = load("res://scenes/cursors/cursor_next_zone.png")
-
+var default_icon = load("res://scenes/cursors/default_cursor.png")
 @export var next_scene_name = "res://scenes/main/main.tscn"
 @onready var is_cursor_in_transition_area = false
 @onready var waiting_for_character = false
@@ -30,7 +30,7 @@ func _show_scene_transition_cursor():
 
 func _show_standard_cursor():
 	is_cursor_in_transition_area = false
-	Input.set_custom_mouse_cursor(null)
+	Input.set_custom_mouse_cursor(default_icon)
 	pass
 	
 

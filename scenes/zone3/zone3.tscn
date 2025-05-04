@@ -165,8 +165,8 @@ starting_node = NodePath("../MovementNodes/Node2")
 position = Vector2(1311, 813)
 hints_path = "res://scenes/old/old_hints.txt"
 animation_start_name = "old"
-riddle_text = "Р’ С‡РµСЃС‚СЊ РєР°РєРѕРіРѕ СЂРµРіРёРѕРЅР° РЅР°Р·РІР°РЅ С€Р°С…РјР°С‚РЅС‹Р№ РґРµР±СЋС‚ СЂР°Р·С‹РіСЂР°РЅРЅС‹Р№ РІ РїР°СЂС‚РёРё?"
-riddle_answer = "РЎРёС†РёР»РёСЏ"
+riddle_text = "В честь какого региона назван шахматный дебют разыгранный в партии?"
+riddle_answer = "Сицилия"
 dialogue_options_block = ExtResource("3_hmlt1")
 
 [node name="Sprite2D" parent="Old" index="0"]
@@ -197,8 +197,8 @@ dialogueCharacter = ExtResource("5_45gkq")
 position = Vector2(681, 779)
 hints_path = "res://scenes/yaga/yaga_hints.txt"
 animation_start_name = "yaga"
-riddle_text = "Р’ РєР°РєСѓСЋ РґР°С‚Сѓ (РЅР°РїСЂРёРјРµСЂ, 1 Р°РїСЂРµР»СЏ) СЂРѕРґРёР»Р°СЃСЊ Р‘Р°Р±Р° РЇРіР°?"
-riddle_answer = "7 Р°РїСЂРµР»СЏ"
+riddle_text = "В какую дату (например, 1 апреля) родилась Баба Яга?"
+riddle_answer = "7 апреля"
 dialogue_options_block = ExtResource("6_it4tm")
 
 [node name="Sprite2D" parent="Yaga" index="0"]

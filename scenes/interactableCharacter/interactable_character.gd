@@ -89,6 +89,7 @@ func _ready() -> void:
 	
 	pass # Replace with function body.
 
+@export var random_idle_value = 1.0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if(StateManager.currentState == StateManager.GlobalStates.FREEZED):
@@ -98,7 +99,7 @@ func _process(delta: float) -> void:
 	
 	if(randf() > 0.5):
 		need_to_start_idle += delta
-	if(need_to_start_idle > 1.0):
+	if(need_to_start_idle > random_idle_value):
 		need_to_start_idle = 0.0
 		animation_state = ANIMATION_STATE.IDLE
 		update_animation()

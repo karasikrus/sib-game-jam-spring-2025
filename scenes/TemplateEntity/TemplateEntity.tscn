@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://br25d1sh2ckhx" path="res://scenes/TemplateEntity/Step_1.wav" id="4_agekm"]
 [ext_resource type="PackedScene" uid="uid://djvm4x8kkeqre" path="res://scenes/dialogues/dialogue_manager/dialogue_manager.tscn" id="5_afxss"]
 [ext_resource type="PackedScene" uid="uid://dr5jvrtte8k8t" path="res://scenes/dialogues/dialogue_box/text_bubble.tscn" id="6_jeuue"]
-[ext_resource type="Resource" uid="uid://bn6b042fasvms" path="res://scenes/dialogues/characters/player.tres" id="7_8lsqu"]
+[ext_resource type="Resource" path="res://scenes/dialogues/characters/player.tres" id="7_8lsqu"]
 
 [sub_resource type="Animation" id="Animation_k8fyg"]
 tracks/0/type = "value"

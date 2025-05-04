@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="Dialogue" load_steps=4 format=3 uid="uid://dl3p5fqiegaai"]
 
 [ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="1_wlyly"]
-[ext_resource type="Resource" uid="uid://mfgfiksvkklq" path="res://scenes/dialogues/lines/dialogues/goblin_dialogue/goblin_intro.tres" id="2_yaqvd"]
+[ext_resource type="Resource" uid="uid://c44jktperlgx7" path="res://scenes/dialogues/lines/dialogues/policeman/policeman_intro.tres" id="2_nlx11"]
 [ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue.gd" id="3_7j8bm"]
 
 [resource]
 script = ExtResource("3_7j8bm")
-lines = Array[ExtResource("1_wlyly")]([ExtResource("2_yaqvd")])
+lines = Array[ExtResource("1_wlyly")]([ExtResource("2_nlx11")])

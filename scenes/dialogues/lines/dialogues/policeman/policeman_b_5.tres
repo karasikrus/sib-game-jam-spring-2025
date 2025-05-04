@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://njqi68rcovjy"]
+
+[ext_resource type="Resource" uid="uid://mp742ualwx1l" path="res://scenes/dialogues/characters/goblin/policeman.tres" id="1_mv13b"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_hc2fs"]
+
+[resource]
+script = ExtResource("2_hc2fs")
+character = ExtResource("1_mv13b")
+text = "А я острое очень люблю, понимаешь? Кимчи это ещё пахнет на всю поляну...но шеф злится будет, если я на посту есть начну."
+timerLengthSec = 3.0

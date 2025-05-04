@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=8 format=3 uid="uid://fp7iwmqh4scf"]
+
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="1_yr0sn"]
+[ext_resource type="Resource" uid="uid://b2iacol8jmjj4" path="res://scenes/dialogues/lines/dialogues/yaga/yaga_a_1.tres" id="2_d5vfs"]
+[ext_resource type="Resource" uid="uid://dlnxipsm482f8" path="res://scenes/dialogues/lines/dialogues/yaga/yaga_a_2.tres" id="3_k81ri"]
+[ext_resource type="Resource" uid="uid://haoyj0piv31o" path="res://scenes/dialogues/lines/dialogues/yaga/yaga_a_3.tres" id="4_n0ogk"]
+[ext_resource type="Resource" uid="uid://c7s5lgu3uo2gp" path="res://scenes/dialogues/lines/dialogues/yaga/yaga_a_4.tres" id="5_xl48b"]
+[ext_resource type="Resource" uid="uid://dj57ip1f8x22y" path="res://scenes/dialogues/lines/dialogues/yaga/yaga_a_5.tres" id="6_0c75m"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue.gd" id="6_sdevj"]
+
+[resource]
+script = ExtResource("6_sdevj")
+lines = Array[ExtResource("1_yr0sn")]([ExtResource("2_d5vfs"), ExtResource("3_k81ri"), ExtResource("4_n0ogk"), ExtResource("5_xl48b"), ExtResource("6_0c75m")])

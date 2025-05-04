@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueOption" load_steps=3 format=3 uid="uid://crl8u87nd5kyr"]
+
+[ext_resource type="Resource" uid="uid://ccmtqppwwu66u" path="res://scenes/dialogues/lines/dialogues/goblin_dialogue/goblin_dialogue_a.tres" id="1_s5a4j"]
+[ext_resource type="Script" path="res://scenes/dialogues/dialogue_options/dialogue_option_resorce.gd" id="2_qq5qu"]
+
+[resource]
+script = ExtResource("2_qq5qu")
+optionText = "Узнать про него побольше"
+dialogue = ExtResource("1_s5a4j")

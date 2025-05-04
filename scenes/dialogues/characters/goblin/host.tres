@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueCharacter" load_steps=2 format=3 uid="uid://ci8y86hj0jat1"]
+
+[ext_resource type="Script" path="res://scenes/dialogues/characters/dialogue_character.gd" id="1_nvycu"]
+
+[resource]
+script = ExtResource("1_nvycu")
+id = "host"
+visibleName = ""
+textColor = Color(0.778381, 0.914063, 0, 1)

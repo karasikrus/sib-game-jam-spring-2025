@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=8 format=3 uid="uid://dn40prn7d7o2w"]
+
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="1_jd2vh"]
+[ext_resource type="Resource" uid="uid://dpu5l2br1pa55" path="res://scenes/dialogues/lines/dialogues/policeman/policeman_b_1.tres" id="2_t5ma0"]
+[ext_resource type="Resource" uid="uid://vhnkv2cn5g3d" path="res://scenes/dialogues/lines/dialogues/policeman/policeman_b_2.tres" id="3_rthin"]
+[ext_resource type="Resource" uid="uid://7eev2l5a1r5g" path="res://scenes/dialogues/lines/dialogues/policeman/policeman_b_3.tres" id="4_i8uee"]
+[ext_resource type="Resource" uid="uid://b5kreecrsf7i1" path="res://scenes/dialogues/lines/dialogues/policeman/policeman_b_4.tres" id="5_tuw3x"]
+[ext_resource type="Resource" uid="uid://njqi68rcovjy" path="res://scenes/dialogues/lines/dialogues/policeman/policeman_b_5.tres" id="6_brvi1"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue.gd" id="8_1b7pt"]
+
+[resource]
+script = ExtResource("8_1b7pt")
+lines = Array[ExtResource("1_jd2vh")]([ExtResource("2_t5ma0"), ExtResource("3_rthin"), ExtResource("4_i8uee"), ExtResource("5_tuw3x"), ExtResource("6_brvi1")])

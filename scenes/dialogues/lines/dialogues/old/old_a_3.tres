@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://dsj2847st6kmh"]
+
+[ext_resource type="Resource" uid="uid://b7crui1rpispg" path="res://scenes/dialogues/characters/goblin/old.tres" id="1_k5ic4"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_yltak"]
+
+[resource]
+script = ExtResource("2_yltak")
+character = ExtResource("1_k5ic4")
+text = "Партию пришлось заново начинать. Как всегда, я пытался [i]первым ходом захватить королевской пешкой центр[/i]."
+timerLengthSec = 3.0

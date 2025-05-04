@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://5otymuhnb4ej"]
+
+[ext_resource type="Resource" uid="uid://dfkne0vmbfblw" path="res://scenes/dialogues/characters/goblin/mermaid.tres" id="1_4qi78"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_j8smm"]
+
+[resource]
+script = ExtResource("2_j8smm")
+character = ExtResource("1_4qi78")
+text = "Мужчина встречается с [i]циклопом[/i], а потом обманом ослепляет его. Кошмар! Я лично была знакома с одним циклопом - добрейший души человек!"
+timerLengthSec = 3.0

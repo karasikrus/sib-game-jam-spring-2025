@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=9 format=3 uid="uid://baygqqi20tukl"]
+
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="1_p6g5g"]
+[ext_resource type="Resource" uid="uid://d0pmwno47vl0s" path="res://scenes/dialogues/lines/dialogues/merchant/merchant_b_1.tres" id="2_f41wk"]
+[ext_resource type="Resource" uid="uid://b2wdcnc4b6hpg" path="res://scenes/dialogues/lines/dialogues/merchant/merchant_b_2.tres" id="3_07qa4"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue.gd" id="3_rw5jh"]
+[ext_resource type="Resource" uid="uid://yyanrdaitgdl" path="res://scenes/dialogues/lines/dialogues/merchant/merchant_b_3.tres" id="4_nvcyo"]
+[ext_resource type="Resource" uid="uid://bck8fiwud0ems" path="res://scenes/dialogues/lines/dialogues/merchant/merchant_b_4.tres" id="5_unebr"]
+[ext_resource type="Resource" uid="uid://dddhjao24qimt" path="res://scenes/dialogues/lines/dialogues/merchant/merchant_b_5.tres" id="6_6aco6"]
+[ext_resource type="Resource" uid="uid://xj5qsuhmkiy" path="res://scenes/dialogues/lines/dialogues/merchant/merchant_b_6.tres" id="7_qfurl"]
+
+[resource]
+script = ExtResource("3_rw5jh")
+lines = Array[ExtResource("1_p6g5g")]([ExtResource("2_f41wk"), ExtResource("3_07qa4"), ExtResource("4_nvcyo"), ExtResource("5_unebr"), ExtResource("6_6aco6"), ExtResource("7_qfurl")])

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DialogueOptionsBlock" load_steps=6 format=3 uid="uid://db6d05aufton1"]
+
+[ext_resource type="Resource" uid="uid://dbo6t8k5u83k3" path="res://scenes/dialogues/lines/dialogues/merchant/merchant_dialogue_intro.tres" id="1_7ul47"]
+[ext_resource type="Resource" uid="uid://bwashcbkotgvp" path="res://scenes/dialogues/lines/dialogues/merchant/dialogue_option_merchant_a.tres" id="2_8t88k"]
+[ext_resource type="Resource" uid="uid://rji6pjaskd8g" path="res://scenes/dialogues/lines/dialogues/merchant/dialogue_option_merchant_b.tres" id="3_l7qx2"]
+[ext_resource type="Resource" uid="uid://cgxwb5wm073ks" path="res://scenes/dialogues/lines/dialogues/exit_dialogue/dialogue_option_exit.tres" id="4_atk6f"]
+[ext_resource type="Script" path="res://scenes/dialogues/dialogue_options/dialogue_options_block.gd" id="5_pa3pw"]
+
+[resource]
+script = ExtResource("5_pa3pw")
+optionExit = ExtResource("4_atk6f")
+optionA = ExtResource("2_8t88k")
+optionB = ExtResource("3_l7qx2")
+introDialogue = ExtResource("1_7ul47")

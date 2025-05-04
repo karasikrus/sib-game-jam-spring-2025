@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://bck8fiwud0ems"]
+
+[ext_resource type="Resource" uid="uid://dha1cigd8phuv" path="res://scenes/dialogues/characters/goblin/merchant.tres" id="1_i71kn"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_m2733"]
+
+[resource]
+script = ExtResource("2_m2733")
+character = ExtResource("1_i71kn")
+text = "Стоило мне расположиться, как он подошел и сказал: “Вы знаете, что на товарах надо обязательно указывать [i]регион производства[/i], ква?”"
+timerLengthSec = 3.0

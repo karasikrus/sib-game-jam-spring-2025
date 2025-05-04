@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://4m0iw5y0k0ad"]
+
+[ext_resource type="Resource" uid="uid://b7crui1rpispg" path="res://scenes/dialogues/characters/goblin/old.tres" id="1_dydcc"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_tsf8u"]
+
+[resource]
+script = ExtResource("2_tsf8u")
+character = ExtResource("1_dydcc")
+text = "А что я мне говорить? Я ведь этот, как говорят, отшельник. Только у себя в замке и сижу. Только бабка иногда приходит."
+timerLengthSec = 3.0

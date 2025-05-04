@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://bdj4ypc7cgo1n"]
+
+[ext_resource type="Resource" uid="uid://uoyn0vuv0tjg" path="res://scenes/dialogues/characters/goblin/wolf.tres" id="1_ixa3x"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_jhur4"]
+
+[resource]
+script = ExtResource("2_jhur4")
+character = ExtResource("1_ixa3x")
+text = "Если я найду ключи, меня отпустят?"
+timerLengthSec = 3.0

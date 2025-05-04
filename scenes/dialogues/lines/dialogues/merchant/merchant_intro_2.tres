@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://deq58as0cjde5"]
+
+[ext_resource type="Resource" uid="uid://dha1cigd8phuv" path="res://scenes/dialogues/characters/goblin/merchant.tres" id="1_ud8es"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_xygw3"]
+
+[resource]
+script = ExtResource("2_xygw3")
+character = ExtResource("1_ud8es")
+text = "Вот вы, молодой человек, пробовали когда-нибудь кимчи? Нет? А стоило бы!"
+timerLengthSec = 3.0

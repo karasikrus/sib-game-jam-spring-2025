@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://dwoqj4mrbomsx"]
+
+[ext_resource type="Resource" uid="uid://dfkne0vmbfblw" path="res://scenes/dialogues/characters/goblin/mermaid.tres" id="1_exnec"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_7oox5"]
+
+[resource]
+script = ExtResource("2_7oox5")
+character = ExtResource("1_exnec")
+text = "Но если это важно, то мы с Кощеем иногда в шахматы играем. В последний раз я ему выдвинула [i]пешку с ферзевой стороны на черное поле и напала на центр[/i]."
+timerLengthSec = 3.0

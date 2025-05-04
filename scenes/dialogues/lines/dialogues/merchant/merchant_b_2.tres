@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://b2wdcnc4b6hpg"]
+
+[ext_resource type="Resource" uid="uid://dha1cigd8phuv" path="res://scenes/dialogues/characters/goblin/merchant.tres" id="1_3ixxe"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_jacaq"]
+
+[resource]
+script = ExtResource("2_jacaq")
+character = ExtResource("1_3ixxe")
+text = "О, вы обратились по адресу! Знаете, торговцы всегда в курсе самых свежих новостей."
+timerLengthSec = 3.0

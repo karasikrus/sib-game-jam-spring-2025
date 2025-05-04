@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueLine" load_steps=3 format=3 uid="uid://ce0vrv5rjuy0f"]
+
+[ext_resource type="Resource" uid="uid://uoyn0vuv0tjg" path="res://scenes/dialogues/characters/goblin/wolf.tres" id="1_j5g5f"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="2_3uy8k"]
+
+[resource]
+script = ExtResource("2_3uy8k")
+character = ExtResource("1_j5g5f")
+text = "Пришел сюда. Посидел. Скоро вечер. Хочу домой.
+"
+timerLengthSec = 3.0

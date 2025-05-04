@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueOption" load_steps=3 format=3 uid="uid://ddfrka8px8k70"]
+
+[ext_resource type="Resource" uid="uid://fp7iwmqh4scf" path="res://scenes/dialogues/lines/dialogues/yaga/yaga_dialogue_a.tres" id="1_5vvmk"]
+[ext_resource type="Script" path="res://scenes/dialogues/dialogue_options/dialogue_option_resorce.gd" id="2_cp5ru"]
+
+[resource]
+script = ExtResource("2_cp5ru")
+optionText = "Узнать про него побольше"
+dialogue = ExtResource("1_5vvmk")

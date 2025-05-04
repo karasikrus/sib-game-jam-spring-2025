@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=7 format=3 uid="uid://08p6wcwgpnck"]
+
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="1_6wp7m"]
+[ext_resource type="Resource" uid="uid://bvu7v7cb6ro3e" path="res://scenes/dialogues/lines/dialogues/wolf/wolf_a_1.tres" id="2_oho2o"]
+[ext_resource type="Resource" uid="uid://bujrj8ewpx655" path="res://scenes/dialogues/lines/dialogues/wolf/wolf_a_2.tres" id="3_o3rk2"]
+[ext_resource type="Resource" uid="uid://ce0vrv5rjuy0f" path="res://scenes/dialogues/lines/dialogues/wolf/wolf_a_3.tres" id="4_75eb7"]
+[ext_resource type="Resource" uid="uid://bphh2gmsqostg" path="res://scenes/dialogues/lines/dialogues/wolf/wolf_a_4.tres" id="5_fewnd"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue.gd" id="6_fnuyp"]
+
+[resource]
+script = ExtResource("6_fnuyp")
+lines = Array[ExtResource("1_6wp7m")]([ExtResource("2_oho2o"), ExtResource("3_o3rk2"), ExtResource("4_75eb7"), ExtResource("5_fewnd")])

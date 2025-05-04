@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=4 format=3 uid="uid://cv7dxwwq36oul"]
+
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue_line.gd" id="1_588fp"]
+[ext_resource type="Resource" uid="uid://58v64htt0tt2" path="res://scenes/dialogues/lines/dialogues/yaga/yaga_intro.tres" id="2_eku8h"]
+[ext_resource type="Script" path="res://scenes/dialogues/lines/dialogue.gd" id="3_iwfdy"]
+
+[resource]
+script = ExtResource("3_iwfdy")
+lines = Array[ExtResource("1_588fp")]([ExtResource("2_eku8h")])

@@ -62,7 +62,9 @@ func show_talk_hack_buttons():
 	talk_button.visible = true
 
 func on_hack_attempt():
-	if(riddle_answer_input.text.to_lower() == riddle_answer.to_lower()):
+	
+	var text = riddle_answer_input.text.replace("/n", "")
+	if(text.to_lower() == riddle_answer.to_lower()):
 		on_hack_succesful()
 	else:
 		on_hack_unsuccesful()

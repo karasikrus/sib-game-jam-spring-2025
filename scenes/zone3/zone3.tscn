@@ -6,13 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://31awqwru7b70" path="res://scenes/movementNode/next_scene_node.tscn" id="3_vmeko"]
 [ext_resource type="Texture2D" uid="uid://68r1elsp0f6p" path="res://scenes/old/old.png" id="4_cu5lb"]
 [ext_resource type="Shader" path="res://scenes/postEffects/crtShader.gdshader" id="5_2xfh0"]
-[ext_resource type="Resource" uid="uid://b7crui1rpispg" path="res://scenes/dialogues/characters/goblin/old.tres" id="5_45gkq"]
+[ext_resource type="Resource" path="res://scenes/dialogues/characters/goblin/old.tres" id="5_45gkq"]
 [ext_resource type="PackedScene" uid="uid://802678fmiy16" path="res://scenes/ui/ui_main.tscn" id="5_vv3x0"]
 [ext_resource type="Script" path="res://scenes/movementNode/movement_nodes.gd" id="6_5jw74"]
 [ext_resource type="Resource" uid="uid://dqpunyrygt06h" path="res://scenes/dialogues/lines/dialogues/yaga/dialogue_options_block_yaga.tres" id="6_it4tm"]
 [ext_resource type="Texture2D" uid="uid://8gb3ip5qb3ry" path="res://scenes/yaga/yaga.PNG" id="7_bxatq"]
 [ext_resource type="PackedScene" uid="uid://c2pwalittkt00" path="res://scenes/movementNode/movement_node.tscn" id="7_hwune"]
-[ext_resource type="Resource" uid="uid://dkww6tofs546i" path="res://scenes/dialogues/characters/goblin/yaga.tres" id="7_vsga5"]
+[ext_resource type="Resource" path="res://scenes/dialogues/characters/goblin/yaga.tres" id="7_vsga5"]
 [ext_resource type="Resource" uid="uid://4ien66q7csgb" path="res://scenes/dialogues/lines/dialogues/template/dialogue_options_block_template.tres" id="9_7g7cu"]
 [ext_resource type="Texture2D" uid="uid://dwr74htwh7wdq" path="res://scenes/chest/chest.png" id="9_xttj0"]
 [ext_resource type="Texture2D" uid="uid://bpb5ljdkwnwsw" path="res://scenes/zone3/Zone3Background.PNG" id="10_0fc5g"]
@@ -286,6 +286,7 @@ libraries = {
 
 [node name="InteractionWindow" parent="Old" index="6"]
 visible = false
+pitchScaleMax = 2
 
 [node name="HackWindow" parent="Old/InteractionWindow/Control" index="1"]
 offset_left = -819.0
@@ -297,9 +298,8 @@ offset_bottom = 679.0
 z_index = 4
 dialogueCharacter = ExtResource("5_45gkq")
 
-[node name="Yaga" parent="." node_paths=PackedStringArray("nodes_to_unlock") instance=ExtResource("2_0hinv")]
+[node name="Yaga" parent="." instance=ExtResource("2_0hinv")]
 position = Vector2(681, 779)
-nodes_to_unlock = [NodePath("../MovementNodes/NextSceneNode")]
 hints_path = "res://scenes/yaga/yaga_hints.txt"
 animation_start_name = "yaga"
 riddle_text = "Когда у Бабы Яги день рождения?"
@@ -325,6 +325,7 @@ position = Vector2(8, 0.5)
 
 [node name="InteractionWindow" parent="Yaga" index="6"]
 visible = false
+pitchScaleMax = 2
 
 [node name="Control" parent="Yaga/InteractionWindow/Control" index="0"]
 offset_top = 268.0
@@ -368,6 +369,7 @@ position = Vector2(8, 0.5)
 
 [node name="InteractionWindow" parent="Chest" index="6"]
 visible = false
+pitchScaleMax = 2
 
 [node name="Control" parent="Chest/InteractionWindow/Control" index="0"]
 offset_top = 268.0
@@ -388,6 +390,7 @@ visible = false
 
 [node name="MovementNodes" type="Node2D" parent="."]
 script = ExtResource("6_5jw74")
+is_debug_draw = false
 
 [node name="Node0" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("7_hwune")]
 position = Vector2(425, 867)
@@ -411,8 +414,7 @@ connected_nodes = [NodePath("../Node2"), NodePath("../Node0"), NodePath("../Node
 
 [node name="NextSceneNode" parent="MovementNodes" instance=ExtResource("3_vmeko")]
 position = Vector2(234, 866)
-next_scene_name = "res://scenes/outro/outro.tscn"
-is_available = false
+next_scene_name = "res://scenes/zone2/zone2.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 top_level = true

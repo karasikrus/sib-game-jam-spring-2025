@@ -83,6 +83,9 @@ func on_hack_succesful():
 	self.visible = false
 	StateManager.currentState = StateManager.GlobalStates.RUNNING
 	play_sound(AUDIO_STATE.HACK_RIGHT_ANSWER)
+	var text = riddle_answer_input.text.replace("/n", "").to_lower()
+	if text == "сказка123":
+		LevelManager.load_specific_scene("res://scenes/outro/outro.tscn")
 
 
 func reset_to_defult_state():

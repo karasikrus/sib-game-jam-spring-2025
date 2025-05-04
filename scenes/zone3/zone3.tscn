@@ -1,6 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://csnoy1ohmy0on"]
+[gd_scene load_steps=34 format=3 uid="uid://csnoy1ohmy0on"]
 
 [ext_resource type="PackedScene" uid="uid://gujhtqt7mob6" path="res://scenes/TemplateEntity/TemplateEntity.tscn" id="1_drnp0"]
+[ext_resource type="Script" path="res://scenes/zone3/zone_3.gd" id="1_yovh7"]
 [ext_resource type="PackedScene" uid="uid://cwd8t1bdevga8" path="res://scenes/interactableCharacter/interactable_character.tscn" id="2_0hinv"]
 [ext_resource type="Resource" uid="uid://cudcwfhp8ki8e" path="res://scenes/dialogues/lines/dialogues/old/dialogue_options_block_old.tres" id="3_hmlt1"]
 [ext_resource type="PackedScene" uid="uid://31awqwru7b70" path="res://scenes/movementNode/next_scene_node.tscn" id="3_vmeko"]
@@ -17,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dwr74htwh7wdq" path="res://scenes/chest/chest.png" id="9_xttj0"]
 [ext_resource type="Texture2D" uid="uid://bpb5ljdkwnwsw" path="res://scenes/zone3/Zone3Background.PNG" id="10_0fc5g"]
 [ext_resource type="Resource" uid="uid://d26875kixq440" path="res://scenes/dialogues/characters/goblin/goblin.tres" id="11_ux8m4"]
+[ext_resource type="AudioStream" uid="uid://bbsq5xe1856qc" path="res://scenes/CyberTale_MainTheme.wav" id="19_r76px"]
 
 [sub_resource type="Animation" id="Animation_k8fyg"]
 loop_mode = 2
@@ -254,6 +256,7 @@ shader_parameter/maskDark = 0.5
 shader_parameter/maskLight = 1.5
 
 [node name="Zone3" type="Node2D"]
+script = ExtResource("1_yovh7")
 
 [node name="TemplateEntity" parent="." node_paths=PackedStringArray("movement_nodes", "starting_node") instance=ExtResource("1_drnp0")]
 position = Vector2(221, 950)
@@ -286,7 +289,6 @@ libraries = {
 
 [node name="InteractionWindow" parent="Old" index="6"]
 visible = false
-pitchScaleMax = 2
 
 [node name="HackWindow" parent="Old/InteractionWindow/Control" index="1"]
 offset_left = -819.0
@@ -325,7 +327,6 @@ position = Vector2(8, 0.5)
 
 [node name="InteractionWindow" parent="Yaga" index="6"]
 visible = false
-pitchScaleMax = 2
 
 [node name="Control" parent="Yaga/InteractionWindow/Control" index="0"]
 offset_top = 268.0
@@ -369,7 +370,6 @@ position = Vector2(8, 0.5)
 
 [node name="InteractionWindow" parent="Chest" index="6"]
 visible = false
-pitchScaleMax = 2
 
 [node name="Control" parent="Chest/InteractionWindow/Control" index="0"]
 offset_top = 268.0
@@ -430,6 +430,16 @@ mouse_force_pass_scroll_events = false
 z_index = -3
 position = Vector2(960, 540)
 texture = ExtResource("10_0fc5g")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_r76px")
+
+[connection signal="mouse_entered" from="Old/InteractionWindow/Control/HackWindow" to="Old/InteractionWindow" method="mouse_on_button"]
+[connection signal="mouse_exited" from="Old/InteractionWindow/Control/HackWindow" to="Old/InteractionWindow" method="mouse_off_button"]
+[connection signal="mouse_entered" from="Yaga/InteractionWindow/Control/HackWindow" to="Yaga/InteractionWindow" method="mouse_on_button"]
+[connection signal="mouse_exited" from="Yaga/InteractionWindow/Control/HackWindow" to="Yaga/InteractionWindow" method="mouse_off_button"]
+[connection signal="mouse_entered" from="Chest/InteractionWindow/Control/HackWindow" to="Chest/InteractionWindow" method="mouse_on_button"]
+[connection signal="mouse_exited" from="Chest/InteractionWindow/Control/HackWindow" to="Chest/InteractionWindow" method="mouse_off_button"]
 
 [editable path="TemplateEntity"]
 [editable path="Old"]

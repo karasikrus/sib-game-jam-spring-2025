@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bd7u4pu58ku2g"]
+[gd_scene load_steps=31 format=3 uid="uid://bd7u4pu58ku2g"]
 
 [ext_resource type="PackedScene" uid="uid://gujhtqt7mob6" path="res://scenes/TemplateEntity/TemplateEntity.tscn" id="1_ppwhq"]
 [ext_resource type="PackedScene" uid="uid://cwd8t1bdevga8" path="res://scenes/interactableCharacter/interactable_character.tscn" id="2_1civm"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c2pwalittkt00" path="res://scenes/movementNode/movement_node.tscn" id="7_iyfop"]
 [ext_resource type="Texture2D" uid="uid://c8h1k40ybuc41" path="res://scenes/mermaid/mermaid.png" id="7_t3rwo"]
 [ext_resource type="PackedScene" uid="uid://31awqwru7b70" path="res://scenes/movementNode/next_scene_node.tscn" id="8_yhxay"]
+[ext_resource type="Texture2D" uid="uid://c7ty07gr10w2d" path="res://scenes/traider/Trader.PNG" id="9_qf670"]
 [ext_resource type="Shader" path="res://scenes/postEffects/crtShader.gdshader" id="9_tmxc1"]
 
 [sub_resource type="Animation" id="Animation_k8fyg"]
@@ -41,6 +42,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Trader/Sprite2D:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Trader/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_8ay3b"]
@@ -142,6 +167,52 @@ _data = {
 "idle": SubResource("Animation_dcrll")
 }
 
+[sub_resource type="Animation" id="Animation_v36lu"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Trader/Sprite2D:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_w3nua"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Trader/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Trader/Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2sgeo"]
+_data = {
+"RESET": SubResource("Animation_v36lu"),
+"idle": SubResource("Animation_w3nua")
+}
+
 [sub_resource type="Animation" id="Animation_h86gu"]
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -221,6 +292,7 @@ vframes = 1
 libraries = {
 "": SubResource("AnimationLibrary_e544i"),
 "goblin": SubResource("AnimationLibrary_ywauo"),
+"trader": SubResource("AnimationLibrary_2sgeo"),
 "wolf": SubResource("AnimationLibrary_8kajc")
 }
 
@@ -291,6 +363,57 @@ offset_bottom = 1077.0
 [node name="TextBubble" parent="Mermaid" index="7"]
 dialogueCharacter = ExtResource("7_7b6g8")
 
+[node name="Trader" parent="." instance=ExtResource("2_1civm")]
+position = Vector2(400, 500)
+hints_path = "res://scenes/wolf/wolf_hints.txt"
+animation_start_name = "trader"
+riddle_text = "Как зовут автора книги, которую читала русалка?"
+riddle_answer = "Гомер"
+dialogue_options_block = ExtResource("6_oglhk")
+random_idle_value = 1.7
+
+[node name="Sprite2D" parent="Trader" index="0"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_qf670")
+flip_h = true
+hframes = 1
+vframes = 1
+
+[node name="AnimationPlayer" parent="Trader" index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_e544i"),
+"goblin": SubResource("AnimationLibrary_ywauo"),
+"mermaid": SubResource("AnimationLibrary_frq6m"),
+"wolf": SubResource("AnimationLibrary_8kajc")
+}
+
+[node name="InteractionWindow" parent="Trader" index="6"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -500.0
+offset_right = -400.0
+offset_bottom = -500.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" parent="Trader/InteractionWindow/Control" index="0"]
+offset_left = 293.0
+offset_top = 360.0
+offset_right = 548.0
+offset_bottom = 433.0
+
+[node name="HackWindow" parent="Trader/InteractionWindow/Control" index="1"]
+visible = false
+offset_left = -79.0
+offset_top = -3.0
+offset_right = 1841.0
+offset_bottom = 1077.0
+
+[node name="TextBubble" parent="Trader" index="7"]
+dialogueCharacter = ExtResource("7_7b6g8")
+
 [node name="UiMain" parent="." instance=ExtResource("5_svl0o")]
 visible = false
 
@@ -324,7 +447,6 @@ next_scene_name = "res://scenes/zone3/zone3.tscn"
 is_available = false
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 top_level = true
 z_index = 1
 z_as_relative = false
@@ -339,7 +461,16 @@ z_index = -3
 position = Vector2(960, 540)
 texture = ExtResource("4_h50ea")
 
+[connection signal="mouse_entered" from="Wolf/InteractionWindow/Control/HackWindow" to="Wolf/InteractionWindow" method="mouse_on_button"]
+[connection signal="mouse_exited" from="Wolf/InteractionWindow/Control/HackWindow" to="Wolf/InteractionWindow" method="mouse_off_button"]
+[connection signal="mouse_entered" from="Mermaid/InteractionWindow/Control/HackWindow" to="Mermaid/InteractionWindow" method="mouse_on_button"]
+[connection signal="mouse_exited" from="Mermaid/InteractionWindow/Control/HackWindow" to="Mermaid/InteractionWindow" method="mouse_off_button"]
+[connection signal="mouse_entered" from="Trader/InteractionWindow/Control/HackWindow" to="Trader/InteractionWindow" method="mouse_on_button"]
+[connection signal="mouse_exited" from="Trader/InteractionWindow/Control/HackWindow" to="Trader/InteractionWindow" method="mouse_off_button"]
+
 [editable path="Wolf"]
 [editable path="Wolf/InteractionWindow"]
 [editable path="Mermaid"]
 [editable path="Mermaid/InteractionWindow"]
+[editable path="Trader"]
+[editable path="Trader/InteractionWindow"]

@@ -1,3 +1,5 @@
+//https://godotshaders.com/shader/vhs-and-crt-monitor-effect/
+
 shader_type canvas_item;
 
 // Emulated input resolution.

@@ -101,8 +101,7 @@ func _process(delta: float) -> void:
 		need_to_start_idle = 0.0
 		animation_state = ANIMATION_STATE.IDLE
 		update_animation()
-	sprite.material.set_shader_parameter("is_highlited", interaction_state == INTERACTION_STATE.HIGHLIGHTED)
-	#sprite.material.set_shader_parameter("is_highlited", interaction_state == INTERACTION_STATE.HIGHLIGHTED)
+	sprite.material.set_shader_parameter("is_highlighted", interaction_state == INTERACTION_STATE.HIGHLIGHTED)
 	update_audio_stream_player()
 	
 

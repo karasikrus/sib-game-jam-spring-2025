@@ -25,25 +25,27 @@ grow_vertical = 2
 script = ExtResource("1_t7ovg")
 audio_streams = Array[AudioStream]([ExtResource("2_c54t2"), ExtResource("4_77a11"), ExtResource("4_1p75k"), ExtResource("5_chdo5"), ExtResource("6_urkgr"), ExtResource("7_hlhrw"), ExtResource("8_n3iny")])
 
-[node name="Hack" type="Button" parent="."]
+[node name="Hack" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 386.0
-offset_top = 258.0
-offset_right = 778.0
-offset_bottom = 579.0
-scale = Vector2(0.2, 0.2)
-icon = ExtResource("2_36p0u")
-flat = true
+offset_left = 417.0
+offset_top = 264.0
+offset_right = 494.0
+offset_bottom = 327.0
+texture_normal = ExtResource("2_36p0u")
+texture_pressed = ExtResource("2_36p0u")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="Talk" type="Button" parent="."]
+[node name="Talk" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 528.0
 offset_top = 257.0
-offset_right = 919.0
-offset_bottom = 586.0
-scale = Vector2(0.2, 0.2)
-icon = ExtResource("3_ka2m2")
-flat = true
+offset_right = 618.0
+offset_bottom = 329.0
+texture_normal = ExtResource("3_ka2m2")
+texture_pressed = ExtResource("3_ka2m2")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="HackWindow" type="Control" parent="."]
 visible = false
@@ -108,10 +110,13 @@ offset_left = -1.0
 offset_right = 1145.0
 offset_bottom = 647.0
 
+[connection signal="button_down" from="Hack" to="." method="hack_button_pressed_scale"]
+[connection signal="button_up" from="Hack" to="." method="hack_button_unpressed_scale"]
 [connection signal="mouse_entered" from="Hack" to="." method="mouse_on_button"]
 [connection signal="mouse_exited" from="Hack" to="." method="mouse_off_button"]
 [connection signal="pressed" from="Hack" to="." method="pressed_hacked"]
-[connection signal="button_down" from="Talk" to="." method="pressed_talk"]
+[connection signal="button_down" from="Talk" to="." method="talk_button_pressed_scale"]
+[connection signal="button_up" from="Talk" to="." method="talk_button_unpressed_scale"]
 [connection signal="mouse_entered" from="Talk" to="." method="mouse_on_button"]
 [connection signal="mouse_exited" from="Talk" to="." method="mouse_off_button"]
 [connection signal="pressed" from="Talk" to="." method="pressed_talk"]

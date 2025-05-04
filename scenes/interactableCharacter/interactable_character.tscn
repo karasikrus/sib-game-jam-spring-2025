@@ -8,12 +8,13 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k0vd5"]
 shader = ExtResource("2_1cv0v")
-shader_parameter/size_effect = 0.1
-shader_parameter/speed = 1.0
-shader_parameter/highlight_strength = 0.5
-shader_parameter/color_mode_toggle = false
-shader_parameter/is_horizontal = false
-shader_parameter/is_highlited = false
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 7.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = false
+shader_parameter/number_of_images = Vector2(1, 1)
+shader_parameter/is_highlighted = false
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vypt4"]
 resource_local_to_scene = true

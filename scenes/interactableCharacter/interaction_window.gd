@@ -115,9 +115,22 @@ func play_sound_for_tip(state : AUDIO_STATE):
 	audio_player_for_tip.play()
 
 func pressed_hacked():
+	(hack_button as TextureButton).scale = Vector2(0.95, 0.95)
 	interactable_character.interaction_state = InteractableCharacter.INTERACTION_STATE.PRESSED_HACK
 	interactable_character.waiting_for_character = true
 	
+	
+func hack_button_pressed_scale():
+	(hack_button as TextureButton).scale = Vector2(0.95, 0.95)
+	
+func hack_button_unpressed_scale():
+	(hack_button as TextureButton).scale = Vector2(1.0, 1.0)
+	
+func talk_button_pressed_scale():
+	(talk_button as TextureButton).scale = Vector2(0.95, 0.95)
+	
+func talk_button_unpressed_scale():
+	(talk_button as TextureButton).scale = Vector2(1.0, 1.0)
 	
 func pressed_talk():
 	interactable_character.interaction_state = InteractableCharacter.INTERACTION_STATE.PRESSED_TALK

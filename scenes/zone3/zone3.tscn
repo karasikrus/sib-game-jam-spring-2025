@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://csnoy1ohmy0on"]
+[gd_scene load_steps=38 format=3 uid="uid://csnoy1ohmy0on"]
 
 [ext_resource type="PackedScene" uid="uid://gujhtqt7mob6" path="res://scenes/TemplateEntity/TemplateEntity.tscn" id="1_drnp0"]
 [ext_resource type="Script" path="res://scenes/zone3/zone_3.gd" id="1_yovh7"]
@@ -151,6 +151,13 @@ _data = {
 "walk_right": SubResource("Animation_airge")
 }
 
+[sub_resource type="Animation" id="Animation_6elio"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v1ktk"]
+_data = {
+"idle": SubResource("Animation_6elio")
+}
+
 [sub_resource type="Animation" id="Animation_dcrll"]
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -241,6 +248,25 @@ _data = {
 "idle": SubResource("Animation_5ts3u")
 }
 
+[sub_resource type="Animation" id="Animation_03sus"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0odhw"]
+_data = {
+"idle": SubResource("Animation_03sus")
+}
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7g8ub"]
 shader = ExtResource("5_2xfh0")
 shader_parameter/res = Vector2(1440, 720)
@@ -283,6 +309,7 @@ vframes = 1
 [node name="AnimationPlayer" parent="Old" index="2"]
 libraries = {
 "": SubResource("AnimationLibrary_e544i"),
+"Chest": SubResource("AnimationLibrary_v1ktk"),
 "goblin": SubResource("AnimationLibrary_ywauo"),
 "old": SubResource("AnimationLibrary_x7sox")
 }
@@ -346,7 +373,7 @@ dialogueCharacter = ExtResource("7_vsga5")
 position = Vector2(1000, 800)
 nodes_to_unlock = [NodePath("../MovementNodes/NextSceneNode")]
 hints_path = "res://scenes/traider/final_hints.txt"
-animation_start_name = "yaga"
+animation_start_name = "chest"
 riddle_text = "Адрес - тот же и -corrupted Пароль: первые буквы Торговец, Волк, Русалка, Кощей, Яга, Полицейский, Лягушка "
 riddle_answer = "сказка123"
 dialogue_options_block = ExtResource("9_7g7cu")
@@ -360,6 +387,7 @@ vframes = 1
 [node name="AnimationPlayer" parent="Chest" index="2"]
 libraries = {
 "": SubResource("AnimationLibrary_e544i"),
+"chest": SubResource("AnimationLibrary_0odhw"),
 "goblin": SubResource("AnimationLibrary_ywauo"),
 "old": SubResource("AnimationLibrary_npwm2"),
 "yaga": SubResource("AnimationLibrary_n80m4")

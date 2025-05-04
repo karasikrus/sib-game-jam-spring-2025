@@ -1,14 +1,10 @@
-[gd_resource type="Resource" script_class="DialogueOptionsBlock" load_steps=6 format=3 uid="uid://4ien66q7csgb"]
+[gd_resource type="Resource" script_class="DialogueOptionsBlock" load_steps=4 format=3 uid="uid://4ien66q7csgb"]
 
-[ext_resource type="Resource" uid="uid://doyr4yibhu3f8" path="res://scenes/dialogues/lines/dialogues/goblin_dialogue/goblin_dialogue_intro.tres" id="1_rwl75"]
-[ext_resource type="Resource" uid="uid://d0vqragcbl2px" path="res://scenes/dialogues/lines/dialogues/goblin_dialogue/dialogue_option_goblin_a.tres" id="2_jolyj"]
-[ext_resource type="Resource" uid="uid://bcliyvefte0mb" path="res://scenes/dialogues/lines/dialogues/goblin_dialogue/dialogue_option_goblin_b.tres" id="3_a0ewv"]
+[ext_resource type="Resource" uid="uid://1j3a6vt082qh" path="res://scenes/dialogues/lines/dialogues/template/template_dialogue_intro.tres" id="1_1mh4v"]
 [ext_resource type="Resource" uid="uid://cgxwb5wm073ks" path="res://scenes/dialogues/lines/dialogues/exit_dialogue/dialogue_option_exit.tres" id="4_wvfyg"]
 [ext_resource type="Script" path="res://scenes/dialogues/dialogue_options/dialogue_options_block.gd" id="5_gtwo0"]
 
 [resource]
 script = ExtResource("5_gtwo0")
 optionExit = ExtResource("4_wvfyg")
-optionA = ExtResource("2_jolyj")
-optionB = ExtResource("3_a0ewv")
-introDialogue = ExtResource("1_rwl75")
+introDialogue = ExtResource("1_1mh4v")

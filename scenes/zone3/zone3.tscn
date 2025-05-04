@@ -4,12 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://cwd8t1bdevga8" path="res://scenes/interactableCharacter/interactable_character.tscn" id="2_0hinv"]
 [ext_resource type="PackedScene" uid="uid://31awqwru7b70" path="res://scenes/movementNode/next_scene_node.tscn" id="3_vmeko"]
 [ext_resource type="Texture2D" uid="uid://bvhd04aau7irw" path="res://scenes/goblin/IdleGoblin.png" id="3_vq5jx"]
-[ext_resource type="Texture2D" uid="uid://dl14je0umglth" path="res://scenes/zone2/Zone2Background.PNG" id="4_6217p"]
 [ext_resource type="Resource" uid="uid://d26875kixq440" path="res://scenes/dialogues/characters/goblin/goblin.tres" id="4_veyla"]
 [ext_resource type="Shader" path="res://scenes/postEffects/crtShader.gdshader" id="5_2xfh0"]
 [ext_resource type="PackedScene" uid="uid://802678fmiy16" path="res://scenes/ui/ui_main.tscn" id="5_vv3x0"]
 [ext_resource type="Script" path="res://scenes/movementNode/movement_nodes.gd" id="6_5jw74"]
 [ext_resource type="PackedScene" uid="uid://c2pwalittkt00" path="res://scenes/movementNode/movement_node.tscn" id="7_hwune"]
+[ext_resource type="Texture2D" uid="uid://bpb5ljdkwnwsw" path="res://scenes/zone3/Zone3Background.PNG" id="10_0fc5g"]
 
 [sub_resource type="Animation" id="Animation_k8fyg"]
 loop_mode = 2
@@ -226,7 +226,10 @@ mouse_force_pass_scroll_events = false
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -3
 position = Vector2(960, 540)
-texture = ExtResource("4_6217p")
+texture = ExtResource("10_0fc5g")
+
+[connection signal="mouse_entered" from="InteractableCharacter/InteractionWindow/Control/HackWindow" to="InteractableCharacter/InteractionWindow" method="mouse_on_button"]
+[connection signal="mouse_exited" from="InteractableCharacter/InteractionWindow/Control/HackWindow" to="InteractableCharacter/InteractionWindow" method="mouse_off_button"]
 
 [editable path="InteractableCharacter"]
 [editable path="InteractableCharacter/InteractionWindow"]

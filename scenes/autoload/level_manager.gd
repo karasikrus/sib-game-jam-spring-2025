@@ -8,10 +8,12 @@ extends Node
 var scene_list = [
 	"res://scenes/menu/main_menu.tscn",
 	"res://scenes/menu/options_menu.tscn",
+	"res://scenes/intro/intro.tscn",
 	"res://scenes/zone1/zone1.tscn",
 	"res://scenes/zone2/zone2.tscn",
 	"res://scenes/zone3/zone3.tscn",
 	"res://scenes/main/main.tscn",
+	
 ]
 
 func reload_scene():

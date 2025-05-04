@@ -12,7 +12,7 @@ func _ready():
 func on_play_pressed():
 	SceneTransition.close_screen()
 	await SceneTransition.transition_halfway
-	LevelManager.load_specific_scene("res://scenes/main/main.tscn")
+	LevelManager.load_specific_scene("res://scenes/intro/intro.tscn")
 	SceneTransition.open_screen()
 
 

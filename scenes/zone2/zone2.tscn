@@ -6,10 +6,10 @@
 [ext_resource type="Resource" uid="uid://duml2n86rraw2" path="res://scenes/dialogues/lines/dialogues/wolf/dialogue_options_block_wolf.tres" id="3_w3uof"]
 [ext_resource type="Texture2D" uid="uid://dl14je0umglth" path="res://scenes/zone2/Zone2Background.PNG" id="4_h50ea"]
 [ext_resource type="PackedScene" uid="uid://802678fmiy16" path="res://scenes/ui/ui_main.tscn" id="5_svl0o"]
-[ext_resource type="Resource" uid="uid://uoyn0vuv0tjg" path="res://scenes/dialogues/characters/goblin/wolf.tres" id="5_yl756"]
+[ext_resource type="Resource" path="res://scenes/dialogues/characters/goblin/wolf.tres" id="5_yl756"]
 [ext_resource type="Resource" uid="uid://fssfronf772f" path="res://scenes/dialogues/lines/dialogues/mermaid/dialogue_options_block_mermaid.tres" id="6_oglhk"]
 [ext_resource type="Script" path="res://scenes/movementNode/movement_nodes.gd" id="6_r2jmf"]
-[ext_resource type="Resource" uid="uid://dfkne0vmbfblw" path="res://scenes/dialogues/characters/goblin/mermaid.tres" id="7_7b6g8"]
+[ext_resource type="Resource" path="res://scenes/dialogues/characters/goblin/mermaid.tres" id="7_7b6g8"]
 [ext_resource type="PackedScene" uid="uid://c2pwalittkt00" path="res://scenes/movementNode/movement_node.tscn" id="7_iyfop"]
 [ext_resource type="Texture2D" uid="uid://c8h1k40ybuc41" path="res://scenes/mermaid/mermaid.png" id="7_t3rwo"]
 [ext_resource type="PackedScene" uid="uid://31awqwru7b70" path="res://scenes/movementNode/next_scene_node.tscn" id="8_yhxay"]
@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c7ty07gr10w2d" path="res://scenes/traider/Trader.PNG" id="9_qf670"]
 [ext_resource type="Shader" path="res://scenes/postEffects/crtShader.gdshader" id="9_tmxc1"]
 [ext_resource type="Texture2D" uid="uid://cbw25i0tdnce4" path="res://scenes/policeman/policeman.PNG" id="10_gdnw4"]
-[ext_resource type="Resource" uid="uid://dha1cigd8phuv" path="res://scenes/dialogues/characters/goblin/merchant.tres" id="11_6g4oj"]
+[ext_resource type="Resource" path="res://scenes/dialogues/characters/goblin/merchant.tres" id="11_6g4oj"]
 
 [sub_resource type="Animation" id="Animation_k8fyg"]
 length = 0.6

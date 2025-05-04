@@ -293,7 +293,6 @@ offset_bottom = 679.0
 
 [node name="TextBubble" parent="Old" index="7"]
 z_index = 4
-z_as_relative = false
 dialogueCharacter = ExtResource("5_45gkq")
 
 [node name="Yaga" parent="." instance=ExtResource("2_0hinv")]

@@ -267,9 +267,6 @@ z_index = -3
 position = Vector2(960, 540)
 texture = ExtResource("9_43j3j")
 
-[connection signal="mouse_entered" from="InteractableCharacter/InteractionWindow/Control/HackWindow" to="InteractableCharacter/InteractionWindow" method="mouse_on_button"]
-[connection signal="mouse_exited" from="InteractableCharacter/InteractionWindow/Control/HackWindow" to="InteractableCharacter/InteractionWindow" method="mouse_off_button"]
-
 [editable path="InteractableCharacter"]
 [editable path="InteractableCharacter/InteractionWindow"]
 [editable path="MovementNodes/NextSceneNode"]

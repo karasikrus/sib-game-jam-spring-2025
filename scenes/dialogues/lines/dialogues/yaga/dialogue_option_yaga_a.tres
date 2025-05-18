@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource("2_cp5ru")
-optionText = "Узнать про него побольше"
+optionText = "Узнать про неё побольше"
 dialogue = ExtResource("1_5vvmk")

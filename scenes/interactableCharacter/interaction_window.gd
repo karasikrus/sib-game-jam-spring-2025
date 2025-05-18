@@ -63,7 +63,7 @@ func show_talk_hack_buttons():
 
 func on_hack_attempt():
 	
-	var text = riddle_answer_input.text.replace("/n", "")
+	var text = riddle_answer_input.text.replace("\n", "")
 	if(text.to_lower() == riddle_answer.to_lower()):
 		on_hack_succesful()
 	else:
@@ -83,7 +83,7 @@ func on_hack_succesful():
 	self.visible = false
 	StateManager.currentState = StateManager.GlobalStates.RUNNING
 	play_sound(AUDIO_STATE.HACK_RIGHT_ANSWER)
-	var text = riddle_answer_input.text.replace("/n", "").to_lower()
+	var text = riddle_answer_input.text.replace("\n", "").to_lower()
 	if text == "сказка123":
 		LevelManager.load_specific_scene("res://scenes/outro/outro.tscn")
 

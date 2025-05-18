@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bd7u4pu58ku2g"]
+[gd_scene load_steps=49 format=3 uid="uid://bd7u4pu58ku2g"]
 
 [ext_resource type="Script" path="res://scenes/zone2/zone_2.gd" id="1_73ulx"]
 [ext_resource type="PackedScene" uid="uid://gujhtqt7mob6" path="res://scenes/TemplateEntity/TemplateEntity.tscn" id="1_ppwhq"]
@@ -7,10 +7,10 @@
 [ext_resource type="Resource" uid="uid://duml2n86rraw2" path="res://scenes/dialogues/lines/dialogues/wolf/dialogue_options_block_wolf.tres" id="3_w3uof"]
 [ext_resource type="Texture2D" uid="uid://dl14je0umglth" path="res://scenes/zone2/Zone2Background.PNG" id="4_h50ea"]
 [ext_resource type="PackedScene" uid="uid://802678fmiy16" path="res://scenes/ui/ui_main.tscn" id="5_svl0o"]
-[ext_resource type="Resource" path="res://scenes/dialogues/characters/goblin/wolf.tres" id="5_yl756"]
+[ext_resource type="Resource" uid="uid://uoyn0vuv0tjg" path="res://scenes/dialogues/characters/goblin/wolf.tres" id="5_yl756"]
 [ext_resource type="Resource" uid="uid://fssfronf772f" path="res://scenes/dialogues/lines/dialogues/mermaid/dialogue_options_block_mermaid.tres" id="6_oglhk"]
 [ext_resource type="Script" path="res://scenes/movementNode/movement_nodes.gd" id="6_r2jmf"]
-[ext_resource type="Resource" path="res://scenes/dialogues/characters/goblin/mermaid.tres" id="7_7b6g8"]
+[ext_resource type="Resource" uid="uid://dfkne0vmbfblw" path="res://scenes/dialogues/characters/goblin/mermaid.tres" id="7_7b6g8"]
 [ext_resource type="PackedScene" uid="uid://c2pwalittkt00" path="res://scenes/movementNode/movement_node.tscn" id="7_iyfop"]
 [ext_resource type="Texture2D" uid="uid://c8h1k40ybuc41" path="res://scenes/mermaid/mermaid.png" id="7_t3rwo"]
 [ext_resource type="PackedScene" uid="uid://31awqwru7b70" path="res://scenes/movementNode/next_scene_node.tscn" id="8_yhxay"]
@@ -18,12 +18,12 @@
 [ext_resource type="Texture2D" uid="uid://c7ty07gr10w2d" path="res://scenes/traider/Trader.PNG" id="9_qf670"]
 [ext_resource type="Shader" path="res://scenes/postEffects/crtShader.gdshader" id="9_tmxc1"]
 [ext_resource type="Texture2D" uid="uid://cbw25i0tdnce4" path="res://scenes/policeman/policeman.PNG" id="10_gdnw4"]
-[ext_resource type="Resource" path="res://scenes/dialogues/characters/goblin/merchant.tres" id="11_6g4oj"]
+[ext_resource type="Resource" uid="uid://dha1cigd8phuv" path="res://scenes/dialogues/characters/goblin/merchant.tres" id="11_6g4oj"]
 [ext_resource type="Resource" uid="uid://dxtjk6c10xhca" path="res://scenes/dialogues/lines/dialogues/policeman/dialogue_options_block_policeman.tres" id="12_cqt4w"]
-[ext_resource type="Resource" path="res://scenes/dialogues/characters/goblin/policeman.tres" id="14_av5mx"]
+[ext_resource type="Resource" uid="uid://mp742ualwx1l" path="res://scenes/dialogues/characters/goblin/policeman.tres" id="14_av5mx"]
 [ext_resource type="Texture2D" uid="uid://brm1g6wnwimn1" path="res://scenes/frog/Frog.png" id="15_nd3fm"]
 [ext_resource type="Resource" uid="uid://b2xx3h7s4n7m7" path="res://scenes/dialogues/lines/dialogues/frog/dialogue_options_block_frog.tres" id="15_oxv6u"]
-[ext_resource type="Resource" path="res://scenes/dialogues/characters/goblin/frog.tres" id="17_wlypc"]
+[ext_resource type="Resource" uid="uid://be6di515l6cqj" path="res://scenes/dialogues/characters/goblin/frog.tres" id="17_wlypc"]
 [ext_resource type="AudioStream" uid="uid://bbsq5xe1856qc" path="res://scenes/CyberTale_MainTheme.wav" id="25_sjxow"]
 
 [sub_resource type="Animation" id="Animation_k8fyg"]
@@ -242,6 +242,9 @@ _data = {
 "idle": SubResource("Animation_h86gu")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lc4dt"]
+size = Vector2(210, 126)
+
 [sub_resource type="Animation" id="Animation_w0jq1"]
 length = 0.6
 tracks/0/type = "value"
@@ -262,6 +265,12 @@ _data = {
 "idle": SubResource("Animation_w0jq1")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nync1"]
+size = Vector2(164, 156)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jygo1"]
+size = Vector2(131, 190)
+
 [sub_resource type="Animation" id="Animation_eyx0y"]
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -280,6 +289,15 @@ tracks/0/keys = {
 _data = {
 "idle": SubResource("Animation_eyx0y")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dc7fn"]
+size = Vector2(66, 152)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1o5k7"]
+size = Vector2(120, 155)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3d0m"]
+size = Vector2(129, 177)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7g8ub"]
 shader = ExtResource("9_tmxc1")
@@ -327,10 +345,13 @@ libraries = {
 "wolf": SubResource("AnimationLibrary_8kajc")
 }
 
+[node name="CollisionShape2D" parent="Wolf/InteractionArea" index="0"]
+position = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_lc4dt")
+
 [node name="InteractionWindow" parent="Wolf" index="6"]
 visible = false
 z_index = 2
-z_as_relative = false
 anchors_preset = -1
 offset_left = -682.0
 offset_top = -327.0
@@ -338,10 +359,10 @@ offset_right = -682.0
 offset_bottom = -327.0
 
 [node name="Control" parent="Wolf/InteractionWindow/Control" index="0"]
-offset_left = 551.0
-offset_top = 196.0
-offset_right = 806.0
-offset_bottom = 269.0
+offset_left = 460.0
+offset_top = 164.0
+offset_right = 715.0
+offset_bottom = 237.0
 
 [node name="TextBubble" parent="Wolf" index="7"]
 dialogueCharacter = ExtResource("5_yl756")
@@ -371,10 +392,13 @@ libraries = {
 "wolf": SubResource("AnimationLibrary_8kajc")
 }
 
+[node name="CollisionShape2D" parent="Mermaid/InteractionArea" index="0"]
+position = Vector2(11, 5)
+shape = SubResource("RectangleShape2D_nync1")
+
 [node name="InteractionWindow" parent="Mermaid" index="6"]
 visible = false
 z_index = 2
-z_as_relative = false
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -386,10 +410,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Control" parent="Mermaid/InteractionWindow/Control" index="0"]
-offset_left = 1248.0
-offset_top = 802.0
-offset_right = 1503.0
-offset_bottom = 875.0
+offset_left = 1144.0
+offset_top = 745.0
+offset_right = 1399.0
+offset_bottom = 818.0
 
 [node name="HackWindow" parent="Mermaid/InteractionWindow/Control" index="1"]
 offset_left = -24.0
@@ -398,6 +422,10 @@ offset_right = 1896.0
 offset_bottom = 1051.0
 
 [node name="TextBubble" parent="Mermaid" index="7"]
+offset_left = -925.0
+offset_top = -250.0
+offset_right = 315.0
+offset_bottom = -150.0
 dialogueCharacter = ExtResource("7_7b6g8")
 
 [node name="Trader" parent="." instance=ExtResource("2_1civm")]
@@ -426,10 +454,13 @@ libraries = {
 "wolf": SubResource("AnimationLibrary_8kajc")
 }
 
+[node name="CollisionShape2D" parent="Trader/InteractionArea" index="0"]
+position = Vector2(-7.5, -6)
+shape = SubResource("RectangleShape2D_jygo1")
+
 [node name="InteractionWindow" parent="Trader" index="6"]
 visible = false
 z_index = 2
-z_as_relative = false
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -441,10 +472,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Control" parent="Trader/InteractionWindow/Control" index="0"]
-offset_left = 293.0
-offset_top = 360.0
-offset_right = 548.0
-offset_bottom = 433.0
+offset_left = 169.0
+offset_top = 287.0
+offset_right = 424.0
+offset_bottom = 360.0
 
 [node name="HackWindow" parent="Trader/InteractionWindow/Control" index="1"]
 offset_left = -79.0
@@ -453,6 +484,10 @@ offset_right = 1841.0
 offset_bottom = 1077.0
 
 [node name="TextBubble" parent="Trader" index="7"]
+offset_left = -285.0
+offset_top = -265.0
+offset_right = 955.0
+offset_bottom = -165.0
 dialogueCharacter = ExtResource("11_6g4oj")
 
 [node name="Policeman" parent="." instance=ExtResource("2_1civm")]
@@ -462,7 +497,7 @@ position = Vector2(1300, 400)
 hints_path = "res://scenes/policeman/policeman_hints.txt"
 animation_start_name = "trader"
 riddle_text = "В какой книге была записана последовательность?"
-riddle_answer = "Aбака"
+riddle_answer = "Абака"
 dialogue_options_block = ExtResource("12_cqt4w")
 random_idle_value = 1.7
 
@@ -481,10 +516,12 @@ libraries = {
 "wolf": SubResource("AnimationLibrary_8kajc")
 }
 
+[node name="CollisionShape2D" parent="Policeman/InteractionArea" index="0"]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_dc7fn")
+
 [node name="InteractionWindow" parent="Policeman" index="6"]
-visible = false
 z_index = 2
-z_as_relative = false
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -496,10 +533,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Control" parent="Policeman/InteractionWindow/Control" index="0"]
-offset_left = 1202.0
-offset_top = 256.0
-offset_right = 1457.0
-offset_bottom = 329.0
+offset_left = 1076.0
+offset_top = 224.0
+offset_right = 1331.0
+offset_bottom = 297.0
 
 [node name="HackWindow" parent="Policeman/InteractionWindow/Control" index="1"]
 offset_left = -79.0
@@ -512,6 +549,10 @@ theme_override_font_sizes/mono_font_size = 0
 theme_override_font_sizes/normal_font_size = 20
 
 [node name="TextBubble" parent="Policeman" index="7"]
+offset_left = -772.0
+offset_top = -222.0
+offset_right = 468.0
+offset_bottom = -122.0
 dialogueCharacter = ExtResource("14_av5mx")
 
 [node name="Frog" parent="." instance=ExtResource("2_1civm")]
@@ -540,9 +581,12 @@ libraries = {
 "wolf": SubResource("AnimationLibrary_8kajc")
 }
 
+[node name="CollisionShape2D" parent="Frog/InteractionArea" index="0"]
+position = Vector2(10, 1.5)
+shape = SubResource("RectangleShape2D_1o5k7")
+
 [node name="InteractionWindow" parent="Frog" index="6"]
 z_index = 2
-z_as_relative = false
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -554,13 +598,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Control" parent="Frog/InteractionWindow/Control" index="0"]
-offset_left = 1309.0
-offset_top = 544.0
-offset_right = 1564.0
-offset_bottom = 617.0
+offset_left = 1196.0
+offset_top = 481.0
+offset_right = 1451.0
+offset_bottom = 554.0
 
 [node name="HackWindow" parent="Frog/InteractionWindow/Control" index="1"]
-visible = false
 offset_left = -79.0
 offset_top = -3.0
 offset_right = 1841.0
@@ -571,6 +614,10 @@ theme_override_font_sizes/mono_font_size = 0
 theme_override_font_sizes/normal_font_size = 20
 
 [node name="TextBubble" parent="Frog" index="7"]
+offset_left = -843.0
+offset_top = -201.0
+offset_right = 397.0
+offset_bottom = -101.0
 dialogueCharacter = ExtResource("17_wlypc")
 
 [node name="UiMain" parent="." instance=ExtResource("5_svl0o")]
@@ -604,6 +651,10 @@ connected_nodes = [NodePath("../Node2"), NodePath("../Node0"), NodePath("../Node
 [node name="NextSceneNode" parent="MovementNodes" instance=ExtResource("8_yhxay")]
 position = Vector2(1125, 261)
 next_scene_name = "res://scenes/zone3/zone3.tscn"
+
+[node name="CollisionShape2D" parent="MovementNodes/NextSceneNode/Area2D" index="0"]
+position = Vector2(-0.5, 8.5)
+shape = SubResource("RectangleShape2D_y3d0m")
 
 [node name="Node6" parent="MovementNodes" node_paths=PackedStringArray("connected_nodes") instance=ExtResource("7_iyfop")]
 position = Vector2(1284, 507)
@@ -649,3 +700,4 @@ autoplay = true
 [editable path="Policeman/InteractionWindow"]
 [editable path="Frog"]
 [editable path="Frog/InteractionWindow"]
+[editable path="MovementNodes/NextSceneNode"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://clb2cdbhem0da"]
+[gd_scene load_steps=23 format=3 uid="uid://clb2cdbhem0da"]
 
 [ext_resource type="Shader" path="res://scenes/postEffects/crtShader.gdshader" id="1_1tu0n"]
 [ext_resource type="Script" path="res://scenes/zone1/zone_1.gd" id="1_ayety"]
@@ -140,6 +140,9 @@ _data = {
 "idle": SubResource("Animation_dcrll")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ms7"]
+size = Vector2(477.5, 262.5)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7g8ub"]
 shader = ExtResource("1_1tu0n")
 shader_parameter/res = Vector2(1440, 720)
@@ -163,7 +166,7 @@ movement_nodes = NodePath("../MovementNodes")
 starting_node = NodePath("../MovementNodes/Node2")
 
 [node name="InteractableCharacter" parent="." node_paths=PackedStringArray("nodes_to_unlock") instance=ExtResource("2_qc3u2")]
-position = Vector2(823, 505)
+position = Vector2(852, 453)
 nodes_to_unlock = [NodePath("../MovementNodes/Node4"), NodePath("../MovementNodes/NextSceneNode")]
 hints_path = "res://scenes/goblin/goblin_hints.txt"
 animation_start_name = "goblin"
@@ -172,7 +175,7 @@ riddle_answer = "Юлекаке"
 dialogue_options_block = ExtResource("3_bnpff")
 
 [node name="Sprite2D" parent="InteractableCharacter" index="0"]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_ikcd4")
 hframes = 9
 vframes = 1
@@ -189,7 +192,6 @@ libraries = {
 }
 
 [node name="InteractionWindow" parent="InteractableCharacter" index="6"]
-visible = false
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -201,20 +203,27 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Control" parent="InteractableCharacter/InteractionWindow/Control" index="0"]
-offset_left = 702.0
-offset_top = 348.0
-offset_right = 957.0
-offset_bottom = 421.0
+offset_left = 588.0
+offset_top = 273.0
+offset_right = 843.0
+offset_bottom = 346.0
 
 [node name="HackWindow" parent="InteractableCharacter/InteractionWindow/Control" index="1"]
-visible = false
+offset_left = -24.0
+offset_top = 66.0
+offset_right = 1896.0
+offset_bottom = 1146.0
 
 [node name="RichTextLabel" parent="InteractableCharacter/InteractionWindow/Control/HackWindow/SuccesfulHackButton" index="0"]
 z_index = 1
-z_as_relative = false
 scroll_active = false
 
 [node name="TextBubble" parent="InteractableCharacter" index="7"]
+visible = true
+offset_left = -604.0
+offset_top = -247.0
+offset_right = 636.0
+offset_bottom = -147.0
 dialogueCharacter = ExtResource("4_rdmax")
 
 [node name="UiMain" parent="." instance=ExtResource("3_5jnvt")]
@@ -254,7 +263,8 @@ is_available = false
 position = Vector2(-25, 5)
 
 [node name="CollisionShape2D" parent="MovementNodes/NextSceneNode/Area2D" index="0"]
-position = Vector2(26, -21)
+position = Vector2(-32.25, -7.25)
+shape = SubResource("RectangleShape2D_u0ms7")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 top_level = true

@@ -7,4 +7,4 @@
 script = ExtResource("2_7oox5")
 character = ExtResource("1_exnec")
 text = "Но если это важно, то мы с Кощеем иногда в шахматы играем. В последний раз я ему выдвинула [i]пешку с ферзевой стороны на черное поле и напала на центр[/i]."
-timerLengthSec = 3.0
+timerLengthSec = 6.0

@@ -7,4 +7,4 @@
 script = ExtResource("2_j8smm")
 character = ExtResource("1_4qi78")
 text = "Мужчина встречается с [i]циклопом[/i], а потом обманом ослепляет его. Кошмар! Я лично была знакома с одним циклопом - добрейший души человек!"
-timerLengthSec = 3.0
+timerLengthSec = 6.0

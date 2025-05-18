@@ -7,4 +7,4 @@
 script = ExtResource("2_bijpo")
 character = ExtResource("1_h0wqd")
 text = "А потом появляются [i]полуженщины-полуптицы[/i]. Боюсь представить, что этот “герой” с ними сделает..."
-timerLengthSec = 3.0
+timerLengthSec = 5.0

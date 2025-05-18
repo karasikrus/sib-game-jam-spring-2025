@@ -7,3 +7,4 @@
 script = ExtResource("2_fmkb2")
 character = ExtResource("1_gmanb")
 text = "Это всё."
+timerLengthSec = 1.0

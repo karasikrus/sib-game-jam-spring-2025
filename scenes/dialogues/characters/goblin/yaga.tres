@@ -6,4 +6,4 @@
 script = ExtResource("1_x8ui2")
 id = "yaga"
 visibleName = ""
-textColor = Color(0, 0.441406, 0.0379333, 1)
+textColor = Color(0.00622559, 0.796875, 0.074172, 1)

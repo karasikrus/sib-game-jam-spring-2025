@@ -26,6 +26,8 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="InteractionWindow" type="Control"]
+z_index = 1000
+z_as_relative = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,15 +44,18 @@ offset_bottom = 1080.0
 
 [node name="Control" type="Control" parent="Control"]
 anchors_preset = 0
-offset_left = 521.0
-offset_top = 234.0
-offset_right = 820.0
-offset_bottom = 308.0
+offset_left = 413.0
+offset_top = 209.0
+offset_right = 712.0
+offset_bottom = 283.0
+scale = Vector2(2, 2)
 
 [node name="Hack" type="TextureButton" parent="Control/Control"]
 layout_mode = 0
-offset_right = 77.0
-offset_bottom = 63.0
+offset_left = 25.5
+offset_top = -1.5
+offset_right = 102.5
+offset_bottom = 61.5
 texture_normal = ExtResource("2_36p0u")
 texture_pressed = ExtResource("2_36p0u")
 ignore_texture_size = true
@@ -58,9 +63,9 @@ stretch_mode = 5
 
 [node name="Talk" type="TextureButton" parent="Control/Control"]
 layout_mode = 0
-offset_left = 150.0
+offset_left = 116.0
 offset_top = -5.0
-offset_right = 240.0
+offset_right = 206.0
 offset_bottom = 67.0
 texture_normal = ExtResource("3_ka2m2")
 texture_pressed = ExtResource("3_ka2m2")
@@ -68,6 +73,7 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="HackWindow" type="Control" parent="Control"]
+visible = false
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
